@@ -1,0 +1,32 @@
+/*-------- Border Radius -------*/
+
+.rounded {
+	border-radius: 3px !important;
+}
+.noborder {
+	border-radius: 0;
+}
+.brround {
+	border-radius: 50%;
+}
+.bradius {
+	border-radius: 25%;
+}
+@each $prop, $abbrev in (border: br) {
+	@each $size, $length in $custom-width {
+		.#{$abbrev}-#{$size} { #{$prop}-radius: $length !important; }
+		.#{$abbrev}-tl-#{$size}{
+			#{$prop}-top-left-radius: $length !important;
+		}
+		.#{$abbrev}-tr-#{$size}{
+			#{$prop}-top-right-radius: $length !important;
+		}
+		.#{$abbrev}-bl-#{$size}{
+			#{$prop}-bottom-left-radius: $length !important;
+		}
+		.#{$abbrev}-br-#{$size}{
+			#{$prop}-bottom-right-radius: $length !important;
+		}
+	}
+}
+/*-------- Border Radius -------*/

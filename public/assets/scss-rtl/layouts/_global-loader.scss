@@ -1,0 +1,47 @@
+/*-------- Global Loader -------*/
+#global-loader {
+	position: fixed;
+	z-index: 50000;
+	background: $white;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.loader-svg-img {
+	position: absolute;
+	left: 0;
+	right: 0;
+	text-align: center;
+	top: 33%;
+	margin: 0 auto;
+	width: 300px;
+	height: 300px;
+	line-height: 300px;
+	border-radius: 50%;
+	background: url(../images/other/loader.svg);
+	img{
+		width:auto;
+	}
+}
+.flight-icon {
+	position: absolute;
+	top: 37%;
+	color: $white;
+	transform: rotate(45deg);
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	animation: fa-spin 10s infinite linear;
+	width: 78px;
+	height: 78px;
+	display: flex;
+	margin: 0 auto;
+	line-height: 80px;
+	font-size: $default-value-size * 18;
+}
+/*-------- Global Loader -------*/

@@ -1,0 +1,32 @@
+/*--------Badges -------*/
+.badge {
+    padding: 0.4rem ($space-xs * 3);
+    font-size: 100%;
+    font-weight: $font-weight-normal;
+    border-radius: $default-value-size * 3;
+}
+.badge-pill {
+	padding-right: 0.8rem;
+	padding-left: 0.8rem;
+	border-radius: 10rem;
+}
+.badgetext {
+	float: left;
+}
+.btn .badge {
+	position: relative;
+	top: -1px;
+}
+/*-------- Badge Colors  -------*/
+@each $colors, $value in $colors {
+	@include badge-variant(".badge-#{$colors}", $value);}
+/*--------Badge Colors -------*/
+
+.badge-light {
+	color: $text-color !important;
+}
+.badge-default {
+	background: rgb(224, 228, 236);
+	color: #3d4e67;
+}
+/*-------- Badges -------*/

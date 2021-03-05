@@ -1,0 +1,311 @@
+/*-------- Carousel -------*/
+%carousel-options{
+	position: absolute;			
+	display: inline-block;
+	width: 100%;
+	height: 10px;
+	content: "";
+}
+%carousel-li-options{
+	position: relative;
+	-ms-flex: 0 1 auto;
+	flex: 0 1 auto;
+	width: 7px;
+	height: 7px;
+	margin-right: 3px;
+	margin-left: 3px;
+	text-indent: -999px;
+	background-color: rgba($white, 0.5);
+	border-radius: 50%;
+}
+%carousel-main-options{
+	position: absolute;
+	z-index: 15;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+	justify-content: center;
+	padding-left: 0;
+	list-style: none;
+}
+.carousel-indicators1 {
+	@extend %carousel-main-options;
+	right: 0;
+	top: 10px;
+	left: 0;
+	margin-right: 15%;
+	margin-left: 15%;
+	li {
+		@extend %carousel-li-options;
+		&::before {
+			@extend %carousel-options;
+			top: -10px;
+			left: 0;
+		}
+		&::after {
+			@extend %carousel-options;
+			bottom: -10px;
+			left: 0;
+		}
+	}
+	.active {
+		background-color: $white;
+	}
+}
+.carousel-indicators2 {
+	@extend %carousel-main-options;
+	right: 10px;
+	left: auto;
+	top: 0;
+	margin-top: 10px;
+	margin-left:0;
+	margin-right:0;
+	li {
+		@extend %carousel-li-options;
+		&::before {
+			@extend %carousel-options;
+			top: -10px;
+			left: 0;
+		}
+		&::after {
+			@extend %carousel-options;
+			bottom: -10px;
+			left: 0;
+		}
+	}
+	.active {
+		background-color: $white;
+	}
+}
+.carousel-indicators3 {
+	@extend %carousel-main-options;
+    left: 10px;
+    top: 10px;
+    right: auto;
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 0;
+	li {
+		@extend %carousel-li-options;
+		&::before {
+			@extend %carousel-options;
+			top: -10px;
+			left: 0;
+		}
+		&::after {
+			@extend %carousel-options;
+			bottom: -10px;
+			left: 0;
+		}
+	}
+	.active {
+		background-color: $white;
+	}
+}
+.carousel-indicators4 {
+	@extend %carousel-main-options;
+    right: 10px;
+    bottom: 0;
+    left: auto;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    bottom: 0px !important;
+	li {
+		@extend %carousel-li-options;
+		&::before {
+			@extend %carousel-options;
+			top: -10px;
+			left: 0;
+		}
+		&::after {
+			@extend %carousel-options;
+			bottom: -10px;
+			left: 0;
+		}
+	}
+	.active {
+		background-color: $white;
+	}
+}
+.carousel-indicators5 {
+	@extend %carousel-main-options;
+    right: auto;
+    bottom: 0;
+    left: 10px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    bottom: 0px !important;
+	li {
+		@extend %carousel-li-options;
+		&::before {
+			@extend %carousel-options;
+			top: -10px;
+			left: 0;
+		}
+		&::after {
+			@extend %carousel-options;
+			bottom: -10px;
+			left: 0;
+		}
+	}
+	.active {
+		background-color: $white;
+	}
+}
+
+.carousel-item-background {
+	content: '';
+	background: rgba($text-color, 0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+	background: rgba($text-color, 0.5);
+	background-image: none;
+	width: 30px;
+	height: 30px;
+	font-size: $default-value-size * 18 !important;
+	color: $white;
+	line-height: 30px !important;
+	border-radius: 50%;
+}
+#thumbcarousel, #thumbcarousel2 {
+	.carousel-control-prev {
+		left: 0;
+		background: rgba($text-color, 0.5);
+	}
+	.carousel-control-next {
+		right: 0;
+		background: rgba($text-color, 0.5);
+	}
+}
+.test-carousel {
+	.carousel-control-next i, .carousel-control-prev i {
+		font-size: 2rem;
+		color: $black;
+		padding: .5rem;
+	}
+}
+
+
+.carousel-bg {
+	.prev-icon, .next-icon {
+		background-color: rgba($text-color, 0.7);
+		padding: 5px 15px;
+		border-radius: 100px;
+		font-size: $default-value-size * 20;
+	}
+}
+.banner1 {
+	.carousel-inner img {
+		width: 100%;
+		max-height: 460px;
+	}
+	.carousel-item:before {
+		content: '';
+		display: block;
+		position: absolute;
+		background: rgba($text-color, 0.6);
+		width: 100%;
+		height: 100%;
+		right: 0;
+		top: 0;
+	}
+	.carousel-control {
+		width: 0;
+		&.left, &.right {
+			opacity: 1;
+			background-image: none;
+			background-repeat: no-repeat;
+			text-shadow: none;
+		}
+		&.left span, &.right span {
+			padding: 15px;
+		}
+		.glyphicon-chevron-left, .glyphicon-chevron-right, .icon-next, .icon-prev {
+			position: absolute;
+			top: 45%;
+			z-index: 5;
+			display: inline-block;
+		}
+		.glyphicon-chevron-left, .icon-prev {
+			left: 0;
+		}
+		.glyphicon-chevron-right, .icon-next {
+			right: 0;
+		}
+		&.left span, &.right span {
+			background: rgba($white, 0.1);
+			color: $white;
+		}
+		&.left span:hover, &.right span:hover {
+			background: rgba($white, 0.3);
+		}
+	}
+	.header-text {
+		position: absolute;
+		left: 0;
+		right: 0;
+		color: $white;
+	}
+	.slider .header-text {
+		top: 29%;
+	}
+	.header-text {
+		h2 {
+			font-size: $default-value-size * 40;
+		}
+		h3 {
+			font-size: $default-value-size * 25;
+		}
+		h2 span {
+			padding: 10px;
+		}
+		h3 span {
+			padding: 15px;
+		}
+	}
+}
+
+.testimonial-carousel-item .card {
+	position: relative;
+	.carosel-shape {
+		position: absolute;
+		width: 65px;
+		height: 100%;
+		left: 0px;
+	}
+}
+.card .carosel-shape-horizontal {
+	position: absolute;
+	width: 100%;
+	height: 100px;
+	left: 0px;
+}
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	overflow: hidden;
+	clip:inherit;
+	white-space: nowrap;
+	border: 0;
+}
+.sr-only-focusable {
+	&:active, &:focus {
+		position: static;
+		width: auto;
+		height: auto;
+		overflow: visible;
+		clip: auto;
+		white-space: normal;
+	}
+}
+/*-------- Carousel -------*/

@@ -1,0 +1,160 @@
+/*-------- Page -------*/
+%page-content{
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+%page-before-content{
+	content: '';
+	width: 100%;
+	height: 100%;
+	display: block;
+	z-index: 1;
+	left: 0;
+	right: 0;
+}
+.page {
+	@extend %page-content;
+	min-height: 100%;
+}
+
+.page-main {
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+}
+.page-content {
+	margin: .75rem 0;
+	@extend %page-content;
+	min-height: 100vh;
+}
+.page-header {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 0;
+	position: relative;
+	min-height: 50px;
+	background: $white;
+	line-height: 50px;
+}
+.users-list .page-header {
+	background: 0 0;
+	padding: 0;
+	border: 0;
+}
+.page-title {
+	margin: 0;
+	font-size: $default-value-size * 18;
+	font-weight: $font-weight-semibold2;
+	line-height: 2.5rem;
+}
+.page-title-icon {
+	color: #cecde0;
+	font-size: 1.25rem;
+}
+.page-subtitle {
+	font-size: .8125rem;
+	color: #5f6877;
+	position: relative;
+	top: 19px;
+	right: 59rem;
+	a {
+		color: inherit;
+	}
+}
+.page-options {
+	margin-left: auto;
+}
+.page-description {
+	margin: .25rem 0 0;
+	color: #5f6877;
+	a {
+		color: inherit;
+	}
+}
+.page-single {
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	@extend %page-content;
+}
+
+.page-breadcrumb {
+	background: 0 0;
+	padding: 0;
+	margin: 1rem 0 0;
+	font-size: .875rem;
+	-ms-flex-preferred-size: 100%;
+	flex-basis: 100%;
+	.breadcrumb-item {
+		color: #cecde0;
+		&.active {
+			color: #5f6877;
+		}
+	}
+}
+
+.page-total-text {
+	margin-right: 1rem;
+	-ms-flex-item-align: center;
+	align-self: center;
+	color: #5f6877;
+}
+
+.page-section {
+	background: url(../images/banners/banner.png);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	position:relative;
+	&:before {
+		position: absolute;
+		content: '';
+			width: 100%;
+			height: 100%;
+			display: block;
+			z-index: 1;
+			left: 0;
+	right: 0;
+		background: linear-gradient(-225deg, rgba(72, 1, 255, 0.9) 0, rgba(121, 24, 242, 0.9) 48%, rgba(172, 50, 228, 0.9) 100%);
+	}
+}
+.page-section2{
+	background: url(../images/banners/error.jpg);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	&:before {
+		position: fixed;
+		@extend %page-before-content;
+		background: transparent !important;
+	}
+	.img-absolute-bottom{
+		right:0;
+		left:auto;
+	}
+}
+.page-section .card {
+	background:$white;
+}
+.page-header .page-select {
+	width: 20%;
+}
+.page-section:before, ::-ms-backdrop {
+	position: absolute;
+	@extend %page-before-content;
+}
+.page-h, ::-ms-backdrop {
+	height: 100%;
+}
+.page-header .breadcrumb-item .fe {
+   float: right;
+    margin-top: 17px;
+    margin-left: 5px;
+}
+/*-------- Page -------*/

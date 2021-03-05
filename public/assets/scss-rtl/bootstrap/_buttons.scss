@@ -1,0 +1,81 @@
+/*-------- Buttons -------*/
+.btn {
+	border: 1px solid transparent;
+	padding: .375rem .75rem;
+	font-size: .9375rem;
+	line-height: 28px;
+	border-radius: $default-value-size * 5;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+	height: 40px;
+	cursor: pointer;
+	min-width: 2.375rem;
+	&:focus, &:hover {
+		text-decoration: none;
+	}
+	&.focus, &:focus {
+		outline: 0;
+		box-shadow: 0 0 0 2px rgba(194, 197, 199, 0.25);
+	}
+	&.disabled, &:disabled {
+		opacity: 0.65;
+	}
+	&:not(:disabled):not(.disabled) {
+		cursor: pointer;
+		&.active, &:active {
+			background-image: none;
+		}
+	}
+}
+@media screen and (prefers-reduced-motion: reduce) {
+	.btn {
+		transition: none;
+	}
+}
+a.btn.disabled, fieldset:disabled a.btn {
+	pointer-events: none;
+}
+
+//btn-colors
+@each $colors, $value in $colors {
+	@include btn-variant(".btn-#{$colors}", $value);
+}
+
+//btn-outline colors
+@each $colors, $value in $colors {
+	@include btn-outline-variant(".btn-outline-#{$colors}", $value);
+}
+.btn-link {
+	font-weight: $font-weight-normal;
+	background-color: transparent;
+	&:hover {
+		color: $text-color;
+		text-decoration: none;
+		background-color: transparent;
+		border-color: transparent;
+	}
+	&.focus, &:focus {
+		text-decoration: none;
+		border-color: transparent;
+		box-shadow: none;
+	}
+	&.disabled, &:disabled {
+		color: #868e96;
+		pointer-events: none;
+	}
+}
+.btn-block {
+	display: block;
+	width: 100%;
+	+.btn-block {
+		margin-top: 0.5rem;
+	}
+}
+.btn-pill {
+	border-radius: 10rem !important;
+	padding-left: 1.5em !important;
+	padding-right: 1.5em !important;
+}
+.btn-square {
+	border-radius: 0;
+}
+/*-------- Buttons -------*/

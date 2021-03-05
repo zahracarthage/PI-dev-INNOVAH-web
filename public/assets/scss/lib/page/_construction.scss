@@ -1,0 +1,48 @@
+/*-------- Construction -------*/
+.construction {
+	z-index: 1;
+	.btn {
+		&.btn-icon {
+			text-align: center;
+			padding: 0;
+			font-size: $default-value-size * 16;
+			color: rgba($white, 0.9);
+			border-radius: 50%;
+			background: rgba($white, 0.2);
+			width: $space-md * 3;
+			height:$space-md * 3;
+			line-height:$space-md * 3;
+		}
+		border-radius: 5px;
+	}
+	.form-control {
+		border: 1px solid $white;
+		border-radius: 5px;
+		padding-left: 20px;
+		width: 60%;
+	}
+	.input-group-1 {
+		margin: 0 auto;
+	}
+	h3 {
+		color: $white;
+		font-size: 3.2rem;
+		font-weight: 800 !important;
+		margin-bottom: .4em !important;
+		letter-spacing: 0;
+		padding-bottom: 0;
+		line-height: 1.2;
+	}
+	p {
+		margin-top: 10px;
+		margin-bottom: 0;
+		font-weight: $font-weight-normal;
+		font-size: $default-value-size * 18;
+		color:$white;
+	}
+}
+.construction-img {
+	background: url(../images/other/construction.jpg);
+	background-size: cover;
+}
+/*-------- Construction -------*/

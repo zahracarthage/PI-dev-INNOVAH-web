@@ -1,0 +1,24 @@
+// tooltip mixins
+@mixin tooltip-con() {
+  display: block;
+	margin: 0;
+	font-style: normal;	
+	line-height: 1.5;
+	text-align: left;
+	text-align: start;
+	text-decoration: none;
+	text-shadow: none;
+	text-transform: none;
+	letter-spacing: normal;
+	word-break: normal;
+	word-spacing: normal;
+	white-space: normal;
+	line-break: auto;	
+	word-wrap: break-word;
+}
+@mixin tooltip-before() {
+	position: absolute;
+	content: "";
+	border-color: transparent;
+	border-style: solid;
+}

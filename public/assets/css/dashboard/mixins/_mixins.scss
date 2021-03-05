@@ -1,0 +1,12 @@
+@mixin trasition-style($property, $prop, $value, $prop2, $prefixes) {
+	@each $trasition-out in $prefixes {
+		-#{$trasition-out}-#{$property}: $prop $value $prop2;
+	}
+	#{$property}: $prop $value $prop2;
+}
+@mixin transform($property, $value, $prefixes) {
+  @each $transform in $prefixes {
+    -#{$transform}-#{$property}: $value;
+  }
+  #{$property}: $value;
+}

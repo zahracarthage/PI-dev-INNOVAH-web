@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reservationrepas{% endblock %}
+
+{% block body %}
+    <h1>Reservationrepas</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ reservationrepa.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ reservationrepa.date ? reservationrepa.date|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('reservationrepas_index') }}">back to list</a>
+
+    <a href="{{ path('reservationrepas_edit', {'id': reservationrepa.id}) }}">edit</a>
+
+    {{ include('reservationrepas/_delete_form.html.twig') }}
+{% endblock %}

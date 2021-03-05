@@ -1,0 +1,60 @@
+/*-------- sptb -------*/
+.sptb {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+.sptb-1 {
+	padding-top: 8.5rem;
+	padding-bottom: 4.5rem;
+}
+.sptb-12 {
+	padding-top: 8.5rem;
+	padding-bottom: 8.5rem;
+}
+.sptb-2 {
+	padding-top: 6.2rem;
+	padding-bottom: 11rem;
+}
+.sptb-21 {
+	padding-top: 4.2rem;
+	padding-bottom: 14rem;
+}
+.sptb-22 {
+	padding-top: 9rem;
+	padding-bottom: 15rem;
+}
+.sptb-3, .sptb-4 {
+	padding-top: 6.2rem;
+	padding-bottom: 11rem;
+}
+.sptb-8 {
+	padding-top: 7rem;
+	padding-bottom: 12rem;
+}
+.categories {
+	margin-top: -65px;
+	margin-bottom: 65px;
+}
+.categories2 {
+	margin-top: -50px;
+}
+.categories-1 {
+	margin-top: -120px;
+}
+.section-title {
+	p {
+		text-align: center;
+		font-size: $default-value-size * 16;
+		margin-bottom: 0;
+		color: #a1a0b9;
+	}
+	padding-bottom: 3rem;
+	h1, h2 {
+		margin-bottom: .5rem;
+		color: #4f4b8b;
+		font-size: 34px;
+		font-weight: $font-weight-bold;
+		z-index: 1;
+	}
+}
+/*-------- sptb -------*/

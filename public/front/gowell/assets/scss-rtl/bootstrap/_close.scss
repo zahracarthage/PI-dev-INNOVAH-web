@@ -1,0 +1,26 @@
+/*-------- close -------*/
+.close {
+	float: left;
+	line-height: 1;
+	color: #a0afc7;
+	text-shadow: 0 1px 0 $white;
+	opacity: .7;
+	font-size: 1rem;
+	line-height: 1.5;
+	transition: .3s color;
+	&:focus, &:hover {
+		color: #a0afc7;
+		text-decoration: none;
+		opacity: .75;
+	}
+	&:not(:disabled):not(.disabled) {
+		cursor: pointer;
+	}
+}
+button.close {
+	padding: 0;
+	background-color: transparent;
+	border: 0;
+	-webkit-appearance: none;
+}
+/*-------- close -------*/

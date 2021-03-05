@@ -1,0 +1,48 @@
+/*-------- Nav tabs-------*/
+.navtab-wizard {
+	li {
+		&:first-of-type a {
+			border-left: none !important;
+			&:active, &:focus, &:hover {
+				border-left: none !important;
+			}
+		}
+		&:last-of-type a {
+			border-right: none !important;
+			&:active, &:focus, &:hover {
+				border-right: none !important;
+			}
+		}
+	}
+	&.nav-tabs .nav-link {
+		border-radius: $default-value-size * 5;
+		width: 100%;
+		text-align: center;
+		display: block;
+		font-size: $default-value-size * 16;
+		font-weight: $font-weight-normal;
+		border-left: 0px solid $border-color;
+		background: $border-color;
+		margin: 4px;
+		padding: 10px;
+	}
+	border-bottom: 1px solid $border-color !important;
+	padding: 10px;
+}
+
+.collapse:not(.show) {
+	display: none;
+	background: $white;
+}
+.collapsing {
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	transition: height 0.35s ease;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+	.collapsing {
+		transition: none;
+	}
+}
+/*-------- Nav tabs-------*/

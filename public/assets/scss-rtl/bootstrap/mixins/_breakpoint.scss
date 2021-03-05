@@ -1,0 +1,135 @@
+// breakpoint mixins
+@function breakpoint-next($name, $grid-breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($grid-breakpoints)) {
+  $n: index($breakpoint-names, $name);
+  @return if($n != null and $n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+@function breakpoint-min($name, $grid-breakpoints: $grid-breakpoints) {
+  $min: map-get($grid-breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+@function breakpoint-max($name, $grid-breakpoints: $grid-breakpoints) {
+  $next: breakpoint-next($name, $grid-breakpoints);
+  @return if($next, breakpoint-min($next, $grid-breakpoints) - .02, null);
+}
+
+@function breakpoint-infix($name, $grid-breakpoints: $grid-breakpoints) {
+  @return if(breakpoint-min($name, $grid-breakpoints) == null, "", "-#{$name}");
+}
+
+
+// breakpoint mixins responisve
+@mixin media-breakpoint-up($name, $grid-breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $grid-breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($name, $grid-breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($name, $grid-breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+//
+//  Breakpoint ABOVE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include breakpoint-above(sm) {}
+@mixin breakpoint-above($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($grid-breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  
+  // If the breakpoint doesn't exist in the map.
+  } @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+
+//
+//  breakpoint BELOW
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include breakpoint-below(sm) {}
+@mixin breakpoint-below($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($grid-breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+  
+  // If the breakpoint doesn't exist in the map.
+  } @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+
+//
+//  breakpoint BETWEEN
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include breakpoint-between(sm, md) {}
+@mixin breakpoint-between($lower, $upper) {
+
+  // If both the lower and upper breakpoints exist in the map.
+  @if map-has-key($grid-breakpoints, $lower) and map-has-key($grid-breakpoints, $upper) {
+
+    // Get the lower and upper breakpoints.
+    $lower-breakpoint: map-get($grid-breakpoints, $lower);
+    $upper-breakpoint: map-get($grid-breakpoints, $upper);
+
+    // Write the media query.
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
+  
+  // If one or both of the breakpoints don't exist.
+  } @else {
+
+    // If lower breakpoint is invalid.
+    @if (map-has-key($grid-breakpoints, $lower) == false) {
+
+      // Log a warning.
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+
+    // If upper breakpoint is invalid.
+    @if (map-has-key($grid-breakpoints, $upper) == false) {
+
+      // Log a warning.
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}

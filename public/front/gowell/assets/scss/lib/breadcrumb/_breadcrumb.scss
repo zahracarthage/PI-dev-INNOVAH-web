@@ -1,0 +1,67 @@
+/*-------- Breadcrumb -------*/
+.page-header .breadcrumb-item+.breadcrumb-item::before {
+	color: $text-color;
+	opacity: 0.3;
+}
+.breadcrumb1 {
+	display: flex;
+	flex-wrap: wrap;
+	padding: ($space-xs * 3) $space-md;
+	margin-bottom: $space-md;
+	list-style: none;
+	background-color: $border-color;
+	border-radius: .25rem;
+}
+.breadcrumb-item1 {
+	a {
+		color: #7b838f;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	+.breadcrumb-item1 {
+		&::before {
+			display: inline-block;
+			padding-right: $space-sm;
+			padding-left: $space-sm;
+			content: "/";
+			opacity:0.5;
+		}
+		&:hover::before {
+			text-decoration: underline;
+			text-decoration: none;
+		}
+	}
+	&.active {
+		color: #b3b1cc;
+	}
+}
+.breadcrumb-1, .breadcrumb-2 {
+	ol {
+		position: relative;
+		display: block;
+		width: 100%;
+		text-align: right;
+	}
+	li {
+		text-align: right;
+		display: contents;
+	}
+}
+.breadcrumb-3, .breadcrumb-4 {
+	ol {
+		position: relative;
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	li {
+		display: contents;
+		text-align: center;
+	}
+}
+.breadcrumb-3 li, ::-ms-backdrop, .breadcrumb-4 li, ::-ms-backdrop, .breadcrumb-1 li, ::-ms-backdrop, .breadcrumb-2 li, ::-ms-backdrop {
+	display: inline-block;
+	text-align: center;
+}
+/*-------- Breadcrumb -------*/

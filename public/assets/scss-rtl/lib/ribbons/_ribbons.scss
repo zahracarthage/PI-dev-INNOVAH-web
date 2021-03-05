@@ -1,0 +1,335 @@
+/*-------- Ribbons -------*/
+.ribbon-1, .ribbon-2 {
+	position: absolute;
+	top: -6.1px;
+	right: 10px;
+	color: $white;
+	&:after {
+		position: absolute;
+		content: "";
+		width: 0;
+		height: 0;
+		border-left: 20px solid transparent;
+		border-right: 24px solid transparent;
+		z-index: 9;
+	}
+	span {
+		position: relative;
+		display: block;
+		text-align: center;
+		font-size: $default-value-size * 14;
+		line-height: 1;
+		padding: 12px 8px 10px;
+		border-top-right-radius: 8px;
+		z-index: 9;
+		&:after {
+			position: absolute;
+			content: "";
+		}
+		&:before {
+			position: absolute;
+			content: "";
+			height: 6px;
+			width: 6px;
+			left: -6px;
+			top: 0;
+		}
+		&:after {
+			height: 6px;
+			width: 8px;
+			left: -8px;
+			top: 0;
+			border-radius: 8px 8px 0 0;
+		}
+	}
+	i {
+		color: $white;
+		font-size: $default-value-size * 16;
+		padding-left: 7px;
+		padding-right: 7px;
+	}
+}
+.ribbon-3 {
+	position: absolute;
+	top: -6.1px;
+	right: 10px;
+	color: $white;
+	&:after {
+		position: absolute;
+		content: "";
+		width: 0;
+		height: 0;
+		border-left: 20px solid transparent;
+		border-right: 24px solid transparent;
+		border-top: 13px solid #0ccad8;
+		z-index: 9;
+	}
+	span {
+		position: relative;
+		display: block;
+		text-align: center;
+		background: #0ccad8;
+		font-size: $default-value-size * 14;
+		line-height: 1;
+		padding: 12px 8px 10px;
+		border-top-right-radius: 8px;
+		z-index: 9;
+	}
+}
+.ribbon-1 span:after {
+	position: absolute;
+	content: "";
+}
+.ribbon-3 {
+	span {
+		&:before {
+			position: absolute;
+			content: "";
+			height: 6px;
+			width: 6px;
+			left: -6px;
+			top: 0;
+			background: #0ccad8;
+		}
+		&:after {
+			height: 6px;
+			width: 8px;
+			left: -8px;
+			top: 0;
+			border-radius: 8px 8px 0 0;
+			background: #0ccad8;
+		}
+	}
+	i {
+		color: $white;
+		font-size: $default-value-size * 16;
+		padding-left: 7px;
+		padding-right: 7px;
+	}
+}
+.ribbone {
+	width: 100%;
+	position: relative;
+	background-size: cover;
+	text-transform: uppercase;
+	color: $white;
+}
+.ribbon1 {
+	position: absolute;
+	top: -6.1px;
+	left: 10px;
+	z-index: 1;
+	&:after {
+		position: absolute;
+		content: "";
+		width: 0;
+		height: 0;
+		border-left: 20px solid transparent;
+		border-right: 21px solid transparent;
+		border-top: 13px solid #f8463f;
+	}
+	span {
+		position: relative;
+		display: block;
+		text-align: center;
+		background: #f8463f;
+		font-size: $default-value-size * 14;
+		line-height: 1.2;
+		padding: 16px 8px 10px;
+		border-top-right-radius: 8px;
+		&:after {
+			position: absolute;
+			content: "";
+		}
+		&:before {
+			position: absolute;
+			content: "";
+			height: 6px;
+			width: 6px;
+			left: -6px;
+			top: 0;
+			background: #f8463f;
+		}
+		&:after {
+			height: 6px;
+			width: 8px;
+			left: -8px;
+			top: 0;
+			border-radius: 8px 8px 0 0;
+			background: #c02031;
+		}
+	}
+}
+%ribbon-style{
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	content: "";
+	right: -15px;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	width: 0;
+}
+.arrow-ribbon {
+	color: $white;
+	padding: 3px 8px;
+	position: absolute;
+	top: 10px;
+	left: 0;
+	z-index: 98;
+	font-size: $default-value-size * 18;
+	&.bg-purple:before {	
+		@extend %ribbon-style;
+		border-left: 15px solid $color-purple;		
+	}
+	&.bg-danger:before {
+		@extend %ribbon-style;
+		border-left: 15px solid $color-danger;
+	}
+	&.bg-secondary:before, &.bg-primary:before {
+		@extend %ribbon-style;
+	}
+	&.bg-success:before {
+		@extend %ribbon-style;
+		border-left: 15px solid $color-success;
+	}
+	&.bg-info:before {
+		@extend %ribbon-style;
+		border-left: 15px solid $color-info;
+	}
+	&.bg-warning:before {
+		@extend %ribbon-style;
+		border-left: 15px solid $color-warning;
+	}
+	&.bg-pink:before {
+		@extend %ribbon-style;
+		border-left: 15px solid $color-pink;
+	}
+}
+.arrow-ribbon2 {
+	color: $white;
+	padding: 3px 8px;
+	position: absolute;
+	top: 10px;
+	left: -1px;
+	z-index: 98;
+	font-size: $default-value-size * 30;
+	&:before {
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		content: "";
+		right: -24px;
+		border-top: 24px solid transparent;
+		border-bottom: 24px solid transparent;
+		width: 0;
+	}
+}
+.ribbon {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: absolute;
+	z-index: 10;
+}
+.power-ribbon {
+	width: 56px;
+	height: 56px;
+	overflow: hidden;
+	position: absolute;
+	z-index: 10;
+	span {
+		position: absolute;
+		display: block;
+		width: 82px;
+		padding: 8px 0;
+		color: $white;
+		font: 500 16px/1 Lato, sans-serif;
+		text-shadow: 0 1px 1px rgba($text-color, 0.2);
+		text-transform: capitalize;
+		text-align: center;
+	}
+}
+.power-ribbon-top-left {
+	span {
+		left: -5px;
+		top: 1px;
+		transform: rotate(-136deg);
+		i {
+			transform: rotate(45deg);
+			padding-top: 2px;
+			padding-left: 7px;
+		}
+	}
+	top: -6px;
+	right: -9px;
+}
+.ribbon {
+	&::after, &::before {
+		position: absolute;
+		z-index: -1;
+		content: '';
+		display: block;
+		border: 5px solid;
+	}
+	span {
+		position: absolute;
+		display: block;
+		width: 225px;
+		padding: 8px 0;
+		box-shadow: 0 5px 10px rgba($text-color, 0.1);
+		color: $white;
+		text-shadow: 0 1px 1px rgba($text-color, 0.2);
+		text-transform: capitalize;
+		text-align: center;
+	}
+}
+.ribbon-top-left {
+	top: -10px;
+	left: -10px;
+	&::after {
+		border-top-color: transparent;
+		border-left-color: transparent;
+	}
+	&::before {
+		border-top-color: transparent;
+		border-left-color: transparent;
+		top: 0;
+		right: 30px;
+	}
+	&::after {
+		bottom: 50px;
+		left: 0;
+	}
+	span {
+		right: -8px;
+		top: 30px;
+		transform: rotate(-45deg);
+	}
+}
+.ribbon-top-right {
+	top: -10px;
+	right: -10px;
+	&::after {
+		border-top-color: transparent;
+		border-right-color: transparent;
+	}
+	&::before {
+		border-top-color: transparent;
+		border-right-color: transparent;
+		top: 0;
+		left: 36px;
+	}
+	&::after {
+		bottom: 36px;
+		right: 0;
+	}
+	span {
+		left: -8px;
+		top: 30px;
+		transform: rotate(45deg);
+	}
+}
+/*-------- Ribbons -------*/

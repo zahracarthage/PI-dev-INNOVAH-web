@@ -1,0 +1,140 @@
+/*-------- Socail Icons -------*/
+.social-icons li {
+	a {
+		color: $white;
+	}
+	margin-right: 15px;
+	display: inline-block;
+	list-style: none;
+	font-size: $default-value-size * 14;
+	width: 35px;
+	height: 35px;
+	margin: 1px;
+	border-radius: 50%;
+	border: 1px solid rgba($white, 0.2);
+	line-height: 35px;
+	margin: 1px auto;
+	text-align: center;
+	cursor: pointer;
+}
+.login-social-icons li {
+	margin-right: 15px;
+	display: inline-block;
+	list-style: none;
+	font-size: $default-value-size * 18;
+	width: 45px;
+	height: 50px;
+	height: 45px;
+	border-radius: 50%;
+	border: 0px solid rgba($white, 0.2);
+	line-height: 47px;
+	margin: 0px 3px;
+	text-align: center;
+	a {
+		color: $white;
+	}
+}
+.social li a {
+	color: rgba($white, 0.6);
+	line-height: 0;
+}
+.socials {
+	display: flex;
+	li {
+		margin: 0 12px;
+		margin-right: 15px;
+	}
+}
+.social-links li a {
+	background: #f8f8f8;
+	border-radius: 50%;
+	color: #cecde0;
+	display: inline-block;
+	height: 1.75rem;
+	width: 1.75rem;
+	line-height: 1.75rem;
+	text-align: center;
+}
+
+.filter-product-social {
+	.social-icon2 li {
+		color: $text-color;
+		margin-right: 35px;
+		display: inline-block;
+		list-style: none;
+		font-size: $default-value-size * 20;
+	}
+	.social-icons li a {
+		color: $text-color;
+	}
+}
+.single-product .product-desc .product-icons .socialicons a {
+	width: 2em;
+	height: 2em;
+	line-height: 2em;
+	border-radius: 50%;
+	font-size: 1em;
+	display: inline-block;
+	vertical-align: middle;
+	border: 1px solid #eef2f9;
+	color: $text-color;
+	margin: 0 auto;
+	text-align: center;
+}
+.social li {
+	float: left;
+	margin-right: 15px;
+	display: inline-block;
+	list-style: none;
+	font-size: $default-value-size * 15;
+	float: right;
+}
+
+.socailicons {
+	.fa {
+		font-size: 70px;
+		text-align: right;
+		position: absolute;
+		top: 13px;
+		right: -5px;
+		outline: 0;
+	}
+	color: $white;
+	text-shadow: 1px 1px 2px rgba($text-color, 0.5);
+	a {
+		text-decoration: none;
+	}
+}
+.twitter1 {
+	background-color: $twitter !important;
+}
+.google-plus1 {
+	background-color: $google !important;
+}
+.facebook-like1 {
+	background-color: $facebook !important;
+}
+.pinterest1 {
+	background-color: $pinterest !important;
+}
+.facebook-bg {
+	background: #3b5998;
+	color: $white;
+}
+.twitter-bg {
+	background: #0c85d0;
+	color: $white;
+}
+.google-bg {
+	background: #c63224;
+	color: $white;
+}
+.dribbble-bg {
+	background: #e62a72;
+	color: $white;
+}
+.pinterest-bg {
+	background: #8c0615;
+	color: $white;
+}
+/*-------- Socail Icons -------*/

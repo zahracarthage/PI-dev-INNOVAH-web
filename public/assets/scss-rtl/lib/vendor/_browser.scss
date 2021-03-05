@@ -1,0 +1,63 @@
+/*------ Browser CSS -------*/
+.browser {
+	width: 1.25rem;
+	height: 1.25rem;
+	display: inline-block;
+	background: no-repeat center/100% 100%;
+	vertical-align: bottom;
+	font-style: normal;
+}
+.browser-android-browser {
+	background-image: url(#{$browser-path}/android-browser.svg);
+}
+.browser-aol-explorer {
+	background-image: url(#{$browser-path}/aol-explorer.svg);
+}
+.browser-blackberry {
+	background-image: url(#{$browser-path}/blackberry.svg);
+}
+.browser-camino {
+	background-image: url(#{$browser-path}/camino.svg);
+}
+.browser-chrome {
+	background-image: url(#{$browser-path}/chrome.svg);
+}
+.browser-chromium {
+	background-image: url(#{$browser-path}/chromium.svg);
+}
+.browser-dolphin {
+	background-image: url(#{$browser-path}/dolphin.svg);
+}
+.browser-edge {
+	background-image: url(#{$browser-path}/edge.svg);
+}
+.browser-firefox {
+	background-image: url(#{$browser-path}/firefox.svg);
+}
+.browser-ie {
+	background-image: url(#{$browser-path}/ie.svg);
+}
+.browser-maxthon {
+	background-image: url(#{$browser-path}/maxthon.svg);
+}
+.browser-mozilla {
+	background-image: url(#{$browser-path}/mozilla.svg);
+}
+.browser-netscape {
+	background-image: url(#{$browser-path}/netscape.svg);
+}
+.browser-opera {
+	background-image: url(#{$browser-path}/opera.svg);
+}
+.browser-safari {
+	background-image: url(#{$browser-path}/safari.svg);
+}
+.browser-sleipnir {
+	background-image: url(#{$browser-path}/sleipnir.svg);
+}
+.browser-uc-browser {
+	background-image: url(#{$browser-path}/uc-browser.svg);
+}
+.browser-vivaldi {
+	background-image: url(#{$browser-path}/vivaldi.svg);
+}

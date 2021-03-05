@@ -1,0 +1,48 @@
+/*-------- Backgrounds -------*/
+@each $colors, $value in $colors {
+	@include bg-variant(".bg-#{$colors}", $value);
+}
+
+/*-------- Background transparents -------*/
+.bg-success-transparent {
+	background-color: rgba($color-success, 0.1) !important;
+}
+.bg-info-transparent {
+	background-color: rgba($color-info, 0.1) !important;
+}
+.bg-warning-transparent {
+	background-color: rgba($color-warning, 0.1) !important;
+}
+.bg-danger-transparent {
+	background-color: rgba($color-danger, 0.1) !important;
+}
+.bg-pink-transparent {
+	background-color: rgba($color-pink, 0.1) !important;
+}
+.bg-purple-transparent {
+	background-color: rgba($color-purple, 0.1) !important;
+}
+.bg-dark-transparent {
+	background-color: rgba($color-dark, 0.3) !important;
+}
+.bg-dark-transparent6 {
+	background-color: rgba($color-dark, 0.6) !important;
+}
+.bg-white-transparent {
+	background-color: rgba($white, 0.18) !important;
+}
+.bg-light-50 {
+	background-color: $body-color !important;
+}
+.bg-light-30 {
+	background-color: $form-background !important;
+}
+.bg-white {
+	background-color: $white !important;
+}
+.bg-transparent {
+	background-color: transparent !important;
+}
+
+/*-------- Backgrounds -------*/
+

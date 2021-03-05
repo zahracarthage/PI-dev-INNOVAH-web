@@ -1,0 +1,30 @@
+/*-------- Breadcrumb -------*/
+.breadcrumb {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 0 !important;
+	list-style: none;
+	border-radius: $default-value-size * 5;
+	left: 0;
+	bottom: 0;
+	padding: 0 !important;
+	background-color: transparent !important;
+}
+.breadcrumb-item a {
+	color: rgba($white, 0.8);
+}
+.breadcrumb-item+.breadcrumb-item {
+	padding-left: 0;
+	&::before {
+		display: inline-block;
+		padding-right: $space-sm;
+		padding-left: $space-sm;
+		color: rgba($white, 0.3);
+		content: "/";
+	}
+	&:hover::before {
+		text-decoration: underline;
+		text-decoration: none;
+	}
+}
+/*-------- Breadcrumb -------*/

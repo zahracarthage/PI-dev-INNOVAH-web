@@ -1,0 +1,13 @@
+@mixin brradius($property, $value, $prefixes) {
+	@each $brradius in $prefixes {
+		-#{$brradius}-#{$property}: $value;
+	}
+	#{$property}: $value;
+}
+
+@mixin chat-transition($property, $bg-color, $value, $transition, $prefixes) {
+	@each $chat-transition in $prefixes {
+		-#{$chat-transition}-#{$property}: $bg-color $value $transition;
+	}
+	#{$property}: $bg-color $value $transition;
+}

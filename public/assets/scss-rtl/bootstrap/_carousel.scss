@@ -1,0 +1,108 @@
+/*-------- Carousel -------*/
+%carousel-options{
+	position: absolute;			
+	display: inline-block;
+	width: 100%;
+	height: 10px;
+	content: "";
+}
+.carousel-indicators {
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	left: 0;
+	z-index: 15;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+	justify-content: center;
+	padding-right: 0;
+	margin-right: 15%;
+	margin-left: 15%;
+	list-style: none;
+	li {
+		position: relative;
+		-ms-flex: 0 1 auto;
+		flex: 0 1 auto;
+		margin-right: 3px;
+		margin-left: 3px;
+		text-indent: -999px;
+		border-radius: 50%;
+		background-color: rgba($white, 0.5);
+		background: #e2e2e2;
+		border: 4px solid $white;
+		width: 5px;
+		height: 5px;
+		margin: 1px 2px;
+		&.active {
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			margin: 1px 2px;
+			border: 5px double;
+		}
+		&::before {
+			@extend %carousel-options;
+			top: -10px;
+			left: 0;
+		}
+		&::after {
+			@extend %carousel-options;
+			bottom: -10px;
+			left: 0;
+		}
+	}
+	.active {
+		background-color: $white;
+	}
+}
+.carousel-caption {
+	position: absolute;
+	right: 15%;
+	top: 30%;
+	left: 15%;
+	z-index: 10;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: $white;
+	text-align: center;
+}
+.carousel-control {
+	&:active, &:focus, &:hover {
+		color: $text-color;
+	}
+}
+.carousel .carousel-indicators {
+	bottom: -1rem;
+}
+.carousel .carousel-control {
+	height: 40px;
+	width: 40px;
+	background: 0 0;
+	margin: auto 0;
+	border-radius: 50%;
+	background: rgba($text-color, 0.6);
+	z-index: 999;
+	i {
+		font-size: 32px;
+		position: absolute;
+		top: 1.6rem;
+		display: inline-block;
+		margin: -18px 0 0 0;
+		z-index: 5;
+		left: 0;
+		right: 0;
+		color: rgba($white, 0.9);
+		text-shadow: none;
+		font-weight: $font-weight-bold;
+		z-index: 999;
+	}
+}
+.carousel-control-next {
+	right: -1.8rem;
+}
+.carousel-control-prev {
+	left: -1.8rem;
+}
+
+/*-------- Carousel -------*/

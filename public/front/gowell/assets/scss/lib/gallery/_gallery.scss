@@ -1,0 +1,35 @@
+/*------ Gallery -------*/
+.img-gallery {
+	margin-right: -.25rem;
+	margin-left: -.25rem;
+	margin-bottom: -.5rem;
+	> {
+		.col, [class*=col-] {
+			padding-left: .25rem;
+			padding-right: .25rem;
+			padding-bottom: .5rem;
+		}
+	}
+}
+
+.gallery-close-button {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background:$white;
+	position: absolute;
+	display: block;
+	right: -15px;
+	top: -15px;
+	z-index: 9;
+	line-height: 53px;
+	cursor: pointer;
+	i {
+		margin: 10px;
+	}
+}
+.gallery-item {
+	cursor: pointer;
+	display: block;
+}
+/*------ Gallery -------*/

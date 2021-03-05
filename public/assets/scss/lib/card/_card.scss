@@ -1,0 +1,334 @@
+/*-------- Cards -------*/
+.card-blog-overlay .card-header {
+	border-bottom: 1px solid rgba($white, 0.2);
+}
+.card-blog-overlay1 .card-footer, .card-blog-overlay2 .card-footer {
+	border-top: 1px solid rgba($white, 0.2);
+}
+.card-blog-overlay {
+	background: url(../images/thumbnails/thumb2.jpg);
+	background-size: cover;
+	position: relative;
+}
+.card-blog-overlay1:before, .card-blog-overlay2:before, .card-blog-overlay:before {
+	content: '';
+	display: block;
+	position: absolute;
+	background: rgba($text-color, 0.2);
+	width: 100%;
+	height: 100%;
+	right: 0;
+	top: 0;
+}
+.card-blog-overlay1 {
+	background: url(../images/thumbnails/thumb3.jpg);
+	background-size: cover;
+	background-position: center;
+}
+.card-blog-overlay2 {
+	background: url(../images/banners/banner12.jpg);
+	background-size: cover;
+	background-position: center;
+}
+.card-blog-overlay3 {
+	background: url(../images/photos/4.jpg);
+	background-size: cover;
+	background-position: center;
+}
+.card-img-overlay {
+	background-color: rgba($text-color, 0.4);
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1.25rem;
+}
+.card-profile .card-header {
+	height: 5rem;
+	background-size: cover;
+	border: 0;
+}
+.profie-img .flex-md-row img {
+	width: 60px;
+}
+.card-profile-img {
+	max-width: 6rem;
+	margin-bottom: 1rem;
+	border: 3px solid $white;
+	border-radius: 100%;
+	box-shadow: 0 1px 1px rgba($text-color, 0.1);
+}
+.card-aside {
+	-ms-flex-direction: row;
+	flex-direction: row;
+}
+.card-aside-column {
+	min-width: 5rem;
+	width: 30%;
+	-ms-flex: 0 0 30%;
+	flex: 0 0 30%;
+	background: no-repeat center/cover;
+}
+.card-value {
+	font-size: 1rem;
+	line-height: 3.4rem;
+	height: 3.4rem;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	font-weight: $font-weight-normal;
+	i {
+		vertical-align: middle;
+	}
+}
+.card-chart-bg {
+	height: 4rem;
+	margin-top: -1rem;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+.card-options {
+	margin-left: auto;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-order: 100;
+	order: 100;
+	margin-right: -.5rem;
+	color: #cecde0;
+	-ms-flex-item-align: center;
+	align-self: center;
+	a:not(.btn) {
+		margin-left: .5rem;
+		color: #b0bcd0;
+		font-size: $default-value-size * 14;
+		display: inline-block;
+		min-width: 1rem;
+		&:hover {
+			text-decoration: none;
+			color: #cecde0;
+		}
+		i {
+			font-size: 1rem;
+			vertical-align: middle;
+		}
+	}
+	.dropdown-toggle:after {
+		display: none;
+	}
+}
+.widgets-cards .wrp {
+	&.icon-circle {
+		width: 73px;
+		height: 73px;
+		border-radius: 50%;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-align-items: center;
+		align-items: center;
+		-webkit-justify-content: center;
+		justify-content: center;
+		padding: 0;
+		margin-right: 15px;
+		i {
+			font-size: 1.6rem;
+			color: $white;
+		}
+	}
+	p {
+		margin-bottom: 0;
+		line-height: 1;
+		margin-bottom: 10px;
+		&:first-child {
+			font-weight: $font-weight-semibold2;
+			font-size: $default-value-size * 30;
+		}
+	}
+}
+.card-collapsed {
+	> :not(.card-header):not(.card-status) {
+		display: none;
+	}
+	.card-options-collapse i:before {
+		content: '\e92d';
+	}
+}
+.card-fullscreen {
+	.card-options-fullscreen i:before {
+		content: '\e992';
+	}
+	.card-options-remove {
+		display: none;
+	}
+}
+.card-map {
+	height: 15rem;
+	background: $border-color;
+}
+.card-map-placeholder {
+	background: no-repeat center;
+}
+.card-tabs {
+	display: -ms-flexbox;
+	display: flex;
+}
+.card-tabs-bottom .card-tabs-item {
+	border: 0;
+	&.active {
+		border-top-color: $white;
+	}
+}
+.card-tabs-item {
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	display: block;
+	padding: 1.4rem 1.5rem;
+	color: inherit;
+	overflow: hidden;
+}
+a.card-tabs-item {
+	background: #fafbfc;
+	&:hover {
+		text-decoration: none;
+		color: inherit;
+	}
+	&:focus {
+		z-index: 1;
+	}
+	&.active {
+		background: $white;
+		border-bottom-color: $white;
+	}
+}
+.card-status {
+	position: absolute;
+	top: -1px;
+	left: 0;
+	right: 0;
+	height: 3px;
+	border-radius: 7px 7px 0 0;
+	background: $border-color;
+}
+.card-status-left {
+	right: auto;
+	bottom: 0;
+	height: auto;
+	width: 3px;
+	border-radius: 3px 0 0 3px;
+}
+.card-icon {
+	width: 3rem;
+	font-size: 2.5rem;
+	line-height: 3rem;
+	text-align: center;
+}
+.card-fullscreen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	margin: 0;
+}
+.card-alert {
+	border-radius: 0;
+	margin: -1px -1px 0;
+}
+.card-category {
+	font-size: $default-value-size * 20;
+	text-transform: capitalize;
+	text-align: center;
+	font-weight: $font-weight-semibold;
+	letter-spacing: .05em;
+	margin: 0 0 .5rem;
+	background: $border-color;
+	padding: 5px;
+}
+.card-header-tabs .nav-item {
+	margin-bottom: 1px;
+}
+.stretch-card {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: stretch;
+	align-items: stretch;
+	-webkit-justify-content: stretch;
+	justify-content: stretch;
+	>.card {
+		width: 100%;
+		min-width: 100%;
+	}
+}
+.card-img-absolute {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+}
+.card-item {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+}
+.card-aside-img {
+	img {
+		width: 80px;
+		height: 80px;
+		vertical-align: middle;
+	}
+	&.wrap-border img {
+		border: 1px solid $border-color;
+		padding: 3px;
+	}
+	position: relative;
+	a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+}
+.card .card-block {
+	padding: 15px;
+}
+.user-card .card-block .user-image {
+	position: relative;
+	margin: 0 auto;
+	display: inline-block;
+	padding: 5px;
+	width: 110px;
+	height: 110px;
+}
+.card .card-block p {
+	line-height: 1.4;
+	margin-top: 10px;
+}
+.user-card .card-block {
+	.activity-leval li {
+		display: inline-block;
+		width: 15%;
+		height: 4px;
+		margin: 0 3px;
+		background-color: #e9ebf9;
+	}
+	.counter-block {
+		color: $white;
+	}
+	.user-social-link i {
+		font-size: $default-value-size * 30;
+	}
+}
+/*-------- Cards -------*/

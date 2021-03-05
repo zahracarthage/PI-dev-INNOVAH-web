@@ -1,0 +1,16 @@
+/*-------- Wizard -------*/
+.wizard-card {
+	.moving-tab {
+		margin-top: 5px;
+	}
+	&.form-group .form-control {
+		background: linear-gradient(#c4c4c4, #c4c4c4);
+	}
+	.choice .icon {
+		border: 4px solid $border-color !important;
+	}
+}
+.wizard-container .wizard-navigation {
+	background: $border-color;
+}
+/*-------- Wizard -------*/

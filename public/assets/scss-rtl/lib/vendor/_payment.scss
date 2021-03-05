@@ -1,0 +1,335 @@
+/*------ Payment CSS -------*/
+.payment {
+	width: 2.5rem;
+	height: 1.5rem;
+	display: inline-block;
+	background: no-repeat center/100% 100%;
+	vertical-align: bottom;
+	font-style: normal;
+	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+	border-radius: 2px;
+}
+.payment-2checkout-dark {
+	background-image: url(#{$payment-path}/2checkout-dark.svg);
+}
+.payment-2checkout {
+	background-image:  url(#{$payment-path}/2checkout.svg);
+}
+.payment-alipay-dark {
+	background-image:  url(#{$payment-path}/alipay-dark.svg);
+}
+.payment-alipay {
+	background-image:  url(#{$payment-path}/alipay.svg);
+}
+.payment-amazon-dark {
+	background-image:  url(#{$payment-path}/amazon-dark.svg);
+}
+.payment-amazon {
+	background-image:  url(#{$payment-path}/amazon.svg);
+}
+.payment-americanexpress-dark {
+	background-image:  url(#{$payment-path}/americanexpress-dark.svg);
+}
+.payment-americanexpress {
+	background-image:  url(#{$payment-path}/americanexpress.svg);
+}
+.payment-applepay-dark {
+	background-image:  url(#{$payment-path}/applepay-dark.svg);
+}
+.payment-applepay {
+	background-image:  url(#{$payment-path}/applepay.svg);
+}
+.payment-bancontact-dark {
+	background-image:  url(#{$payment-path}/bancontact-dark.svg);
+}
+.payment-bancontact {
+	background-image:  url(#{$payment-path}/bancontact.svg);
+}
+.payment-bitcoin-dark {
+	background-image:  url(#{$payment-path}/bitcoin-dark.svg);
+}
+.payment-bitcoin {
+	background-image:  url(#{$payment-path}/bitcoin.svg);
+}
+.payment-bitpay-dark {
+	background-image:  url(#{$payment-path}/bitpay-dark.svg);
+}
+.payment-bitpay {
+	background-image:  url(#{$payment-path}/bitpay.svg);
+}
+.payment-cirrus-dark {
+	background-image:  url(#{$payment-path}/cirrus-dark.svg);
+}
+.payment-cirrus {
+	background-image:  url(#{$payment-path}/cirrus.svg);
+}
+.payment-clickandbuy-dark {
+	background-image:  url(#{$payment-path}/clickandbuy-dark.svg);
+}
+.payment-clickandbuy {
+	background-image:  url(#{$payment-path}/clickandbuy.svg);
+}
+.payment-coinkite-dark {
+	background-image:  url(#{$payment-path}/coinkite-dark.svg);
+}
+.payment-coinkite {
+	background-image:  url(#{$payment-path}/coinkite.svg);
+}
+.payment-dinersclub-dark {
+	background-image:  url(#{$payment-path}/dinersclub-dark.svg);
+}
+.payment-dinersclub {
+	background-image:  url(#{$payment-path}/dinersclub.svg);
+}
+.payment-directdebit-dark {
+	background-image:  url(#{$payment-path}/directdebit-dark.svg);
+}
+.payment-directdebit {
+	background-image:  url(#{$payment-path}/directdebit.svg);
+}
+.payment-discover-dark {
+	background-image:  url(#{$payment-path}/discover-dark.svg);
+}
+.payment-discover {
+	background-image:  url(#{$payment-path}/discover.svg);
+}
+.payment-dwolla-dark {
+	background-image:  url(#{$payment-path}/dwolla-dark.svg);
+}
+.payment-dwolla {
+	background-image:  url(#{$payment-path}/dwolla.svg);
+}
+.payment-ebay-dark {
+	background-image:  url(#{$payment-path}/ebay-dark.svg);
+}
+.payment-ebay {
+	background-image:  url(#{$payment-path}/ebay.svg);
+}
+.payment-eway-dark {
+	background-image:  url(#{$payment-path}/eway-dark.svg);
+}
+.payment-eway {
+	background-image:  url(#{$payment-path}/eway.svg);
+}
+.payment-giropay-dark {
+	background-image:  url(#{$payment-path}/giropay-dark.svg);
+}
+.payment-giropay {
+	background-image:  url(#{$payment-path}/giropay.svg);
+}
+.payment-googlewallet-dark {
+	background-image:  url(#{$payment-path}/googlewallet-dark.svg);
+}
+.payment-googlewallet {
+	background-image:  url(#{$payment-path}/googlewallet.svg);
+}
+.payment-ingenico-dark {
+	background-image:  url(#{$payment-path}/ingenico-dark.svg);
+}
+.payment-ingenico {
+	background-image:  url(#{$payment-path}/ingenico.svg);
+}
+.payment-jcb-dark {
+	background-image:  url(#{$payment-path}/jcb-dark.svg);
+}
+.payment-jcb {
+	background-image:  url(#{$payment-path}/jcb.svg);
+}
+.payment-klarna-dark {
+	background-image:  url(#{$payment-path}/klarna-dark.svg);
+}
+.payment-klarna {
+	background-image:  url(#{$payment-path}/klarna.svg);
+}
+.payment-laser-dark {
+	background-image:  url(#{$payment-path}/laser-dark.svg);
+}
+.payment-laser {
+	background-image:  url(#{$payment-path}/laser.svg);
+}
+.payment-maestro-dark {
+	background-image:  url(#{$payment-path}/maestro-dark.svg);
+}
+.payment-maestro {
+	background-image:  url(#{$payment-path}/maestro.svg);
+}
+.payment-mastercard-dark {
+	background-image:  url(#{$payment-path}/mastercard-dark.svg);
+}
+.payment-mastercard {
+	background-image:  url(#{$payment-path}/mastercard.svg);
+}
+.payment-monero-dark {
+	background-image:  url(#{$payment-path}/monero-dark.svg);
+}
+.payment-monero {
+	background-image:  url(#{$payment-path}/monero.svg);
+}
+.payment-neteller-dark {
+	background-image:  url(#{$payment-path}/neteller-dark.svg);
+}
+.payment-neteller {
+	background-image:  url(#{$payment-path}/neteller.svg);
+}
+.payment-ogone-dark {
+	background-image:  url(#{$payment-path}/ogone-dark.svg);
+}
+.payment-ogone {
+	background-image:  url(#{$payment-path}/ogone.svg);
+}
+.payment-okpay-dark {
+	background-image:  url(#{$payment-path}/okpay-dark.svg);
+}
+.payment-okpay {
+	background-image:  url(#{$payment-path}/okpay.svg);
+}
+.payment-paybox-dark {
+	background-image:  url(#{$payment-path}/paybox-dark.svg);
+}
+.payment-paybox {
+	background-image:  url(#{$payment-path}/paybox.svg);
+}
+.payment-paymill-dark {
+	background-image:  url(#{$payment-path}/paymill-dark.svg);
+}
+.payment-paymill {
+	background-image:  url(#{$payment-path}/paymill.svg);
+}
+.payment-payone-dark {
+	background-image:  url(#{$payment-path}/payone-dark.svg);
+}
+.payment-payone {
+	background-image:  url(#{$payment-path}/payone.svg);
+}
+.payment-payoneer-dark {
+	background-image:  url(#{$payment-path}/payoneer-dark.svg);
+}
+.payment-payoneer {
+	background-image:  url(#{$payment-path}/payoneer.svg);
+}
+.payment-paypal-dark {
+	background-image:  url(#{$payment-path}/paypal-dark.svg);
+}
+.payment-paypal {
+	background-image:  url(#{$payment-path}/paypal.svg);
+}
+.payment-paysafecard-dark {
+	background-image:  url(#{$payment-path}/paysafecard-dark.svg);
+}
+.payment-paysafecard {
+	background-image:  url(#{$payment-path}/paysafecard.svg);
+}
+.payment-payu-dark {
+	background-image:  url(#{$payment-path}/payu-dark.svg);
+}
+.payment-payu {
+	background-image:  url(#{$payment-path}/payu.svg);
+}
+.payment-payza-dark {
+	background-image:  url(#{$payment-path}/payza-dark.svg);
+}
+.payment-payza {
+	background-image:  url(#{$payment-path}/payza.svg);
+}
+.payment-ripple-dark {
+	background-image:  url(#{$payment-path}/ripple-dark.svg);
+}
+.payment-ripple {
+	background-image:  url(#{$payment-path}/ripple.svg);
+}
+.payment-sage-dark {
+	background-image:  url(#{$payment-path}/sage-dark.svg);
+}
+.payment-sage {
+	background-image:  url(#{$payment-path}/sage.svg);
+}
+.payment-sepa-dark {
+	background-image:  url(#{$payment-path}/sepa-dark.svg);
+}
+.payment-sepa {
+	background-image:  url(#{$payment-path}/sepa.svg);
+}
+.payment-shopify-dark {
+	background-image:  url(#{$payment-path}/shopify-dark.svg);
+}
+.payment-shopify {
+	background-image:  url(#{$payment-path}/shopify.svg);
+}
+.payment-skrill-dark {
+	background-image:  url(#{$payment-path}/skrill-dark.svg);
+}
+.payment-skrill {
+	background-image:  url(#{$payment-path}/skrill.svg);
+}
+.payment-solo-dark {
+	background-image:  url(#{$payment-path}/solo-dark.svg);
+}
+.payment-solo {
+	background-image:  url(#{$payment-path}/solo.svg);
+}
+.payment-square-dark {
+	background-image:  url(#{$payment-path}/square-dark.svg);
+}
+.payment-square {
+	background-image:  url(#{$payment-path}/square.svg);
+}
+.payment-stripe-dark {
+	background-image:  url(#{$payment-path}/stripe-dark.svg);
+}
+.payment-stripe {
+	background-image:  url(#{$payment-path}/stripe.svg);
+}
+.payment-switch-dark {
+	background-image:  url(#{$payment-path}/switch-dark.svg);
+}
+.payment-switch {
+	background-image:  url(#{$payment-path}/switch.svg);
+}
+.payment-ukash-dark {
+	background-image:  url(#{$payment-path}/ukash-dark.svg);
+}
+.payment-ukash {
+	background-image:  url(#{$payment-path}/ukash.svg);
+}
+.payment-unionpay-dark {
+	background-image:  url(#{$payment-path}/unionpay-dark.svg);
+}
+.payment-unionpay {
+	background-image:  url(#{$payment-path}/unionpay.svg);
+}
+.payment-verifone-dark {
+	background-image:  url(#{$payment-path}/verifone-dark.svg);
+}
+.payment-verifone {
+	background-image:  url(#{$payment-path}/verifone.svg);
+}
+.payment-verisign-dark {
+	background-image:  url(#{$payment-path}/verisign-dark.svg);
+}
+.payment-verisign {
+	background-image:  url(#{$payment-path}/verisign.svg);
+}
+.payment-visa-dark {
+	background-image:  url(#{$payment-path}/visa-dark.svg);
+}
+.payment-visa {
+	background-image:  url(#{$payment-path}/visa.svg);
+}
+.payment-webmoney-dark {
+	background-image:  url(#{$payment-path}/webmoney-dark.svg);
+}
+.payment-webmoney {
+	background-image:  url(#{$payment-path}/webmoney.svg);
+}
+.payment-westernunion-dark {
+	background-image:  url(#{$payment-path}/westernunion-dark.svg);
+}
+.payment-westernunion {
+	background-image:  url(#{$payment-path}/westernunion.svg);
+}
+.payment-worldpay-dark {
+	background-image:  url(#{$payment-path}/worldpay-dark.svg);
+}
+.payment-worldpay {
+	background-image:  url(#{$payment-path}/worldpay.svg);
+}
