@@ -1,0 +1,68 @@
+/*-------- Accordion -------*/
+
+.panel-group .panel {
+	border-radius: 0;
+	box-shadow: none;
+	border-color: $border-color;
+}
+.panel-default>.panel-heading {
+	padding: 0;
+	border-radius: 0;
+	background-color: $border-color;
+	border-color: $border-color;
+}
+.panel-title {
+	font-size: $default-value-size * 14;
+	margin-bottom: 0;
+	>a {
+		display: block;
+		padding: 15px;
+		text-decoration: none;
+	}
+}
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+	border: 1px solid $border-color;
+}
+a {
+	&:active, &:focus, &:hover {
+		outline: 0;
+		text-decoration: none;
+	}
+}
+.panel-title a.accordion-toggle {
+	&:before {
+		content: "\f068";
+		padding: 0 10px 0 0;
+		color: $white;
+		font-family: FontAwesome;
+		float: right;
+	}
+	&.collapsed:before {
+		content: "\f067";
+		padding: 0 10px 0 0;
+		color: $white;
+		font-family: FontAwesome;
+		float: right;
+	}
+}
+.accordion .card {
+	&:not(:first-of-type) {
+		&:not(:last-of-type) {
+			border-bottom: 0;
+			border-radius: 0;
+		}
+		.card-header:first-child {
+			border-radius: 0;
+		}
+	}
+	&:first-of-type {
+		border-bottom: 0;
+		border-bottom-right-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+	&:last-of-type {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+}
+/*-------- Accordion -------*/

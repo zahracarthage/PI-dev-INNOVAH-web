@@ -1,0 +1,120 @@
+
+{% extends 'standardlist.html.twig' %}
+
+
+
+{% block namelist %} Activités list {% endblock %}
+
+
+   {% block body %}
+
+
+    {% for activites in activites %}
+               <tbody>
+
+               <table>
+
+
+                   <div class="tab-pane active" id="tab-12">
+                       <div class="row">
+
+
+                               <tr>
+
+
+
+
+                               <div class="col-lg-6 col-md-6 col-xl-6">
+                               <div class="card overflow-hidden">
+                                   <div class="h-100">
+
+                                       <div class="item-card9-img h-250">
+                                           <div class="item-card9-imgs">
+                                               <a href="tours.html" class="absolute-link2"></a>
+                                               <img src="{{ activites.image }}" alt="img" class="cover-image">
+                                           </div>
+
+                                           <div class="item-card9-icons">
+                                               <a href="#" class="item-card9-icons1 wishlist"> <i class="fa fa fa-heart-o"></i></a>
+                                           </div>
+                                                                                              <div class="font-weight-semibold2 text-muted mb-0 price-badge item-cardreview-absolute-price bg-info"><span class="text-white">{{ activites.prix }}</span><small class="text-white-80">/person</small></div>
+
+
+                                       </div>
+
+                                  <div class="card border-0 mb-0 br-0">
+                                   <div class="card-body h-100">
+                                        <div class="item-card9">
+
+
+
+
+                                            <a href="tours.html" class="text-dark"><h4 class="font-weight-semibold2 mt-1 mb-1">{{ activites.Nom }}</h4></a>
+
+                                                   <div class="mt-0 mb-0 d-sm-flex d-md-block d-xl-flex">
+                                                       <a href="#" class="mt-1 mb-0 mr-3 text-dark"><i class="fe fe-map-pin mr-1"></i> {{ activites.getDate()|date('d-m-Y H:i:s') }} }}</a>
+                                                       <div class="star-ratings start-ratings-main clearfix d-flex mt-1">
+                                                           <div class="stars stars-example-fontawesome stars-example-fontawesome-sm mr-2">
+                                                               <select class="example-fontawesome" name="rating" autocomplete="off">
+                                                                   <option value="1">1</option>
+                                                                   <option value="2">2</option>
+                                                                   <option value="3">3</option>
+                                                                   <option value="4" selected>4</option>
+                                                                   <option value="5">5</option>
+                                                               </select>
+                                                           </div> <a class="fs-13 leading-tight mt-1" href="#">56 Reviews</a>
+                                                       </div>
+                                                   </div>
+
+                                                   <div class="">
+                                                       <p class="mt-2 mb-0 leading-loose"> {{ activites.description }}  </p>
+                                                   </div>
+                                                       <div class="card-footer">
+                                                           <div class="item-card9-footer d-flex">
+                                                               <div class="item-card9-cost d-flex">
+                                                                   <div class="ml-3">
+                                                                       <h6 class="mb-0 mt-2 font-weight-semibold2">{{ activites.categorie }}</h6>
+                                                                   </div>
+                                                               </div>
+
+                                                           </div>
+                                                       </div>
+
+
+
+
+                                               </div>
+                                         </div>
+
+
+                                       </div>
+
+
+
+                                       </div>
+                                   </div>
+                               </div>
+
+
+                               </tr>
+
+
+
+
+
+                       </div>
+                   </div>
+
+
+                   </tbody>
+           </table>
+
+           {%  endfor %}
+
+
+
+
+
+
+
+{% endblock %}

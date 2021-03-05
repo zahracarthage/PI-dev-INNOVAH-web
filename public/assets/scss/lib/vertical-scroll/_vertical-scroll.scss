@@ -1,0 +1,33 @@
+/*-------- Vertical scroll -------*/
+.vertical-scroll {
+	.news-item {
+		border: 1px solid $border-color !important;
+		margin-bottom: 15px;
+		padding: 10px;
+		td:last-child {
+			width: 76%;
+		}
+	}
+	.item {
+		border: 1px solid $border-color !important;
+		margin-bottom: 5px;
+		margin-top: 5px;
+		.p-5 {
+			padding: 1rem !important;
+		}
+	}
+	margin-bottom: 0;
+}
+.vertical-scroll1 .item, .vertical-scroll2 .item {
+	border: 1px solid $border-color !important;
+	margin-bottom: 15px;
+	background: $white;
+	a {
+		text-decoration: none;
+	}
+}
+.vertical-scroll .item2 {
+	border-bottom: 1px solid $border-color !important;
+	padding: 12px 25px;
+}
+/*-------- Vertical scroll -------*/

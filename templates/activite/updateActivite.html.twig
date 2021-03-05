@@ -1,0 +1,63 @@
+
+
+{% extends 'dashboard.html.twig' %}
+
+{% block body %}
+<div class="app-content">
+
+							<div class="side-app">
+						
+						 <div class="row">
+							<div class="col-md-12">
+								<div class="card m-b-20">
+									<div class="card-header">
+										<h3 class="card-title">modifier une Activité</h3>
+
+									</div>
+									 {{ form_start(form)}}
+                                    <div class="card-body">
+
+										<form>
+											<div class="form-group">
+												<label class="form-label" for="exampleInputname">nom de l'activite</label>
+												{{ form_widget(form.nom , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Nom activite'}} ) }}
+                                        {{ form_errors(form.nom) }}
+											</div>
+											<div class="form-group">
+												<label class="form-label" for="exampleInputEmail2">description</label>
+												{{ form_widget(form.description , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'description'}} ) }}
+                                        {{ form_errors(form.description) }}
+											</div>
+											<div class="form-group">
+												<label class="form-label" for="exampleInputPassword2">Catégorie</label>
+												{{ form_widget(form.categorie , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'catégorie'}} ) }}
+                                        {{ form_errors(form.categorie) }}
+											</div>
+											<div class="form-group">
+												<label class="form-label">prix</label>
+												{{ form_widget(form.prix , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Prix en dinars'}} ) }}
+                                        {{ form_errors(form.prix) }}
+											</div>
+											<div class="form-group">
+												<label class="form-label" for="exampleInputnumber">date</label>
+												{{ form_widget(form.date , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'date'}} ) }}
+                                        {{ form_errors(form.date) }}
+											</div>
+											<div class="form-group">
+												<label class="form-label" for="exampleInputnumber">image</label>
+												{{ form_widget(form.image , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Nom du fichier'}} ) }}
+                                        {{ form_errors(form.image) }}
+											</div>
+											
+											<div class="form-group mb-0">
+												<div class="checkbox checkbox-secondary">
+														{{ form_widget(form) }}
+													<button type="submit" class="btn btn-primary ">modifier</button>
+												</div>
+											</div>
+										</form>
+									</div>
+                                     {{ form_end(form) }}
+								</div>
+							</div>
+                            {% endblock %}

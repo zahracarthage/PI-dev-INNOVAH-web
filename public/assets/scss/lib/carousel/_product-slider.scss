@@ -1,0 +1,141 @@
+/*-------- Product Slider -------*/
+.product-slider {
+	#carousel {
+		margin: 0;
+		border-radius: 5px 0 5px 5px;
+		overflow: hidden;
+	}
+	#thumbcarousel {
+		margin: 4px 0 0 0;
+		padding: 0;
+		.carousel-item {
+			text-align: center;
+			.thumb {
+				display: inline-block;
+				vertical-align: middle;
+				cursor: pointer;
+				width: 19.5%;
+				&:hover {
+					border-color: $border-color;
+				}
+			}
+		}
+	}
+	#carousel2 {
+		margin: 0;
+		border-radius: 5px 0 5px 5px;
+		overflow: hidden;
+	}
+	#thumbcarousel2 {
+		margin: 4px 0 0 0;
+		padding: 0;
+		.carousel-item {
+			text-align: center;
+			.thumb {
+				display: inline-block;
+				vertical-align: middle;
+				cursor: pointer;
+				width: 19.5%;
+				&:hover {
+					border-color: $border-color;
+				}
+			}
+		}
+	}
+	.carousel-item {
+		img {
+			width: 100%;
+			height: auto;
+			border-radius: 7px;
+		}
+		width: 100%;
+		height: auto;
+		border-radius: 7px;
+		overflow: hidden;
+	}
+	.carousel-control-next {
+		right: 3px;
+		background:$white;
+		width: 60px;
+		border-radius: 50%;
+		height: 60px;
+		top: 45%;
+	}
+	#thumbcarousel .carousel-inner .carousel-item img, #thumbcarousel2 .carousel-inner .carousel-item img {
+		height: 90px;
+	}
+	.carousel-control-prev {
+		left: 3px;
+		background:$white;
+		width: 60px;
+		border-radius: 50%;
+		height: 60px;
+		top: 45%;
+	}
+	.carousel-control-next i, .carousel-control-prev i {
+		font-size: 2rem;
+		padding: .5rem;
+	}
+}
+.product-slide-thumb {
+	.carousel-control-next {
+		right: 10px !important;
+		background:$white !important;
+		width: 30px !important;
+		border-radius: 50%;
+		height: 30px !important;
+		top: 35% !important;
+	}
+	.carousel-control-prev {
+		left: 10px !important;
+		background:$white !important;
+		width: 30px !important;
+		border-radius: 50%;
+		height: 30px !important;
+		top: 35% !important;
+	}
+	i {
+		font-size: 1.2rem !important;
+	}
+}
+#image-slider{
+	&.carousel {
+		.carousel-control-next{
+			right: 10px !important;
+			background: $black-3 !important;
+			width: 30px !important;
+			border-radius: 50%;
+			height: 30px !important;
+				top: 45%;
+		} 
+		.carousel-control-prev{
+			left: 10px !important;
+			background: $black-3 !important;
+			width: 30px !important;
+			border-radius: 50%;
+			height: 30px !important;
+				top: 45%;
+		} 
+	} 
+}
+#image-slider1 {
+	&.carousel {
+		.carousel-control-next{
+			right: 10px !important;
+			background: $black-3 !important;
+			width: 30px !important;
+			border-radius: 50%;
+			height: 30px !important;
+				top: 45%;
+		} 
+		.carousel-control-prev{
+			left: 10px !important;
+			background: $black-3 !important;
+			width: 30px !important;
+			border-radius: 50%;
+			height: 30px !important;
+				top: 45%;
+		} 
+	} 
+}
+/*-------- Product Slider -------*/

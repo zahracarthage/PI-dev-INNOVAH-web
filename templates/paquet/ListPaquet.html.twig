@@ -1,0 +1,41 @@
+<h1> Liste des paquets </h1>
+
+<table border ="1">
+<tr>
+    <th scope="row">Nom</th>
+     <th scope="row">prix</th>
+      <th scope="row">activites</th>
+     <th scope="row">Editer</th>
+</tr>
+    {% for paquets in paquets %}
+<tr>
+   <td>
+
+{{ paquets.Nom }}
+
+   </td>
+   <td>
+
+{{ paquets.prix }}
+
+   </td>
+
+    <td>
+{{ paquets.activites }}
+
+   </td>
+
+    <td>
+
+<a href="{{ path('updatePaquet', {'idpaquet': paquets.idpaquet})}}"> modifier</a>
+  
+<a href="{{ path('deletePaquet', {'idpaquet': paquets.idpaquet}) }}"> supprimer </a>
+
+</td>
+</tr>
+{% endfor %}
+</table>
+<div style="margin-left:50px;">
+<a href="{{path('newPaquet')}}"> Ajouter un Paquet </a>
+</div>
+
