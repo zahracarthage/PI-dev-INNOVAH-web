@@ -33,7 +33,11 @@ class RepasType extends AbstractType
             )
 
             ->add('adresse')
-            ->add('img')
+            ->add('img', FileType::class, [
+                'label' => 'Please upload your image' ,
+            'mapped' => false,
+
+        ])
         ;
     }
 

@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\ReclamationRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=ReclamationRepository::class)
@@ -18,34 +20,41 @@ class Reclamation
     private $id;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=50)
      */
     private $nom;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=50)
      */
     private $prenom;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=100)
      */
     private $email;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
      */
     private $subject;
 
     /**
+     * @Assert\NotBlank
      * @ORM\Column(type="text")
      */
     private $message;
 
     /**
-     * @ORM\Column(type="binary", nullable=true)
+     *
+     * @ORM\Column(type="integer", nullable=true)
      */
-    private $etat;
+    private $etat='0';
+
 
     public function getId(): ?int
     {

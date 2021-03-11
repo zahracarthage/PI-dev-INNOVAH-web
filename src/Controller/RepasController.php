@@ -9,7 +9,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -65,9 +64,24 @@ class RepasController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $img = $request->files->get('repas')['img'];
+            $uploads_directory = $this->getParameter('uploads_directory');
+
+            $filename = md5(uniqid()) . '.' . $img->guessExtension();
+            $img->move(
+                $uploads_directory,
+                $filename
+
+            );
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($repa);
-            $entityManager->flush();
+
+
+        $repa->setimg($filename);
+
+
+           $entityManager->persist($repa);
+          $entityManager->flush();
 
             return $this->redirectToRoute('repas_index');
         }
@@ -113,8 +127,6 @@ class RepasController extends AbstractController
         $em->flush();
         return $this->redirectToRoute('repas_index2');
     }
-
-
 
 
 }

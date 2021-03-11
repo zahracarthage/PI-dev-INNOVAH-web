@@ -6,28 +6,20 @@
 
     {% block body %}
 
+        <div class="tab-pane active" id="tab-12">
+        <div class="row">
+
                 {% for repa in repas %}
 
-                <tbody>
-
-                <table>
-
-
-                    <div class="tab-pane active" id="tab-12">
-                        <div class="row">
-
-
-                                <tr>
-
-                                <div class="col-lg-6 col-md-6 col-xl-6">
+                           <div class="col-lg-6 col-md-6 col-xl-6">
                                 <div class="card overflow-hidden">
                                     <div class="h-100">
 
                                         <div class="item-card9-img h-250">
                                             <div class="item-card9-imgs">
                                                 <a href="tours.html" class="absolute-link2"></a>
-                                             <img src="{{ repa.img }}" alt="img" class="cover-image">
-                                             </div>
+                                                <img src="{{ asset('uploads/' ~ repa.img ) }}" alt="img" class="cover-image">
+                                            </div>
 
                                             <div class="item-card9-icons">
                                                 <a href="#" class="item-card9-icons1 wishlist"> <i class="fa fa fa-heart-o"></i></a>
@@ -35,7 +27,7 @@
 
                                         </div>
 
-                                   <div class="card border-0 mb-0 br-0">
+                                        <div class="card border-0 mb-0 br-0">
                                     <div class="card-body h-100">
                                          <div class="item-card9">
 
@@ -71,42 +63,18 @@
 
                                                             </div>
                                                         </div>
-
-
-
-
-                                                </div>
-                                          </div>
-
-
-                                        </div>
-
-
-
+                                                   </div>
+                                             </div>
+                                           </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                    <th>
-
-                                </tr>
-
-
-
-
-
-
-
-                        </div>
-                    </div>
-
-
-                    </tbody>
-            </table>
 
             {%  endfor %}
 
-
+        </div>
+        </div>
 
 
 

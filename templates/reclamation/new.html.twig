@@ -12,8 +12,7 @@
                             <div class="card-header">
                                 <div class="card-title">Get In Touch With Me</div>
                             </div>
-                            {{ form_start(form)}}
-
+                                {{ form_start(form, {'attr': {'role': 'form', 'onsubmit':'return validate();'}}) }} 
                             <div class="card-body">
                                 <form>
                                     <div class="form-group">
@@ -36,10 +35,19 @@
 
                                     {{ form_widget(form) }}
 
-                                    <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                                    <button type="submit" class="btn btn-primary btn-block" onClick="validateSubmit();">Send Message</button>
                                     {{ form_end(form) }}
+                                      <script>
+                        function validateSubmit() {
+                         result = confirm("Are you sure you want to submit this form ?");
+                        if (result) {
+                           $('#form').submit();
+                                  }
+                        }
+                        </script>
 
-                                </form>
+                               
+
 
                             </div>
                         </div>
