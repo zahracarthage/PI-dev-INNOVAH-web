@@ -79,7 +79,7 @@
 
                                 </div>
                                 <div class="card-footer text-right">
-                                <input type="submit" value="Enregistrer" class="btn btn-success" ;"/>
+                                <input type="submit" value="Enregistrer" class="btn btn-success" onClick="validateSubmit()"/>
 
                                 </div>
                                 <hr>
@@ -89,7 +89,7 @@
                                 <hr>
                             </div>
 
-
+ 
                         </div>
                     </div>
 
@@ -100,6 +100,19 @@
             </div>
         </div>
 </section>
+
+  <script>
+
+
+                        function validateSubmit() {
+                         result = confirm("Are you sure you want to submit this form ?");
+                        if (result) {
+                           $('#form').submit();
+                           
+                        
+                                  }
+                        }
+                        </script>
 
 
 {% endblock %}

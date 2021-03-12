@@ -3,6 +3,7 @@
 {% block title %}New Reclamation{% endblock %}
 
 {% block body %}
+
     <div class="sptb">
         <div class="container">
             <div class="">
@@ -37,16 +38,23 @@
 
                                     <button type="submit" class="btn btn-primary btn-block" onClick="validateSubmit();">Send Message</button>
                                     {{ form_end(form) }}
-                                      <script>
+
+                         
+                         
+                        
+                        <script>
+
+
                         function validateSubmit() {
                          result = confirm("Are you sure you want to submit this form ?");
                         if (result) {
                            $('#form').submit();
+                           
+                        
                                   }
                         }
                         </script>
 
-                               
 
 
                             </div>

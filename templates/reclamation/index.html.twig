@@ -1,8 +1,12 @@
 {% extends 'baseback.html.twig' %}
 
-{% block title %}Reclamation index{% endblock %}
+
+{% block title %} Reclamation index {% endblock %} 
+
+
 
 {% block body %}
+
     <div class="app-content">
         <div class="side-app">
             <div class="page-header">
@@ -12,8 +16,7 @@
                     <li class="breadcrumb-item active" aria-current="page">Data Tables</li>
                 </ol>
             </div>
-
-
+       
 
             <div class="row">
                 <div class="col-md-12 col-lg-12">
@@ -21,11 +24,16 @@
                         <div class="card-header">
                             <div class="card-title">Data Tables</div>
                         </div>
+
+                        <input class="form-control" id="myInput" type="text" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
+
                         <div class="card-body">
+
 
                             <div class="table-responsive">
 
                                 <table id="example" class="table table-striped table-bordered" >
+
 
                                     <thead>
                                     <tr>
@@ -43,6 +51,8 @@
                                     </tr>
 
                                     </thead>
+                            <tbody id="hi">
+
                                     {% for reclamation in reclamation %}
                                         <tr>
                                             <td>{{ reclamation.id }}</td>
@@ -67,18 +77,72 @@
                                                 <a href="{{ path('reclamation_delete', {'id': reclamation.id}) }}" class="btn btn-success">Delete</a>
 
                                             </td>
-
+    
                                             <td>
-                                                <div class="form-check form-switch">
-                                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked />
-                                                    <label class="form-check-label" for="flexSwitchCheckChecked"
-                                                    >Checked switch checkbox input</label
-                                                    >
-                                                </div>
 
+
+
+<input type="checkbox" class="toggle" checked>    
+</div>
+
+<style>
+
+body
+{
+  min-height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+  background: #141419
+  }
+*{
+  box-sizing: border-box
+  }
+  
+input[type="checkbox"]
+{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+} 
+  &:focus{
+    outline: 0;
+    }
+
+.toggle{
+  height: 32px;
+  width: 52px;
+  border-radius: 16px;
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  border: 2px solid #474755;
+  background: linear-gradient(180deg, #2D2F39 0%, #1F2027 100%);
+  transition: all .2s ease };
+  &:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 1px 2px rgba(44,44,44,.2);
+    transition: all .2s cubic-bezier(.5,.1,.75,1.35) };
+  &:checked { 
+    border-color: #654FEC}; }
+    &:after {
+      transform: translatex(20px);
+      }
+    
+</style>
                                             </td>
                                         </tr>
                                     {% endfor %}
+                                    </tbody>
 
                                 </table>
                                 {# a changer m3a el base twig bsh yodhhrou mourab3at #}
@@ -102,5 +166,18 @@
 
 
     </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#hi tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
 
 {% endblock %}

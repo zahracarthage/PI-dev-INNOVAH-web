@@ -141,6 +141,13 @@ class Repas
         return $this;
     }
 
+    public function findByString($nom){
+        return $this->createQueryBuilder('repas')
+            ->where('repas.nom like :nom')
+            ->setParameter('nom', '%'.$nom.'%')
+            ->getQuery()
+            ->getResult();
+    }
 
 
 

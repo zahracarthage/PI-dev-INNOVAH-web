@@ -29,7 +29,7 @@ class ReclamationController extends AbstractController
             5
         );
         return $this->render('reclamation/index.html.twig', [
-            'reclamation' => $reclamation, ]);
+            'reclamation' => $reclamation ]);
     }
 
     /**
@@ -38,11 +38,16 @@ class ReclamationController extends AbstractController
     public function new(Request $request,\Swift_Mailer $mailer): Response
     {
         $reclamation = new Reclamation();
+
+
         $form = $this->createForm(ReclamationType::class, $reclamation);
         $form->handleRequest($request);
 
+
+
         if ($form->isSubmitted() && $form->isValid()) {
-            
+
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($reclamation);
             $entityManager->flush();
@@ -68,11 +73,12 @@ class ReclamationController extends AbstractController
                     'text/html'
                 )
                 ;
-
    
             $mailer->send($message); 
             $this->addFlash('message', 'le message a bien ete envoye'); 
-            return $this->redirectToRoute('reclamation_new');
+
+            return $this->redirectToRoute('reclamation_new')
+            ;
             
 
         }
@@ -83,6 +89,10 @@ class ReclamationController extends AbstractController
         ]);
     }
 
+
+      /**
+     * @Route("/tri", name="tri")
+     */
     
 
 
@@ -112,7 +122,8 @@ class ReclamationController extends AbstractController
     /**
      * @Route("/{id}", name="reclamation_delete", methods={"GET","DELETE"})
      */
-        public function delete($id, ReclamationRepository $repository){
+    public function delete($id, ReclamationRepository $repository)
+    {
      $reclamation=$repository->find($id);
      $em=$this->getDoctrine()->getManager();
      $em->remove($reclamation);
@@ -120,6 +131,5 @@ class ReclamationController extends AbstractController
      return $this->redirectToRoute('reclamation_index');
     }
 
-    
     
 }

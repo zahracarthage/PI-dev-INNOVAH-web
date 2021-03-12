@@ -10,6 +10,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
+
 
 /**
  * @Route("/repas")
@@ -62,6 +66,7 @@ class RepasController extends AbstractController
         $repa = new Repas();
         $form = $this->createForm(RepasType::class, $repa);
         $form->handleRequest($request);
+        
 
         if ($form->isSubmitted() && $form->isValid()) {
 
@@ -92,7 +97,16 @@ class RepasController extends AbstractController
         ]);
     }
 
+    /**
+    * Creates a new ActionItem entity.
+    *
+    * @Route("/search", name="ajax_search")
+    * @Method("GET")
+    */
+    
 
+  
+#
 
     /**
      * @Route("/{id}/edit", name="repas_edit", methods={"GET","POST"})
@@ -110,8 +124,45 @@ class RepasController extends AbstractController
         return $this->render('repas/edit.html.twig',
             ['form'=>$form->createView()]);
     }
+/**
+     * @Route("/trinom", name="trinom")
+     */
+    public function Trinom(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
 
+        $query = $em->createQuery(
+            'SELECT e FROM App\Entity\Repas e 
+            ORDER BY e.nom' 
+        );
+            
+    
+        $rep = $query->getResult(); 
 
+        return $this->render('repas/showbackrepas.html.twig', 
+        array('repas' => $rep));
+    
+    }
+    /**
+     * @Route("/triid", name="triid")
+     */
+
+    public function Triid(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $query = $em->createQuery(
+            'SELECT e FROM App\Entity\Repas e 
+            ORDER BY e.id' 
+        );
+            
+    
+        $rep = $query->getResult(); 
+
+        return $this->render('repas/showbackrepas.html.twig', 
+        array('repas' => $rep));
+    
+    }
 
 
 
