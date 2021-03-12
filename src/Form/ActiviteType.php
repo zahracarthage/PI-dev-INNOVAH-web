@@ -10,6 +10,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class ActiviteType extends AbstractType
 {
@@ -27,7 +28,13 @@ class ActiviteType extends AbstractType
                 ),
             ])
             ->add('date', DateType::class)
-            ->add('image', TextType::class)
+            
+            ->add('image', FileType::class, [
+                'label' => 'image',
+                'mapped' => false,
+                
+                ],
+            )
             ->add('prix', NumberType::class)
         ;
     }

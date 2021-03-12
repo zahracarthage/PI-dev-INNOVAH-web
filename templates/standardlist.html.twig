@@ -5,14 +5,14 @@
    <meta charset="UTF-8">
    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="description" content="Gowell - Travel HTML Listing Template">
+   <meta name="description" content="kiftrip ">
    <meta name="author" content="Spruko™ Technologies Private Limited">
    <meta name="keywords" content="travel html template,html code for travel and tourism website,travel agency website templates,template hotel booking,travel web template,trip travel,themeforest html templates,travel website templates,travel template,travel itinerary template,travel booking template,travel agency website templates html5,travel website templates bootstrap,tourism website templates html,travel agency html template,travel theme html,html travel website templates,travel html theme,travel website templates html,template html travel,tour operator website templates">
    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
    <!-- Title -->
-  {% block title %} <title>Gowell - Travel HTML Listing Template</title> {% endblock %}
+  {% block title %} <title>kiftrip</title> {% endblock %}
 
    <!-- Bootstrap Css -->
    <link href="{{ asset('../assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
@@ -204,13 +204,13 @@
 
        <div class="page-header">
 
-           <h4 class="page-title"> {% block namelist %}Event list {% endblock %}</h4>
+           <h4 class="page-title"> {% block namelist %} liste des activités {% endblock %}</h4>
 
 
        </div>
    </div>
 </div>
-{
+
 <!--/Breadcrumb-->
 
 <!--<div class="ht-300 map-view" id="leaflet2" style="height:400px"></div>-->
@@ -224,21 +224,26 @@
        <div class="row">
 
            <!--Side Content-->
+        
+           
            <div class="col-xl-3 col-lg-3 col-md-12">
+           {% block recherche %}  
                <div class="card">
                    <div class="card-body">
                        <div class="input-group">
-                           <input type="text" class="form-control br-tl-5 br-bl-5" placeholder="Search Tour">
+                           <input type="text" class="form-control br-tl-5 br-bl-5" placeholder="chercher une activité">
                            <div class="input-group-append ">
-                               <button type="button" class="btn btn-secondary br-tr-5 br-br-5">
-                                   Search
+                               <button type="submit" class="btn btn-secondary br-tr-5 br-br-5">
+                                   rechercher
                                </button>
                            </div>
                        </div>
                    </div>
                </div>
+           
+        {% endblock %}   
 
-               # bloc categorie
+               {# bloc categorie #}
 
                <div class="card mb-0">
                    <div class="card-header">
@@ -266,6 +271,7 @@
                    </div>
                </div>
            </div>
+       
            <!--/ Side Content-->
 
            <div class="col-xl-9 col-lg-9 col-md-12">
@@ -510,8 +516,10 @@
                            </div>
                        </div>
                    </div>
+                   
                    <div class="d-sm-flex">
                        <h6 class="mb-4 mb-sm-0 mt-3">Showing <b>1 to 10</b> of 30 entries</h6>
+                       
                        <ul class="pagination mb-5 ml-auto">
                            <li class="page-item page-prev disabled">
                                <a class="page-link" href="#" tabindex="-1">Prev</a>
@@ -523,7 +531,9 @@
                                <a class="page-link" href="#">Next</a>
                            </li>
                        </ul>
+                      
                    </div>
+                  
                </div>
            </div>
 
@@ -670,7 +680,7 @@
            <div class="container">
                <div class="row d-flex">
                    <div class="col-lg-12 col-sm-12  mt-2 mb-2 text-center ">
-                       Copyright © 2020 <a href="#" class="fs-14 text-secondary">Gowell</a>. Designed by <a href="spruko.com" class="fs-14 text-secondary">Spruko</a> All rights reserved.
+                       Copyright © 2021 <a href="#" class="fs-14 text-secondary">kiftrip</a>. Designed by <a href="spruko.com" class="fs-14 text-secondary">innovah</a> All rights reserved.
                    </div>
                    <div class="col-lg-12 col-sm-12 text-center mb-2 mt-2">
                        <ul class="social-icons mb-0">

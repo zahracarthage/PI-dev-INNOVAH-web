@@ -3,9 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ActivitesRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -15,57 +14,55 @@ class Activites
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $idact;
 
     /**
-     * * @Assert\NotBlank
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=55, nullable=true)
      */
     private $nom;
 
     /**
-     * * @Assert\NotBlank
+     * @Assert\NotBlank
      * @ORM\Column(type="text", nullable=true)
      */
     private $description;
 
     /**
-     * * @Assert\NotBlank
+     * @Assert\NotBlank
      * @ORM\Column(type="string", length=55, nullable=true)
      */
     private $categorie;
 
     /**
-     * * @Assert\NotBlank
-     * @ORM\Column(type="date")
+     * @Assert\NotBlank
+     * @ORM\Column(type="date", nullable=true)
      */
     private $date;
 
     /**
-     * @ORM\Column(type="blob", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image;
 
     /**
-     *  @Assert\NotBlank
+     * @Assert\NotBlank
      * @Assert\Range(
      *      min = 5,
      *      max=100,
      *      minMessage = "Prix incorrecte ",
      * )
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="float", nullable=true)
      */
     private $prix;
-
 
     public function getIdact(): ?int
     {
         return $this->idact;
     }
-
 
     public function getNom(): ?string
     {
@@ -108,19 +105,19 @@ class Activites
         return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setDate(?\DateTimeInterface $date): self
     {
         $this->date = $date;
 
         return $this;
     }
 
-    public function getImage()
+    public function getImage(): ?string
     {
         return $this->image;
     }
 
-    public function setImage($image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
 
@@ -132,7 +129,7 @@ class Activites
         return $this->prix;
     }
 
-    public function setPrix(float $prix): self
+    public function setPrix(?float $prix): self
     {
         $this->prix = $prix;
 

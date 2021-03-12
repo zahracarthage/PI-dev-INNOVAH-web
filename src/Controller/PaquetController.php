@@ -39,7 +39,7 @@ class PaquetController extends AbstractController
     public function newPaquet(Request $request )
     {   $paquet= new Paquet ();
         $form =$this->createForm (PaquetType::class, $paquet);
-        $form -> add ('Ajouter', SubmitType::Class);
+        $form -> add ('Ajouter', SubmitType::class);
         $form ->handleRequest($request);
         if ($form->isSubmitted()){
         $paquet= $form->getData();
@@ -59,7 +59,7 @@ class PaquetController extends AbstractController
     {   $em= $this->getDoctrine()->getManager();
         $paquet= $em ->getRepository (Paquet::class)->find ($idpaquet);
         $form =$this->createForm (PaquetType::class, $paquet);
-        $form -> add ('Modifier', SubmitType::Class);
+        $form -> add ('Modifier', SubmitType::class);
         $form ->handleRequest($request);
         if ($form->isSubmitted() && $form-> isValid ()){
         $em->flush();

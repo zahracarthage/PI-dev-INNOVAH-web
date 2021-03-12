@@ -5,26 +5,63 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Resactivites;
-use App\Repository\Resactivitesrepository;
+use App\Repository\ResactivitesRepository;
 use App\Form\ResactivitesType;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
 class ResactivitesController extends AbstractController
 {
    
      /**
-     * @Route("/listresactivites", name="listresactivites")
+     * @Route("/listresactivites", name="listresactivites", methods={"GET"}))
      */
-    public function list()
-    {
+    public function list(ResactivitesRepository $resactivitesRepository): Response
+    { 
         $Repository=$this -> getDoctrine () -> getRepository (Resactivites::class);
         $resactivites= $Repository -> findAll();
        
-        return $this->render('resactivites/listresactivites.html.twig', [
+        return $this->render('resactivites/Listresactivites.html.twig', [
             'resactivites' => $resactivites,
         ]);
+    
     }
+
+    /**
+     * @Route("/pdf", name="pdf", methods={"GET"})
+     */
+    public function pdf(ResactivitesRepository $resactivitesRepository): Response
+    {
+        // Configure Dompdf according to your needs
+        $pdfOptions = new Options();
+        $pdfOptions->set('defaultFont', 'Arial');
+
+        // Instantiate Dompdf with our options
+        $dompdf = new Dompdf($pdfOptions);
+        // Retrieve the HTML generated in our twig file
+        $html = $this->renderView('resactivites/pdf.html.twig', [
+            'resactivites' => $resactivitesRepository->findAll(),
+        ]);
+
+        // Load HTML to Dompdf
+        $dompdf->loadHtml($html);
+
+        // (Optional) Setup the paper size and orientation 'portrait' or 'portrait'
+        $dompdf->setPaper('A4', 'portrait');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser (inline view)
+        $dompdf->stream("mypdf.pdf", [
+            "Attachment" => true
+        ]);
+    }
+
+
     /**
      * @Route("/newresactivites", name="newresactivites")
      */

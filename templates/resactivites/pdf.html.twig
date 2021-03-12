@@ -1,0 +1,24 @@
+
+<div class="table-responsive">
+    <table border="2" class="table mb-0">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>nbpersonnes</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        {%   for r in resactivites  %}
+        <tr>
+            <td>{{r.idresactivites}}</td>
+            <td>{{r.getDate()|date('d-m-Y H:i:s')}}</td>
+            <td>{{r.nbpersonnes}}</td>
+        </tr>
+
+        {% endfor %}
+        </tbody>
+
+</table>
+</div>

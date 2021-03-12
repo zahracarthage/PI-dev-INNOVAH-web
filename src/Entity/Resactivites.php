@@ -4,7 +4,9 @@ namespace App\Entity;
 
 use App\Repository\ResactivitesRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=ResactivitesRepository::class)
@@ -27,10 +29,11 @@ class Resactivites
   
 
     /**
+
      * @Assert\Range(
-     *      min = 1,
-     *      max=10,
-     *      minMessage = "vous avez dépasser le nombre max de personnes ",
+     *      min=2,
+     *      max=20,
+     *      minMessage="vous avez dépasser le nombre max de personnes ",
      * )
      *  @Assert\NotBlank
      * @ORM\Column(type="integer")

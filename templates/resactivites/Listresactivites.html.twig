@@ -6,8 +6,9 @@
 						<div class="page-header">
 							<h4 class="page-title">Liste des réservations</h4>
 							<ol class="breadcrumb">
-								<li class="breadcrumb-item"><a href="#"><i class="fe   fe-box mr-1"></i> Tables</a></li>
-								<li class="breadcrumb-item active" aria-current="page">Data Tables</li>
+								{#<li class="breadcrumb-item"><a href="#"><i class="fe   fe-box mr-1"></i> Tables</a></li>#}
+								{#<li class="breadcrumb-item active" aria-current="page">Data Tables</li>#}
+								<li> <input class="form-control" id="myInput" type="text" id="navbar-search-input" placeholder="chercher.." aria-label="search" aria-describedby="search"> </li>
 							</ol>
 						</div>
 						<div class="row">
@@ -28,7 +29,7 @@
 														<th class="wd-25p">supprimer</th>
 													</tr>
 												</thead>
-												<tbody>
+												<tbody id="hi">
 													<tr {% for r in resactivites %}>
                                                         <td>{{r.idresactivites}}</td>
                                                         <td>{{r.getDate()|date('d-m-Y H:i:s')}}</td>
@@ -43,12 +44,25 @@
 									<!-- table-wrapper -->
                                 <div class="card-body">
 										<a class="btn btn-primary" href="{{path('newresactivites')}}"> Ajouter une réservation </a>
+										<a class="btn btn-info" href="{{path('pdf')}}"> imprimer </a>
 									</div>
 
 								</div>
                                 
 								<!-- section-wrapper -->
-							</div>
+							
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script>
+    	$(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#hi tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    	});
+		</script>
                         
 
 {% endblock %}
