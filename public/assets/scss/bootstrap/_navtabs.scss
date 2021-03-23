@@ -1,0 +1,139 @@
+/*-------- Nav Tabs -------*/
+.nav-tabs {
+	.nav-link {
+		&:focus, &:hover {
+			border: 0;
+		}
+		&.disabled {
+			color: #868e96;
+			background-color: transparent;
+			border-color: transparent;
+			opacity: .4;
+			cursor: default;
+			pointer-events: none;
+		}
+	}
+	.nav-item.show .nav-link, .nav-link.active {
+		border: 0;
+	}
+	.dropdown-menu {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+	.nav-item1 {
+		&.nav-link {
+			border: 1px solid transparent;
+			border-top-left-radius: $default-value-size * 3;
+			border-top-right-radius: $default-value-size * 3;
+		}
+		.nav-link {
+			border: 0;
+			color: inherit;
+			margin-bottom: -1px;
+			color: $text-color;
+			transition: .3s border-color;
+			font-weight: $font-weight-normal;
+			padding: 0.5rem 20px;
+   			border-radius: $default-value-size * 5;
+			&:hover:not(.disabled), &.active {
+				color: $white;
+			}
+			&.disabled {
+				opacity: .6;
+				cursor: default;
+				pointer-events: none;
+			}
+		}
+		margin-bottom: 0;
+		position: relative;
+		i {
+			margin-right: .25rem;
+			line-height: 1;
+			font-size: 0px;
+			width: .875rem;
+			vertical-align: baseline;
+			display: inline-block;
+			margin-right: 10px;
+		}
+		&:hover .nav-submenu {
+			display: block;
+		}
+	}
+	.nav-submenu {
+		display: none;
+		position: absolute;
+		background: $black;
+		border: 1px solid $border-color;
+		border-top: none;
+		z-index: 10;
+		box-shadow: 0 1px 2px 0 rgba($text-color, 0.05);
+		min-width: 10rem;
+		border-radius: 0 0 3px 3px;
+		.nav-item1 {
+			display: block;
+			padding: .5rem 1rem;
+			color: #cecde0;
+			margin: 0 !important;
+			cursor: pointer;
+			transition: .3s background;
+			&.active {
+				color: $color-blue;
+			}
+			&:hover {
+				color: #5f6877;
+				text-decoration: none;
+				background: rgba($text-color, 0.024);
+			}
+		}
+	}
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	color: $black;
+	border-bottom: 0;
+	.nav-link {
+		border: 0;
+		border-radius: 0;
+		color: inherit;
+		color: $text-color;
+		transition: .3s border-color;
+		font-weight: $font-weight-semibold;
+		padding: 1rem 1.6rem;
+		font-size: $default-value-size * 13;
+		text-align: center;
+		border: 0px solid transparent;
+	}
+	.nav-item {
+		margin-bottom: 0;
+		position: relative;
+		&:hover .nav-submenu {
+			display: block;
+		}
+		i {
+			margin-right: .25rem;
+			line-height: 1;
+			width: .875rem;
+			vertical-align: baseline;
+			display: inline-block;
+			margin-right: 10px;
+		}
+	}
+	.nav-submenu .nav-item {
+		display: block;
+		padding: .5rem 1rem;
+		color: #cecde0;
+		margin: 0 !important;
+		cursor: pointer;
+		transition: .3s background;
+		&.active {
+			color: $color-blue;
+		}
+		&:hover {
+			color: #5f6877;
+			text-decoration: none;
+			background: rgba($text-color, 0.024);
+		}
+	}
+}
+/*-------- Nav Tabs -------*/

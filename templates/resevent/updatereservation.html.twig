@@ -1,0 +1,51 @@
+{#
+<h1> update une Reservation Event </h1>
+{{ form (form)}}
+ #}
+{% extends 'test.html.twig' %}
+
+{#<h1>Ajout Article</h1>
+{{ form(form)}}#}
+{% block body %}
+    <div class="btn btn-danger" href="{{ path('listres') }}"> Go TO List </div>
+
+    <div class="app-content">
+
+    <div class="side-app">
+
+    <div class="row">
+    <div class="col-md-12">
+        <div class="card m-b-20">
+            <div class="card-header">
+                <h3 class="card-title">Modifier Une Reservation Event</h3>
+
+            </div>
+            {{ form_start(form)}}
+            <div class="card-body">
+
+                <form>
+
+                    <div class="form-group">
+                        <label class="form-label" for="exampleInputEmail2">Date</label>
+                        {{ form_widget(form.date , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'DATE'}} ) }}
+                        {{ form_errors(form.date) }}
+                    </div>
+                    <div class="form-group mb-0">
+                        <div class="checkbox checkbox-secondary">
+                            {{ form_widget(form) }}
+                            <button type="SubmitType" class="btn btn-primary ">Ajouter Reservation</button>
+                        </div>
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+        {{ form_end(form) }}
+
+    </div>
+    </div>
+
+{% endblock %}

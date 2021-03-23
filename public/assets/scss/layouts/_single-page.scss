@@ -1,0 +1,131 @@
+/*------ Single page -------*/
+.single-page {
+	button.dark {
+		border-color: #ff4931;
+		background: #ff4931;
+	}
+	.move button.dark {
+		border-color: #e0b722;
+		background: #e0b722;
+	}
+	.splits p {
+		font-size: ($default-value-size * 18);
+	}
+	button {
+		&:active {
+			box-shadow: none;
+		}
+		&:focus {
+			outline: 0;
+		}
+	}
+	>.wrapper3 {
+		width: 100%;
+		padding-top: 8rem;
+	}
+	.wrapper {
+		&.wrapper2 {
+			background: $white;
+			width: 100%;
+			transition: all .5s;
+			color: $white;
+			overflow: hidden;
+			border-radius: ($default-value-size * 5);
+			text-align: center;
+			top: -37%;
+			left: 4%;
+		}
+		background: $white;
+		box-shadow: 0 10px 40px 0 rgba(62, 57, 107, 0.1), 0 2px 9px 0 rgba(62, 57, 107, 0.1);
+		transition: all .5s;
+		color: #838ab6;
+		overflow: hidden;
+		border-radius: ($default-value-size * 7);
+		>form {
+			width: 100%;
+			transition: all .5s;
+			background: $white;
+		}
+		.card-body {
+			padding: 30px;
+		}
+		>form:focus {
+			outline: 0;
+		}
+		#login {
+			visibility: visible;
+		}
+		#register {
+			transform: translateY(-80%) translateX(100%);
+			visibility: hidden;
+		}
+		&.move {
+			#register {
+				transform: translateY(-80%) translateX(0);
+				visibility: visible;
+			}
+			#login {
+				transform: translateX(-100%);
+				visibility: hidden;
+			}
+		}
+		>form>div {
+			position: relative;
+			margin-bottom: 15px;
+		}
+		label {
+			position: absolute;
+			top: -7px;
+			font-size: ($default-value-size * 12);
+			white-space: nowrap;
+			background: $white;
+			text-align: left;
+			left: 15px;
+			padding: 0 5px;
+			color: $text-color;
+			font-weight: $font-weight-semibold;
+			pointer-events: none;
+		}
+		h3, h4 {
+			margin-bottom: 25px;
+			font-size: ($default-value-size * 22);
+			color: $text-color;
+		}
+		input {
+			height: 50px;
+			padding: 10px 15px 3px 15px;
+			width: 100%;
+			border-radius: ($default-value-size * 5);
+			border: solid 1px $border-color;
+			&:focus {
+				outline: 0;
+				border-color: $border-color;
+			}
+		}
+	}
+	>.wrapper.move {
+		left: 45%;
+		input:focus {
+			border-color: #e0b722;
+		}
+	}
+	width: 100%;
+	margin: 0 auto;
+	display: table;
+	position: relative;
+	border-radius: ($default-value-size * 7);
+	&.single-pageimage {
+		min-height: 387px;
+		&::before {
+			content: '';
+			background: rgba($white, 0.5);
+		}
+	}
+	>.log-wrapper {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: right;
+		color: $white;
+	}
+}
+/*------ Single page -------*/

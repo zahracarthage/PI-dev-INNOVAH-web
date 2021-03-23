@@ -1,0 +1,23 @@
+
+<div class="table-responsive">
+    <table class="table mb-0">
+        <thead>
+        <tr>
+            <th>ID</th>
+
+            <th>Date</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for resevent in resevent %}
+            <tr>
+                <td>{{ resevent.id }}</td>
+                <td>{{ resevent.getDate()|date('d-m-Y H:i:s') }}</td>
+              </tr>
+
+        {% endfor %}
+        </tbody>
+
+    </table>
+</div>

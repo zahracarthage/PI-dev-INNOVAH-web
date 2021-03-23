@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Event(s){% endblock %}
+
+{% block body %}
+
+    <h1>Create new Ev</h1>
+
+    {{ include('ev/_form.html.twig') }}
+
+    <a href="{{ path('ev_index') }}">back to list</a>
+    <button type="submit" class="btn btn-success">Créer </button>
+<a href="{{  path('ev_new')}}" class="nav-link"> Ajouter un Evenement</a>
+{% endblock %}

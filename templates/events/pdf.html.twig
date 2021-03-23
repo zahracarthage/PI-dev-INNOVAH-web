@@ -1,0 +1,31 @@
+
+<div class="table-responsive">
+    <table class="table mb-0">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>User Name</th>
+            <th>Date</th>
+            <th>CAPACITY</th>
+            <th>Description</th>
+            <th>image</th>
+            <th>Adresse</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for events in events %}
+        <tr>
+            <td>{{ events.id }}</td>
+            <td>{{ events.nom }}</td>
+            <td>{{ events.getDate()|date('d-m-Y H:i:s') }}</td>
+            <td>{{ events.capacite }}</td>
+            <td>{{ events.description }}</td>
+            <td>{{ events.image }}</td>
+            <td>{{ events.adresse }}</td>
+        </tr>
+
+        {% endfor %}
+        </tbody>
+
+</table>
+</div>

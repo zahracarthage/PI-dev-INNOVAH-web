@@ -1,0 +1,184 @@
+/*-------- Popover-------*/
+.popover {
+	font-weight: $font-weight-normal;
+	background-color: $white;
+	border: 1px solid $border-color;
+	border-radius: $default-value-size * 5;
+	font-size: .875rem;
+	top: 0;
+	left: 0;
+	z-index: 1060;
+	display: block;
+	max-width: 276px;
+	font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+	font-style: normal;	
+	line-height: 1.5;
+	text-align: left;
+	text-align: start;
+	text-decoration: none;
+	text-shadow: none;
+	text-transform: none;
+	letter-spacing: normal;
+	word-break: normal;
+	word-spacing: normal;
+	white-space: normal;
+	line-break: auto;	
+	word-wrap: break-word;	
+	background-clip: padding-box;
+	-webkit-filter: drop-shadow(0 1px 3px rgba($text-color, 0.1));
+	filter: drop-shadow(0 1px 3px rgba($text-color, 0.1));
+	.arrow {
+		position: absolute;
+		display: block;
+		width: .5rem;
+		height: .5rem;
+		margin: 0 3px;
+		margin-left: calc(.25rem + -5px);
+		&::after, &::before {
+			position: absolute;
+			display: block;
+			content: "";
+			border-color: transparent;
+			border-style: solid;
+		}
+	}
+}
+.popover-header {
+	padding: .5rem .75rem;
+	margin-bottom: 0;
+	font-size: .9375rem;
+	color: inherit;
+	background-color: $white;
+	border-bottom: 1px solid $border-color;
+	border-top-left-radius: calc(3px - 1px);
+	border-top-right-radius: calc(3px - 1px);
+	&:empty {
+		display: none;
+	}
+}
+.popover-body {
+	padding: .75rem 1rem;
+	color: #5f6877;
+}
+.bs-popover-top{
+	margin-bottom: .5rem;
+	.arrow{
+		bottom: calc((.5rem + 1px) * -1);
+		&:before{
+			border-width: .5rem .25rem 0;
+			bottom: 0;
+			border-top-color: rgba($text-color, 0.25);
+		}
+		&:after{
+			border-width: .5rem .25rem 0;
+			bottom: 1px;
+			border-top-color: $white;
+		}
+	}
+}
+.bs-popover-right{
+	margin-left: .5rem;
+	.arrow{
+		left: calc((.5rem + 1px) * -1);
+		width: .5rem;
+		height: .5rem;
+		margin: 3px 0;
+		&:before{
+			border-width: .25rem .5rem .25rem 0;
+			left: 0;
+			border-right-color: rgba($text-color, 0.25);
+		}
+		&:after{
+			border-width: .25rem .5rem .25rem 0;
+			left: 1px;
+			border-right-color: $white;
+		}
+	}
+}
+.bs-popover-bottom{
+	margin-top: .5rem;
+	.arrow{
+		top: calc((.5rem + 1px) * -1);
+		&:before{
+			border-width: 0 .25rem .5rem .25rem;
+			top: 0;
+			border-bottom-color: rgba($text-color, 0.25);
+		}
+		&:after{
+			border-width: 0 .25rem .5rem .25rem;
+			top: 1px;
+			border-bottom-color: $white;
+		}
+	}
+	.popover-header{
+		&:before{
+			position: absolute;
+			top: 0;
+			left: 50%;
+			display: block;
+			width: .5rem;
+			margin-left: -.25rem;
+			content: "";
+			border-bottom: 1px solid $white;
+		}
+	}	
+}
+.bs-popover-left{
+	margin-right: .5rem;
+	.arrow{
+		right: calc((.5rem + 1px) * -1);
+		width: .5rem;
+		height: .5rem;
+		margin: 3px 0;
+		&:before{
+			border-width: .25rem 0 .25rem .5rem;
+			right: 0;
+			border-left-color: rgba($text-color, 0.25);
+		}
+		&:after{
+			border-width: .25rem 0 .25rem .5rem;
+			right: 1px;
+			border-left-color: $white;
+		}
+	}
+}
+.bs-popover-auto[x-placement^=top]{
+	@extend .bs-popover-top;
+}
+.bs-popover-auto[x-placement^=right]{
+	@extend .bs-popover-right;
+}
+.bs-popover-auto[x-placement^=bottom]{
+	@extend .bs-popover-bottom;
+}
+.bs-popover-auto[x-placement^=left]{
+	@extend .bs-popover-left;
+}
+#popup {
+	position: absolute;
+	width: auto;
+	height: 30px;
+	background: #fe6b1f;
+	display: none;
+	color: $white;
+	border-radius: 5px;
+}
+#copy {
+	background: 0 0;
+	color: $white;
+	font-weight: $font-weight-bold;
+	padding: 8px 25px;
+	border: 0;
+}
+.popover {
+	&.bs-popover-auto[x-placement^=top], &.bs-popover-top {
+		margin-bottom: .625rem;
+	}
+}
+.popover-static-demo .popover {
+	.arrow {
+		margin-left: calc(.25rem + 122px);
+	}
+	position: relative;
+}
+/*-------- Popover-------*/

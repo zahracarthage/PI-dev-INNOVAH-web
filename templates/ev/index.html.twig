@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ev index{% endblock %}
+
+{% block body %}
+    <h1>Ev index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Date</th>
+                <th>Lieu</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ev in evs %}
+            <tr>
+                <td>{{ ev.id }}</td>
+                <td>{{ ev.Nom }}</td>
+                <td>{{ ev.date ? ev.date|date('Y-m-d') : '' }}</td>
+                <td>{{ ev.lieu }}</td>
+                <td>{{ ev.prix }}</td>
+                <td>
+                    <a href="{{ path('ev_show', {'id': ev.id}) }}">show</a>
+                    <a href="{{ path('ev_edit', {'id': ev.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('ev_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,43 @@
+<h1> Liste des RESERVATIONS </h1>
+
+<table border ="1">
+    <tr>
+        <th scope="row">ID</th>
+        <th scope="row">date</th>
+
+        <th scope="row">Editer</th>
+        <th scope="row">Supprimer</th>
+    </tr>
+    <h1>Resevent</h1>
+
+    {% for resevent in resevent %}
+    <tr>
+        <th>Id</th>
+        <td>{{ resevent.id }}</td>
+    </tr>
+    <tr>
+        <th>Date</th>
+        <td>{{ resevent.date ? resevent.date|date('Y-m-d') : '' }}</td>
+    </tr>
+        <td>
+{% endfor %}
+{#
+            <a href="{{ path('updateResevent', {'id': Resevent.id})}}"> modifier</a>
+
+            <a href="{{ path('delete', {'id': events.id}) }}"> supprimer </a>
+
+        </td>
+    {% endfor %}
+</table>
+<div style="margin-left:50px;">
+    { <a href="{{path('newResevent')}}"> Ajouter une Reservation Event </a> }
+</div>
+    <a href="{{ path('resevent_index') }}"> back to list</a>
+
+    <a href="{{ path('resevent_edit', {'id': resevent.id}) }}"> edit</a>
+<div style="margin-left:50px;">
+    { <a href="{{path('new')}}"> Ajouter une ResEvent </a> }
+</div>
+
+    {{ include('resevent/_delete_form.html.twig') }}
+#}

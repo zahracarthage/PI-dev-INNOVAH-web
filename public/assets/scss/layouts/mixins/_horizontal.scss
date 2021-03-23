@@ -1,0 +1,66 @@
+//horizontal mixins
+
+@mixin horizontaldropdown() {
+	opacity:0;
+	visibility: hidden;
+	@include transorm-origin(transform-origin, 0%, 0%, moz webkit o ms);
+	@include trasition(transition, transform, 0.3s, opacity, 0.3s, moz webkit o ms);
+	@include transform(transform, rotateX(-75deg), moz webkit o ms);
+	@include transform-style(transform-style, preserve-3d, moz webkit o ms);
+}
+
+//transfor orgin mixin
+@mixin transorm-origin($property, $value, $value1, $prefixes) {
+	@each $transorm-origin in $prefixes {
+		-#{$transorm-origin}-#{$property}: $value $value1;
+	}
+	#{$property}: $value $value1;
+}
+
+//transtion mixin
+@mixin trasition($property, $prop, $value, $prop2, $value1, $prefixes) {
+	@each $trasition in $prefixes {
+		-#{$trasition}-#{$property}: $prop $value, $prop2 $value1;
+	}
+	#{$property}: $prop $value, $prop2 $value1;
+}
+
+//transtion out mixin
+@mixin trasition-out($property, $prop, $value, $prop2, $prefixes) {
+	@each $trasition-out in $prefixes {
+		-#{$trasition-out}-#{$property}: $prop $value $prop2;
+	}
+	#{$property}: $prop $value $prop2;
+}
+
+//transtion inherit mixin
+@mixin trasition-inherit($property, $prop, $prefixes) {
+	@each $trasition-inherit in $prefixes {
+		-#{$trasition-inherit}-#{$property}: $prop;
+	}
+	#{$property}: $prop;
+}
+
+//transform mixin
+@mixin transform($property, $value, $prefixes) {
+  @each $transform in $prefixes {
+    -#{$transform}-#{$property}: $value;
+  }
+  #{$property}: $value;
+}
+
+//transform style mixin
+@mixin transform-style($property, $value, $prefixes) {
+  @each $transform-style in $prefixes {
+    -#{$transform-style}-#{$property}: $value;
+  }
+  #{$property}: $value;
+}
+
+//brradius mixin
+@mixin brradius($property, $value, $prefixes) {
+	@each $brradius in $prefixes {
+		-#{$brradius}-#{$property}: $value;
+	}
+	#{$property}: $value;
+}

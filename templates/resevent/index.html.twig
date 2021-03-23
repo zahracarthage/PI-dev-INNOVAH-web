@@ -1,0 +1,33 @@
+<h1> Liste des reservations </h1>
+
+<table border ="1">
+    <tr>
+        <th scope="row">ID</th>
+        <th scope="row">date</th>
+        </tr>
+    {% for reservations in reservations %}
+        <tr>
+            <td>
+
+                {{ reservations.id }}
+
+            </td>
+
+            <td>
+                {{ activites.getDate()|date('d-m-Y H:i:s') }}
+
+            </td>
+
+            <td>
+                <a href="{{ path('deletereservation', {'id': reservation.id})}}"> supprimer </a>
+
+              {#   <a href="{{ path('deleteActivite', {'idact': activites.idact}) }}"> supprimer </a>
+              #}
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+{#  <div style="margin-left:50px;">
+    <a href="{{path('newActivite')}}"> Ajouter une activite </a>
+</div>
+    #}

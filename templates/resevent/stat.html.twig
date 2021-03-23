@@ -1,0 +1,70 @@
+{%  extends 'test.html.twig' %}
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+<script>
+
+    let forum = document.querySelector("#forum")
+    let annGraph = new Chart(forum, {
+        type: "line",
+        data: {
+            labels: {{ dates| json_encode|raw }},
+            datasets: [{
+                label: "Nombre des Dates",
+                data: {{ annoncesCount|json_encode|raw }}
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    })
+</script>
+
+
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title ">Statistiques</h4>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+
+
+                                <div class="form-group">
+
+
+
+
+
+                                    <hr class="invis">
+
+
+                                    <div class="container">
+
+
+
+                                        <canvas id="forum" width="400" height="100"></canvas>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+ {% extends 'test.html.twig' %}
+ {% block title %}
+ <h1> Liste des Reservations </h1>
+ {% endblock %}
+
+ {% block body %}
+     <table border="1">
+    <tr>
+        <th scope="row">ID</th>
+        <th scope="row">Date</th>
+    </tr>
+         <div style="margin-left:50px;"> <a class="btn-info" href="{{path('newreservation')}}"> Ajouter une nouvelle Reservation </a>
+         </div>
+
+         <tr>
+
+         {% for resevent in resevent %}
+
+        <td>
+            {{ resevent.id }}
+        </td>
+
+        <td>
+            {{ resevent.getDate()|date('d-m-Y H:i:s') }}
+        </td>
+
+
+
+        <td>
+     <a class="btn-primary" href="{{ path('deletereservation', {'id': resevent.id }) }}"> supprimer </a>
+     <a class=" btn-info" href="{{ path('updatereservation', {'id': resevent.id    }) }}"> modifier </a>
+
+        </td>
+    </tr>
+{% endfor %}
+</table>
+     <a class="btn btn-azure" href="{{ path('pdf2') }}">Create pdf</a>
+     <a class="btn btn-danger" href="{{ path('listres') }}"> Go TO List </a>
+     <a class="btn btn-dark" href="{{ path('stat') }}"> Go TO STATS </a>
+
+ {% endblock %}
