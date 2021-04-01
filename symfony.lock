@@ -1,4 +1,13 @@
 {
+    "cmen/google-charts-bundle": {
+        "version": "4.0.0"
+    },
+    "components/bootstrap": {
+        "version": "3.4.1"
+    },
+    "components/jquery": {
+        "version": "3.5.1"
+    },
     "composer/package-versions-deprecated": {
         "version": "1.11.99.1"
     },
@@ -84,6 +93,9 @@
     "egulias/email-validator": {
         "version": "2.1.25"
     },
+    "eternicode/bootstrap-datepicker": {
+        "version": "v1.9.0"
+    },
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.3"
     },
@@ -92,6 +104,9 @@
     },
     "knplabs/knp-paginator-bundle": {
         "version": "v5.4.2"
+    },
+    "kriswallsmith/assetic": {
+        "version": "v1.0.5"
     },
     "laminas/laminas-code": {
         "version": "3.4.1"
@@ -138,6 +153,9 @@
     "psr/log": {
         "version": "1.1.3"
     },
+    "robloach/component-installer": {
+        "version": "0.2.3"
+    },
     "sabberworm/php-css-parser": {
         "version": "8.3.1"
     },
@@ -152,6 +170,9 @@
         "files": [
             "./config/packages/sensio_framework_extra.yaml"
         ]
+    },
+    "stripe/stripe-php": {
+        "version": "v7.76.0"
     },
     "symfony/asset": {
         "version": "v4.4.19"

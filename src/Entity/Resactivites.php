@@ -40,6 +40,12 @@ class Resactivites
      */
     private $nbpersonnes;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Activites::class)
+     * @ORM\JoinColumn(name="ida", referencedColumnName="idact", nullable=false, onDelete="CASCADE")
+     */
+    private $ida;
+
     public function getidresactivites(): ?int
     {
         return $this->idresactivites;
@@ -77,6 +83,18 @@ class Resactivites
     public function setNbpersonnes(int $nbpersonnes): self
     {
         $this->nbpersonnes = $nbpersonnes;
+
+        return $this;
+    }
+
+    public function getIda(): ?Activites
+    {
+        return $this->ida;
+    }
+
+    public function setIda(?Activites $ida): self
+    {
+        $this->ida = $ida;
 
         return $this;
     }

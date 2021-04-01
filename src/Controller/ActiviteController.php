@@ -5,10 +5,9 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Activites;
-use App\Entity\rechercheActivite;
+
 use App\Repository\Activitesrepository;
 use App\Form\ActiviteType;
-use App\Form\RechercheType;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,6 +15,8 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
+
 
 class ActiviteController extends AbstractController
 {
@@ -31,10 +32,15 @@ class ActiviteController extends AbstractController
      /**
      * @Route("/listactivites", name="listactivites")
      */
-    public function list()
+    public function list(Request $request , PaginatorInterface $paginator ): Response
     {
         $Repository=$this -> getDoctrine () -> getRepository (activites::class);
         $activites= $Repository -> findAll();
+        $activites = $paginator->paginate(
+            $activites,
+            $request->query->getInt('page',1),
+            4
+        );
        
         return $this->render('activite/afficheractivitesadmin.html.twig', [
             'activites' => $activites,
@@ -124,11 +130,82 @@ class ActiviteController extends AbstractController
         return $this->render('activite/list.html.twig', [
             'activites' => $activites,
         ]);
-        
-        
+      
     }
+     /**
+     * @Route("/stat", name="stat")
+     */
+    public function indexAction(){
+        $repository = $this->getDoctrine()->getRepository(Activites::class);
+        $Activites = $repository->findAll();
+        $em = $this->getDoctrine()->getManager();
+        
+        $rd=0; 
+        $qu=0;
+        $es=0;
+       
 
-   
+        foreach ($Activites as $Activites)
+        {
+            if (  $Activites->getCategorie()=="randonnée")  :
+            
+                $rd+=1; 
+             elseif ($Activites->getCategorie()=="quad"):
+
+                $qu+=1; 
+             else :
+                $es +=1;  
+            
+             endif;
+
+        }
+
+
+        $pieChart = new PieChart();
+        $pieChart->getData()->setArrayToDataTable(
+            [['catégories', 'nombres'],
+             ['randonnée',     $rd],
+             ['quad',      $qu],
+             ['escalade',   $es]
+            ]
+        );
+        $pieChart->getOptions()->setTitle('Top categories');
+        $pieChart->getOptions()->setHeight(500);
+        $pieChart->getOptions()->setWidth(900);
+        $pieChart->getOptions()->getTitleTextStyle()->setBold(true);
+        $pieChart->getOptions()->getTitleTextStyle()->setColor('#009900');
+        $pieChart->getOptions()->getTitleTextStyle()->setItalic(true);
+        $pieChart->getOptions()->getTitleTextStyle()->setFontName('Arial');
+        $pieChart->getOptions()->getTitleTextStyle()->setFontSize(20);
+    
+        return $this->render('resactivites/stat.html.twig', array('piechart' => $pieChart));
+        }
+
+   /**
+     * @Route("/tri", name="tri")
+     */
+    public function Tri(Request $request,PaginatorInterface $paginator)
+    {
+        $em = $this->getDoctrine()->getManager();
+        
+
+        $query = $em->createQuery(
+            'SELECT a FROM App\Entity\Activites a 
+            ORDER BY a.prix DESC' 
+        );
+        
+        $activites = $query->getResult(); 
+        
+        $activites = $paginator->paginate(
+            $activites,
+            $request->query->getInt('page',1),
+            4
+        );
+
+        return $this->render('activite/afficheractivitesadmin.html.twig', 
+        array('activites' => $activites));
+    
+    }
     
 
     

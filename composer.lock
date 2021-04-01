@@ -4,8 +4,169 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d893ef4e40b04bd4f7764e7ff7b8d391",
+    "content-hash": "4a65c22422e5d246f8063d9a52de6a9e",
     "packages": [
+        {
+            "name": "cmen/google-charts-bundle",
+            "version": "4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cmen/CMENGoogleChartsBundle.git",
+                "reference": "8bc2b9a28d8b44527d373b39e110f6ec33b8d0ed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cmen/CMENGoogleChartsBundle/zipball/8bc2b9a28d8b44527d373b39e110f6ec33b8d0ed",
+                "reference": "8bc2b9a28d8b44527d373b39e110f6ec33b8d0ed",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.1.3",
+                "symfony/framework-bundle": "^4.0 || ^5.0",
+                "twig/twig": "^1.41 || ^2.10 || ^3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "phpstan/phpstan": "^0.12.55",
+                "phpunit/phpunit": "^7.5"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "CMEN\\GoogleChartsBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christophe Meneses"
+                }
+            ],
+            "description": "This Bundle provides a Twig extension and PHP objects to display Google charts in your Symfony application.",
+            "keywords": [
+                "chart",
+                "charts",
+                "google",
+                "graph",
+                "graphs",
+                "map"
+            ],
+            "time": "2020-11-15T15:42:46+00:00"
+        },
+        {
+            "name": "components/bootstrap",
+            "version": "3.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/bootstrap.git",
+                "reference": "427f4d414fc6ae8385aee02b7efc8e391eb141ad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/bootstrap/zipball/427f4d414fc6ae8385aee02b7efc8e391eb141ad",
+                "reference": "427f4d414fc6ae8385aee02b7efc8e391eb141ad",
+                "shasum": ""
+            },
+            "require": {
+                "components/jquery": "1.9.1 - 3"
+            },
+            "suggest": {
+                "components/bootstrap-default": "Provide a theme for Bootstrap as components/bootstrap only provides the CSS as file assets"
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "js/bootstrap.js"
+                    ],
+                    "files": [
+                        "js/*.js",
+                        "css/*.css",
+                        "css/*.map",
+                        "fonts/*",
+                        "less/mixins/*.less",
+                        "less/*.less"
+                    ],
+                    "shim": {
+                        "deps": [
+                            "jquery"
+                        ]
+                    }
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jacob Thornton",
+                    "email": "jacobthornton@gmail.com"
+                },
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                }
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "homepage": "http://getbootstrap.com",
+            "keywords": [
+                "css",
+                "framework",
+                "front-end",
+                "less",
+                "mobile-first",
+                "responsive",
+                "web"
+            ],
+            "time": "2019-05-08T19:36:29+00:00"
+        },
+        {
+            "name": "components/jquery",
+            "version": "3.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jquery.git",
+                "reference": "b33e8f0f9a1cb2ae390cf05d766a900b53d2125b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jquery/zipball/b33e8f0f9a1cb2ae390cf05d766a900b53d2125b",
+                "reference": "b33e8f0f9a1cb2ae390cf05d766a900b53d2125b",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "jquery.js"
+                    ],
+                    "files": [
+                        "jquery.min.js",
+                        "jquery.min.map",
+                        "jquery.slim.js",
+                        "jquery.slim.min.js",
+                        "jquery.slim.min.map"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "JS Foundation and other contributors"
+                }
+            ],
+            "description": "jQuery JavaScript Library",
+            "homepage": "http://jquery.com",
+            "time": "2020-05-05T13:21:02+00:00"
+        },
         {
             "name": "composer/package-versions-deprecated",
             "version": "1.11.99.1",
@@ -1463,6 +1624,61 @@
             "time": "2020-12-29T14:50:06+00:00"
         },
         {
+            "name": "eternicode/bootstrap-datepicker",
+            "version": "v1.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/uxsolutions/bootstrap-datepicker.git",
+                "reference": "fb8776d65825068b9f914ab37d6fd847c951f488"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/uxsolutions/bootstrap-datepicker/zipball/fb8776d65825068b9f914ab37d6fd847c951f488",
+                "reference": "fb8776d65825068b9f914ab37d6fd847c951f488",
+                "shasum": ""
+            },
+            "require": {
+                "components/bootstrap": ">=2.0, <4.0",
+                "components/jquery": ">=1.7.1, <4.0.0",
+                "robloach/component-installer": "*"
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "js/bootstrap-datepicker.js"
+                    ],
+                    "styles": [
+                        "dist/css/bootstrap-datepicker.css",
+                        "dist/css/bootstrap-datepicker3.css"
+                    ],
+                    "files": [
+                        "js/locales/bootstrap-datepicker.*.js"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew Rowls",
+                    "email": "eternicode@gmail.com"
+                },
+                {
+                    "name": "Community",
+                    "homepage": "https://github.com/uxsolutions/bootstrap-datepicker/contributors"
+                }
+            ],
+            "description": "A datepicker for Bootstrap",
+            "keywords": [
+                "bootstrap",
+                "datepicker"
+            ],
+            "time": "2019-05-20T07:36:46+00:00"
+        },
+        {
             "name": "friendsofphp/proxy-manager-lts",
             "version": "v1.0.3",
             "source": {
@@ -1684,6 +1900,49 @@
                 "symfony"
             ],
             "time": "2020-12-17T08:19:16+00:00"
+        },
+        {
+            "name": "kriswallsmith/assetic",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kriswallsmith/assetic.git",
+                "reference": "8ab3638325af9cd144242765494a9dc9b53ab430"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/8ab3638325af9cd144242765494a9dc9b53ab430",
+                "reference": "8ab3638325af9cd144242765494a9dc9b53ab430",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Assetic": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kris Wallsmith",
+                    "email": "kris.wallsmith@gmail.com",
+                    "homepage": "http://kriswallsmith.net/"
+                }
+            ],
+            "description": "Asset Management for PHP",
+            "homepage": "https://github.com/kriswallsmith/assetic",
+            "keywords": [
+                "assets",
+                "compression",
+                "minification"
+            ],
+            "time": "2014-12-12T05:07:58+00:00"
         },
         {
             "name": "laminas/laminas-code",
@@ -2363,6 +2622,55 @@
             "time": "2020-03-23T09:12:05+00:00"
         },
         {
+            "name": "robloach/component-installer",
+            "version": "0.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RobLoach/component-installer.git",
+                "reference": "908a859aa7c4949ba9ad67091e67bac10b66d3d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RobLoach/component-installer/zipball/908a859aa7c4949ba9ad67091e67bac10b66d3d7",
+                "reference": "908a859aa7c4949ba9ad67091e67bac10b66d3d7",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "kriswallsmith/assetic": "1.*",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "composer/composer": "1.*@alpha",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                },
+                "class": "ComponentInstaller\\ComponentInstallerPlugin"
+            },
+            "autoload": {
+                "psr-0": {
+                    "ComponentInstaller": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Loach",
+                    "homepage": "http://robloach.net"
+                }
+            ],
+            "description": "Allows installation of Components via Composer.",
+            "abandoned": "oomphinc/composer-installers-extender",
+            "time": "2015-08-10T12:35:38+00:00"
+        },
+        {
             "name": "sabberworm/php-css-parser",
             "version": "8.3.1",
             "source": {
@@ -2482,6 +2790,63 @@
                 "controllers"
             ],
             "time": "2020-08-25T19:10:18+00:00"
+        },
+        {
+            "name": "stripe/stripe-php",
+            "version": "v7.76.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stripe/stripe-php.git",
+                "reference": "47e66d4186712be33c593fe820dccf270a04d5d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/47e66d4186712be33c593fe820dccf270a04d5d6",
+                "reference": "47e66d4186712be33c593fe820dccf270a04d5d6",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "2.17.1",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^5.7",
+                "squizlabs/php_codesniffer": "^3.3",
+                "symfony/process": "~3.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Stripe\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stripe and contributors",
+                    "homepage": "https://github.com/stripe/stripe-php/contributors"
+                }
+            ],
+            "description": "Stripe PHP Library",
+            "homepage": "https://stripe.com/",
+            "keywords": [
+                "api",
+                "payment processing",
+                "stripe"
+            ],
+            "time": "2021-03-22T16:50:21+00:00"
         },
         {
             "name": "symfony/asset",

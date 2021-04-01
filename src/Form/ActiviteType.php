@@ -27,7 +27,12 @@ class ActiviteType extends AbstractType
                     'escalades'=>'escalades',
                 ),
             ])
-            ->add('date', DateType::class)
+            ->add('date', DateType::class,[
+                'attr' => ['class' => 'form-control '],
+
+                'widget' =>'single_text',
+
+            ])
             
             ->add('image', FileType::class, [
                 'label' => 'image',

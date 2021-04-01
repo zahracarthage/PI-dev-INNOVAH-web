@@ -23,6 +23,7 @@ class Kernel extends BaseKernel
                 yield new $class();
             }
         }
+        
     }
 
     public function getProjectDir(): string
@@ -51,4 +52,7 @@ class Kernel extends BaseKernel
         $routes->import($confDir.'/{routes}/*'.self::CONFIG_EXTS, '/', 'glob');
         $routes->import($confDir.'/{routes}'.self::CONFIG_EXTS, '/', 'glob');
     }
+  
 }
+    
+

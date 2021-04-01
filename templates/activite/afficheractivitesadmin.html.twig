@@ -20,7 +20,18 @@
 									<div class="card-header">
 										<div class="card-title">Liste des activités</div>
 									</div>
-				
+									<div>
+									<form role="search" id="nav-search-form" method="post" action="{{ path('tri') }}">
+										<div class="btn-toolbar" role="toolbar" aria-label="Programmatic control">
+											<div class="btn-group btn-group-sm" aria-label="Set Select2 option">
+												<button class="js-programmatic-set-val btn btn-outline-primary mr-1 mb-1">
+													tri par prix
+												</button>
+											</div>
+										</div>
+
+									</form>
+									</div>
 									<div class="card-body">
 										<div class="table-responsive">
 											<input class="form-control" id="myInput" type="text" id="navbar-search-input" placeholder="chercher.." aria-label="search" aria-describedby="search">
@@ -61,9 +72,13 @@
 									<!-- table-wrapper -->
                                 <div class="card-body">
 										<a class="btn btn-primary" href="{{path('newActivite')}}"> Ajouter activité </a>
+									
+										<a class="btn btn-primary" href="{{path('stat')}}"> statistiques </a>
 									</div>
 
 								</div>
+                                 
+								
                                 
 								<!-- section-wrapper -->
 							</div>
@@ -79,6 +94,10 @@
         });
     	});
 		</script>
+
+		<div>
+                {{ knp_pagination_render (activites) }}
+            </div>    
                         
 
 {% endblock %}
