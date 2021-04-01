@@ -1,0 +1,26 @@
+/*-------- Back to top -------*/
+#back-to-top {
+	color: $white;
+	position: fixed;
+	bottom: 80px;
+	right: 20px;
+	z-index: 99;
+	display: none;
+	text-align: center;
+	@include brradius(border-radius, 50px, moz webkit o);
+	z-index: 10000;
+	height: 50px;
+	width: 50px;
+	line-height: 59px;
+	background-repeat: no-repeat;
+	background-position: center;
+	@include trasition-background(transition, background-color, .1s, linear, moz webkit o ms);
+	transition: background-color .1s linear;
+	-moz-transition: background-color .1s linear;
+	-webkit-transition: background-color .1s linear;
+	-o-transition: background-color .1s linear;
+	i {
+		font-size: $default-value-size * 22;
+	}
+}
+/*-------- Back to top -------*/

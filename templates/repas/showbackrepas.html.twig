@@ -25,6 +25,7 @@
                         </div>
                         <div class="card-body">
 
+
     <form role="search" id="nav-search-form" method="post" action="{{ path('trinom') }}">
 
 
@@ -34,6 +35,7 @@
                     Sort by Name
                 </button>
             </div>
+        </div>
 
     </form>
 
@@ -46,12 +48,13 @@
                     Sort by Id
                 </button>
             </div>
+            </div>
 
     </form>
 
                                 <div class="table-responsive">
 
-                                <table id="example" class="table table-striped table-bordered" >
+                                <table id="dataTable" class="table table-striped table-bordered" >
 
                                     <thead>
                                     <tr>
@@ -61,6 +64,8 @@
                                         <th class="wd-15p">price</th>
                                         <th class="wd-10p">category</th>
                                         <th class="wd-25p">adresse</th>
+                                        <th class="wd-25p">image</th>
+
                                         <th class="wd-25p">Update</th>
                                         <th class="wd-25p">Delete</th>
 
@@ -81,16 +86,23 @@
                                         <td>{{ repa.category }}</td>
                                         <td>{{repa.adresse}}</td>
 
+                                        <td> <img src="{{ asset('uploads/' ~ repa.img ) }}" alt="img" class="fill" style="max-height: 150px; width: 120px;"> </td>                            
                                         <td><a href="{{ path('repas_edit', {'id': repa.id}) }}" class="btn btn-success">update</td>
                                         <td><a href="{{ path('repas_delete', {'id': repa.id}) }}" class="btn btn-danger">Delete</td>
 
                                     </tr>
                                     </tbody>
+
+                                    
                                     {% endfor %}
+                                    
 
                                 </table>
+                               <div style="float:right;">{{ knp_pagination_render(repas) }}
+                                    </div> 
+                                
 
-                            </div>
+                                     </div>
 
                         </div>
 
@@ -102,4 +114,13 @@
             </div>
         </div>
     </div>
+<script>
+$(document).ready(function() {
+    $('#dataTable').DataTable( {      
+         "searching": false,
+         "paging": false
+    } );
+} );
+</script>
+    
 {% endblock %}

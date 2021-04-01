@@ -1,0 +1,60 @@
+/*-------- Profile -------*/
+.profile-pic {
+	text-align: center;
+	position: relative;
+}
+.profile-pic-2 {
+	text-align: left;
+	margin-top: -70px;
+	position: relative;
+}
+.edit-profile-icon {
+	position: absolute;
+	top: 0;
+	left: 8px;
+	text-align: center;
+	i {
+		width: 35px;
+		height: 35px;
+		line-height: 35px;
+		border-radius: 50%;
+		display: block;
+	}
+}
+.profile-pic .d-md-flex {
+	text-align: left;
+}
+.profile-pic-img {
+	position: relative;
+	width: 5rem;
+	height: 5rem;
+	line-height: 5rem;
+	font-size: 2rem;
+	text-align: center;
+	margin: 0 auto;
+	span {
+		position: absolute;
+		width: 1rem;
+		height: 1rem;
+		border-radius: 50px;
+		right: -1px;
+		top: .5rem;
+		border: 2px solid $white;
+	}
+}
+.profile-user-tabs {
+	border-top: 1px solid #f2edf9;
+	padding: 15px 25px 0 25px;
+	li {
+		a {
+			padding: 8px 20px 8px 20px !important;
+			display: block;
+			background: $white;
+			border: 1px solid #f2edf9;
+			font-weight: $font-weight-semibold;
+		}
+		width: 50%;
+		text-align: center;
+	}
+}
+/*-------- Profile -------*/

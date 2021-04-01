@@ -1,0 +1,18 @@
+/*-------- Rich text -------*/
+.richText {
+	.richText-toolbar {
+		ul {
+			li a {
+				border-right: $border-color solid 1px;
+			}
+			background: #f6f7fb;
+			border-bottom: $border-color solid 1px;
+		}
+		background: #f6f7fb;
+		border-top: $border-color solid 0px;
+		border-bottom: $border-color solid 0px;
+	}
+	border: $border-color solid 1px;
+	background-color: $border-color;
+}
+/*-------- Rich text -------*/

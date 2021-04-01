@@ -1,4 +1,4 @@
-# See https://symfony.com/doc/current/email/dev_environment.html
+# See https://symfony.com/doc/current/email/dev_environment.html 
 swiftmailer:
     transport:        gmail
     username:         zcarthage@gmail.com

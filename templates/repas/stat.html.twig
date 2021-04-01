@@ -1,0 +1,39 @@
+{% extends 'baseback.html.twig' %}
+
+{% block body %}
+
+<div class="app-content">
+        <div class="side-app">
+            <div class="page-header">
+                <h4 class="page-title">Data Tables</h4>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#"><i class="fe   fe-box mr-1"></i> Tables</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Data Tables</li>
+                </ol>
+            </div>
+
+
+                <div id="div_chart"></div>
+                
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                    {{ gc_draw(piechart, 'div_chart') }}
+                </script>
+
+
+              </div>
+
+                        <!-- table-wrapper -->
+                    </div>
+                    <!-- section-wrapper -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<!-- index.html.twig -->
+
+
+
+{% endblock %}

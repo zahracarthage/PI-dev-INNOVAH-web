@@ -5,6 +5,9 @@ namespace App\Entity;
 use App\Repository\RepasRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Mgilet\NotificationBundle\Annotation\Notifiable;
+use Mgilet\NotificationBundle\NotifiableInterface;
+
 
 
 /**
@@ -22,6 +25,7 @@ class Repas
     /**
      * @Assert\NotBlank
      * @ORM\Column(type="string", length=255)
+     * @Notifiable(name="nom")
      */
     private $nom;
 
@@ -141,6 +145,7 @@ class Repas
         return $this;
     }
 
+    
     public function findByString($nom){
         return $this->createQueryBuilder('repas')
             ->where('repas.nom like :nom')
@@ -150,5 +155,11 @@ class Repas
     }
 
 
+    public function __toString(){
+        //return $this->id;
+        return (string)$this->id;
+        
+    }
+ 
 
 }

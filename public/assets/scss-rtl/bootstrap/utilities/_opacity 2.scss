@@ -1,0 +1,7 @@
+/*-------- Opacity -------*/
+@each $prop, $abbrev in (opacity: op) {
+  @each $size, $length in $opacity {
+    .#{$abbrev}-#{$size} { #{$prop}: $length !important; }
+  }
+}
+/*-------- Opacity -------*/

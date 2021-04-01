@@ -12,6 +12,13 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Knp\Component\Pager\PaginatorInterface;
+use CMEN\GoogleChartsBundle\GoogleCharts\Options\VAxis;
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\Histogram;
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\LineChart;
+use CMEN\GoogleChartsBundle\Twig\GoogleChartsExtension;
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
+
 
 
 
@@ -20,46 +27,76 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class RepasController extends AbstractController
 {
-
-
     /**
-     * @Route("/affichagesolo", name="repas_index3", methods={"GET"})
+    * 
+     * @Route("/statistique", name="repas/statistique")
      */
-
-    public function index3(RepasRepository $repasRepository): Response
+    public function Stat()
     {
-        return $this->render('repas/showsolo.html.twig', [
-            'repas' => $repasRepository->findAll(),
-        ]);
+        $repository = $this->getDoctrine()->getRepository(repas::class);
+        $repas = $repository->findAll();
+        $em = $this->getDoctrine()->getManager();
+        
+        $sg=0; 
+        $veg=0;
+        $vg=0;
+        $hl=0;
+        $db=0;
+
+        foreach ($repas as $repas)
+        {
+            if (  $repas->getCategory()=="sans-gluten")  :
+            
+                    $sg+=1; 
+             elseif ($repas->getCategory()=="Vegan"):
+
+                 $veg +=1; 
+             elseif ($repas->getCategory()=="Halal") :
+             $hl +=1;  
+             elseif($repas->getCategory()=="Diabetique") :
+              $db +=1; 
+              else  : $vg +=1;
+
+             endif;
+
+
+
+        }
+        
+
+    $pieChart = new PieChart();
+
+
+    $pieChart->getData()->setArrayToDataTable(
+        
+        [['Categorie', 'nombre'],
+        
+         ['sans-gluten',  $sg],
+         ['Vegan',   $veg],
+         ['Halal',  $hl],
+         ['Diabetique', $db],
+         ['vegetarien',   $vg],
+    ]
+);
+           
+    
+
+
+     
+    $pieChart->getOptions()->setTitle('Type des Annonces repas ');
+    $pieChart->getOptions()->setHeight(500);
+    $pieChart->getOptions()->setWidth(900);
+    $pieChart->getOptions()->getTitleTextStyle()->setBold(true);
+    $pieChart->getOptions()->getTitleTextStyle()->setColor('#009900');
+    $pieChart->getOptions()->getTitleTextStyle()->setItalic(true);
+    $pieChart->getOptions()->getTitleTextStyle()->setFontName('Arial');
+    $pieChart->getOptions()->getTitleTextStyle()->setFontSize(20);
+
+    return $this->render('repas/stat.html.twig', array('piechart' => $pieChart));
     }
-
-
-
-    /**
-     * @Route("/", name="repas_index", methods={"GET"})
-     */
-
-
-    public function index(RepasRepository $repasRepository): Response
-    {
-        return $this->render('repas/showrepas.html.twig', [
-            'repas' => $repasRepository->findAll(),
-        ]);
-    }
-
-    /**
-     * @Route("/repas_back", name="repas_index2", methods={"GET"})
-     */
-    public function index2(RepasRepository $repasRepository): Response
-    {
-        return $this->render('repas/showbackrepas.html.twig', [
-            'repas' => $repasRepository->findAll(),
-        ]);
-    }
-
-
-    /**
-     * @Route("/new", name="repas_new", methods={"GET","POST"})
+/**
+ * 
+     * @Route("/newrepas", name="repas_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -86,7 +123,8 @@ class RepasController extends AbstractController
 
 
            $entityManager->persist($repa);
-          $entityManager->flush();
+
+            $entityManager->flush();
 
             return $this->redirectToRoute('repas_index');
         }
@@ -97,6 +135,58 @@ class RepasController extends AbstractController
         ]);
     }
 
+    
+
+    /**
+     * @Route("/", name="repas_index", methods={"GET"})
+     */
+
+
+    public function index(RepasRepository $repasRepository,Request $request, PaginatorInterface $paginator): Response
+    {
+       
+        $Repository=$this -> getDoctrine () -> getRepository (repas::class);
+        $repas= $Repository -> findAll();
+        $repas = $paginator->paginate(
+            $repas,
+            $request->query->getInt('page',1),
+            4
+        );
+        
+        return $this->render('repas/showrepas.html.twig', [
+            'repas' => $repas ]);
+    }
+
+    /**
+     * @Route("/repas_back", name="repas_back", methods={"GET"})
+     */
+    public function index_back(RepasRepository $repasRepository,Request $request, PaginatorInterface $paginator): Response
+    {
+        
+        $Repository=$this -> getDoctrine () -> getRepository (repas::class);
+        $repas= $Repository -> findAll();
+        $repas = $paginator->paginate(
+            $repas,
+            $request->query->getInt('page',1),
+            4
+        );
+        return $this->render('repas/showbackrepas.html.twig', [
+            'repas' => $repas ]);
+    }
+
+
+    /**
+     * @Route("/{id}", name="singlerepas_show", methods={"GET"})
+     */
+    public function show(repas $repas): Response
+    {
+        return $this->render('repas/showsolo.html.twig', [
+            'repas' => $repas,
+        ]);
+    }
+
+
+
     /**
     * Creates a new ActionItem entity.
     *
@@ -104,9 +194,19 @@ class RepasController extends AbstractController
     * @Method("GET")
     */
     
+    public function searchAction(Request $request)
+  {
+    $repository = $this->getDoctrine()->getRepository(repas::class);
+    $requestString= $request->get('searchValue');
+    $repas = $repository->findBystring($requestString);
+    $jsonContent = $Normalizer->normalize($repas, 'json',['groups'=>'repas']);
+    $retour=json_encode($jsonContent);
+    return new Response($retour);
+
+  }
 
   
-#
+
 
     /**
      * @Route("/{id}/edit", name="repas_edit", methods={"GET","POST"})
@@ -119,15 +219,19 @@ class RepasController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $em=$this->getDoctrine()->getManager();
             $em->flush();
-            return $this->redirectToRoute('repas_index2');
+            return $this->redirectToRoute('repas_back');
         }
         return $this->render('repas/edit.html.twig',
             ['form'=>$form->createView()]);
     }
-/**
+
+    
+
+
+    /**
      * @Route("/trinom", name="trinom")
      */
-    public function Trinom(Request $request)
+    public function Trinom(Request $request,PaginatorInterface $paginator)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -135,19 +239,27 @@ class RepasController extends AbstractController
             'SELECT e FROM App\Entity\Repas e 
             ORDER BY e.nom' 
         );
-            
-    
-        $rep = $query->getResult(); 
+        
+        $repas = $query->getResult(); 
+        
+        $repas = $paginator->paginate(
+            $repas,
+            $request->query->getInt('page',1),
+            4
+        );
 
         return $this->render('repas/showbackrepas.html.twig', 
-        array('repas' => $rep));
+        array('repas' => $repas));
     
     }
+   
+        
+        
     /**
      * @Route("/triid", name="triid")
      */
 
-    public function Triid(Request $request)
+    public function Triid(Request $request,PaginatorInterface $paginator)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -156,19 +268,38 @@ class RepasController extends AbstractController
             ORDER BY e.id' 
         );
             
-    
-        $rep = $query->getResult(); 
+        
+            $repas = $query->getResult(); 
+            $repas = $paginator->paginate(
+            $repas,
+            $request->query->getInt('page',1),
+            4
+        );
+
 
         return $this->render('repas/showbackrepas.html.twig', 
-        array('repas' => $rep));
+        array('repas' => $repas));
     
     }
 
 
+    public function sendNotification(Request $request)
+    {
+      $manager = $this->get('mgilet.notification');
+      $notif = $manager->createNotification('Hello world!');
+      $notif->setMessage('This a notification.');
+      $notif->setLink('https://symfony.com/');
+      // or the one-line method :
+      // $manager->createNotification('Notification subject', 'Some random text', 'https://google.fr/');
+
+      // you can add a notification to a list of entities
+      // the third parameter `$flush` allows you to directly flush the entities
+      $manager->addNotification(array($this->getUser()), $notif, true);
+      }
+
 
     /**
-     * @Route("/{id}", name="repas_delete", methods={"GET","DELETE"})
-     *
+     * @Route("/repas_back/{id}", name="repas_delete", methods={"GET","DELETE"})
      */
     public function delete($id, RepasRepository $repository){
 
@@ -176,8 +307,13 @@ class RepasController extends AbstractController
         $em=$this->getDoctrine()->getManager();
         $em->remove($repas);
         $em->flush();
-        return $this->redirectToRoute('repas_index2');
+        return $this->redirectToRoute('repas_back');
     }
+
+    
+    
+    
+
 
 
 }

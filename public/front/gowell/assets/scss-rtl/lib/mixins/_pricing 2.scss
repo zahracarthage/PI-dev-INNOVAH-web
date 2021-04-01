@@ -1,0 +1,7 @@
+// pricing trasition mixin
+@mixin trasition-in($property, $prop, $value, $prop2, $prefixes) {
+	@each $trasition-in in $prefixes {
+		-#{$trasition-in}-#{$property}: $prop $value $prop2;
+	}
+	#{$property}: $prop $value $prop2;
+}

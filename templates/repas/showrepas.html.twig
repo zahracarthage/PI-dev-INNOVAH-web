@@ -28,7 +28,9 @@
 
                                         <div class="item-card9-img h-250">
                                             <div class="item-card9-imgs">
-                                                <a href="tours.html" class="absolute-link2"></a>;
+
+                                            <a href="{{ path('singlerepas_show', { 'id': repa.id }) }}"></a>
+
                                                 <img src="{{ asset('uploads/' ~ repa.img ) }}" alt="img" class="cover-image">
                                             </div>
 
@@ -87,10 +89,9 @@
 
         </div>
         </div>
-
-
-
-
+        
+                    <div style="float:right;">{{ knp_pagination_render(repas) }}
+</div>
 
 
 

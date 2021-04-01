@@ -1,13 +1,85 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseback.html.twig' %}
 
-{% block title %}Edit Reservationrepas{% endblock %}
+{% block title %} Edit reservation {% endblock %}
 
 {% block body %}
-    <h1>Edit Reservationrepas</h1>
 
-    {{ include('reservationrepas/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class="app-content">
+        <div class="side-app">
+            <div class="page-header">
+                <h4 class="page-title">Forms</h4>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#"><i class="fe   fe-edit mr-1"></i> Forms</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Form Elements</li>
+                </ol>
+            </div>
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="card m-b-20">
+                        <div class="card-header">
+                            <h3 class="card-title">Basic Example</h3>
+                        </div>
+                        {{ form_start(form) }}
 
-    <a href="{{ path('reservationrepas_index') }}">back to list</a>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <label class="form-label" for="exampleInputname">User Name</label>
+                                    {{ form_widget(form.nom,{'attr': {'class': 'form-control form-control-user'}} ) }}
+                                    {{ form_errors(form.nom) }}
 
-    {{ include('reservationrepas/_delete_form.html.twig') }}
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="exampleInputEmail2">description</label>
+                                    {{ form_widget(form.description,{'attr': {'class': 'form-control form-control-user'}} ) }}
+                                    {{ form_errors(form.description) }}
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="exampleInputPassword2">price</label>
+                                    {{ form_widget(form.price,{'attr': {'class': 'form-control form-control-user'}}) }}
+                                    {{ form_errors(form.price) }}
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">category</label>
+                                    {{ form_widget(form.category,{'attr': {'class': 'form-control form-control-user'}} ) }}
+                                    {{ form_errors(form.category) }}
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="exampleInputnumber">adresse</label>
+                                    {{ form_widget(form.adresse,{'attr': {'class': 'form-control form-control-user'}} ) }}
+                                    {{ form_errors(form.adresse) }}
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="exampleInputnumber">img</label>
+                                    {{ form_widget(form.img,{'attr': {'class': 'form-control form-control-user'}} ) }}
+                                    {{ form_errors(form.img) }}
+
+                                </div>
+
+                                <div class="form-group mb-0">
+                                    <div class="checkbox checkbox-secondary">
+                                        {{ form_widget(form) }}
+                                        <button type="submit" class="btn btn-primary ">Submit</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                        {{ form_end(form) }}
+
+                    </div>
+                </div>
+                <!-- end col -->
+
+            </div>
+            <!-- end row -->
+
+        </div>
+    </div>
+
+
 {% endblock %}

@@ -1,35 +1,33 @@
 {% extends 'singleshow.html.twig' %}
 
 
-           {% block name%}
-               {%  for r in repas %}
-              {{ r.nom }}
-{% endfor %}
+           {% block name %}
+{{repas.nom}}
            {% endblock %}
 
 {% block container %}
 
-    {%  for r in repas %}
 
     <section class="sptb">
         <div class="container">
             <div class="row">
                 <div class="col-xl-8 col-lg-8 col-md-12">
 
-                    <!--Tours And Travels Overview-->
+                    <!--repas Overview-->
                     <div class="card overflow-hidden details-accordion">
-                        <div class="ribbon ribbon-top-right text-danger font-weight-bold"><span class="bg-danger fs-16 font-weight-bold">$456 <small class="fs-12"> / Day</small></span></div>
+                        <div class="ribbon ribbon-top-right text-danger font-weight-bold"><span class="bg-danger fs-16 font-weight-bold">{{repas.price}}
+                            <small class="fs-12"> / Day</small></span></div>
                         <div class="card-body">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <a href="#" class="fs-16 font-weight-semibold2 card-header bg-transparent" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Overview
+                                        Description
                                     </a>
                                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                                         <div class="card-body leading-normal-2">
                                             <div class="mb-0">
-                                                <p class="leading-loose">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atcorrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-                                                <p class="leading-loose">On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoraliz the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble thena bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.</p>
+                                                <p class="leading-loose">{{repas.description}}.
+                                                                        </p>
                                             </div>
                                             <h4 class="card-title mt-6 mb-3 font-weight-semibold2">Contact Info</h4>
                                             <div class="item-user mt-3">
@@ -46,23 +44,41 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card">
-                                    <a href="#" class="fs-16 font-weight-semibold2 collapsed card-header bg-transparent" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                        Specifications
-                                    </a>
-                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                        <div class="card">
+                                            <a href="#" class="fs-16 font-weight-semibold2 collapsed card-header bg-transparent" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                                Specifications
+                                            </a>
+                                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                                    <div class="card-body leading-normal-2">
+                                                        <div class="table-responsive">
+                                                            <table class="table row table-borderless w-100 m-0 text-nowrap">
+                                                                <tbody class="col-lg-12 col-xl-6 p-0">
+                                                                <tr>
+                                                                    <td class="px-0"><span class="font-weight-semibold">    Category :</span> {{repas.category}}
+                                                                    </td>
+                                                                </tr>
+                                                            
+                                                                </tbody>
+
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+
+
+
+                                    <div class="card">
+                                        <a href="#" class="fs-16 font-weight-semibold2 collapsed card-header bg-transparent" id="headingThree" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                            Gallery
+                                        </a>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                                         <div class="card-body leading-normal-2">
                                             <div class="table-responsive">
                                                 <table class="table row table-borderless w-100 m-0 text-nowrap">
-                                                    <tbody class="col-lg-12 col-xl-6 p-0">
-                                                    <tr>
-                                                        <td class="px-0"><span class="font-weight-semibold">Category :</span> Deluxe</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="px-0"><span class="font-weight-semibold">Date :</span> Canada</td>
-                                                    </tr>
-
-                                                    </tbody>
+                                                    
+                                                      <img src="{{ asset('uploads/' ~ repas.img ) }}" alt="img" class="cover-image">
+ 
 
                                                 </table>
                                             </div>
@@ -70,27 +86,29 @@
                                     </div>
                                 </div>
 
+ 
 
 
-
-
-                                <div class="card mb-0">
-                                    <a href="#" class="fs-16 font-weight-semibold2 collapsed card-header" data-toggle="collapse" id="headingEight" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
-                                        Activity Gallery
-                                    </a>
-
-                                </div>
                             </div>
+                            <form  method="post" >
+               
+    
+                              <a type='submit' href="{{ path('reservationrepas_new',{ 'id': repas.id  }) }}" class="btn btn-success" style="float:right;">book</a>
+
+
+                            </form>
                         </div>
 
 
 
-                        <div class="card-footer">
-                            <div class="icons">
-                                <a href="path" class="btn btn-primary px-5">Book Now</a>
+                           
 
-                            </div>
+ 
+                       <div class="card-footer">
+
                         </div>
+                         
+
                     </div>
 
 
@@ -109,6 +127,6 @@
             </div>
 
     </section>
-    {% endfor %}
+  
 
 {%  endblock %}

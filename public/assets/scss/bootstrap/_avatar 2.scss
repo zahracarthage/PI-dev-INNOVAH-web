@@ -1,0 +1,105 @@
+/*-------- Avatars -------*/
+
+.avatar {
+	width: $space-xl;
+	height: $space-xl;
+	line-height: $space-xl;
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	color: $white;
+	font-weight: $font-weight-semibold2;
+	vertical-align: bottom;
+	font-size: .875rem;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.avatar i {
+	font-size: 125%;
+	vertical-align: sub;
+}
+.avatar-status {
+	position: absolute;
+	right: -2px;
+	bottom: -2px;
+	width: $space-xs * 3;
+	height: $space-xs * 3;
+	border: 2px solid $white;
+	background: #868e96;
+	border-radius: 50%;
+}
+.avatar-sm {
+	width: $space-lg;
+	height: $space-lg;
+	line-height: $space-lg;
+	font-size: $space-xs * 3;
+}
+.avatar-md {
+	width: $space-xl;
+	height: $space-xl;
+	line-height: $space-xl;
+	font-size: $space-lg;
+}
+.avatar-lg {
+	width: $space-lg * 2;
+	height: $space-lg * 2;
+	line-height:$space-lg * 2;
+	font-size: $space-xs * 5;
+}
+.avatar-xl {
+	width: $space-md * 4;
+	height: $space-md * 4;
+	line-height: $space-md * 4;
+	font-size: $space-xs * 7;
+}
+.avatar-xxl {
+	width: $space-md * 5;
+	height: $space-md * 5;
+	line-height: $space-md * 5;
+	font-size: $space-xs * 8;
+}
+.avatar-placeholder {
+	background: #ced4da url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" width="134" height="134" viewBox="0 0 134 134"><path fill="#868e96" d="M65.92 66.34h2.16c14.802.42 30.928 6.062 29.283 20.35l-1.618 13.32c-.844 6.815-5.208 7.828-13.972 7.866H52.23c-8.764-.038-13.13-1.05-13.973-7.865l-1.62-13.32C34.994 72.4 51.12 66.76 65.92 66.34zM49.432 43.934c0-9.82 7.99-17.81 17.807-17.81 9.82 0 17.81 7.99 17.81 17.81 0 9.82-7.99 17.807-17.81 17.807-9.82 0-17.808-7.987-17.808-17.806z"/></svg>') no-repeat (center / 80%);
+}
+.avatar-list {
+	margin: 0 0 -$space-sm;
+	padding: 0;
+	font-size: 0;
+	.avatar {
+		margin-bottom: $space-sm;
+		&:not(:last-child) {
+			margin-right: $space-sm;
+		}
+	}
+}
+.avatar-list-stacked .avatar {
+	margin-right: -.8em !important;
+	box-shadow: 0 0 0 2px $white;
+}
+
+.alert-avatar {
+	padding-left: 3.75rem;
+	.avatar {
+		position: absolute;
+		top: .5rem;
+		left: .75rem;
+	}
+}
+
+.avatar-premium {
+	position: relative;
+	i {
+		position: absolute;
+		top: 0;
+		font-size: $default-value-size * 12;
+	}
+}
+/*-------- Avatar colors  -------*/
+@each $colors, $value in $colors {
+	@include avatar-variant(".avatar-#{$colors}", $value);
+}
+/*-------- Avatar Colors -------*/
+
+/*-------- Avatars -------*/

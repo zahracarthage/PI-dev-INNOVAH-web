@@ -1,0 +1,11 @@
+//Bootstrap root
+:root {
+  @each $color, $value in $colors {
+    --#{$color}: #{$value};
+  }
+
+  @each $color, $value in $hovercolors {
+    --#{$color}: #{$value};
+  }
+
+}

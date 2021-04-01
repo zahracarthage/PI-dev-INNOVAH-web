@@ -5,7 +5,265 @@
 {% block body %}
     <h1>Create new Reservationrepas</h1>
 
-    {{ include('reservationrepas/_form.html.twig') }}
+   {#{{ include('reservationrepas/_form.html.twig') }}#} 
 
     <a href="{{ path('reservationrepas_index') }}">back to list</a>
+
+               {{ form_start(form)}}
+
+    <section class="sptb">
+			<div class="container">
+				<div class="row ">
+					<div class="col-lg-8 col-md-12">
+						<div class="card">
+							<div class="card-header ">
+								<h3 class="card-title">Book Now</h3>
+							</div>
+							<div class="card-body">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="form-label text-dark">Date</label>
+                                            {{ form_widget(form.date , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'message'}} ) }}
+                                             {{ form_errors(form.date) }}	
+                                             </div>									
+									</div>
+									
+								</div>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="form-label text-dark">Nombre de personnes</label>
+											 {{ form_widget(form.nbrpersonnes , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Nom'}} ) }}
+                                             {{ form_errors(form.nbrpersonnes) }}
+										</div>
+									</div>
+
+                                    <div class="col-sm-6">
+										<div class="form-group">
+											<label class="form-label text-dark">Heure d'arrivee</label>
+                                             {{ form_widget(form.heure , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'message'}} ) }}
+                                             {{ form_errors(form.heure) }}	
+											
+										</div>
+									</div>
+
+
+									
+								</div>
+								
+								<div class="form-group">
+									<label class="form-label text-dark">Description</label>
+                                    {{ form_widget(form.message , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'message'}} ) }}
+                                             {{ form_errors(form.message) }}								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header">
+								<h3 class="card-title">Personal Information</h3>
+							</div>
+							<div class="card-body">
+								<div class="row">
+									<div class="col-sm-12 col-md-12">
+										<div class="form-group">
+											<label class="form-label">Name</label>
+											{{ form_widget(form.nom , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Veuillez entrer votre nom'}} ) }}
+                                             {{ form_errors(form.nom) }}	
+										</div>
+									</div>
+									<div class="col-sm-12 col-md-12">
+										<div class="form-group">
+											<label class="form-label">Email</label>
+                                     {{ form_widget(form.email , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'message'}} ) }}
+                                            											</div>
+									</div>
+									<div class="col-sm-12 col-md-12">
+										<div class="form-group">
+											<label class="form-label">Phone Number</label>
+                         {{ form_widget(form.phone , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Numero de telephone'}} ) }}
+                                             {{ form_errors(form.phone) }}											</div>
+									</div>
+									
+									
+									
+									
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header">
+								<h3 class="card-title">Payments</h3>
+							</div>
+							<div class="card-body">
+								<div class="tab-content card-body border mb-0 b-0">
+									<div class="panel panel-secondary">
+										<div class=" tab-menu-heading border-0 pl-0 pr-0 pt-0">
+											<div class="tabs-menu1 ">
+												<!-- Tabs -->
+												<ul class="nav panel-tabs">
+													<li><a href="#tab5" class="active" data-toggle="tab">Credit/ Debit Card</a></li>
+													<li><a href="#tab6" data-toggle="tab">Pay-pal</a></li>
+													<li><a href="#tab7" data-toggle="tab">Net Banking</a></li>
+													<li><a href="#tab8" data-toggle="tab">Gift Voucher</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="panel-body tabs-menu-body pl-0 pr-0 border-0">
+											<div class="tab-content">
+												<div class="tab-pane active " id="tab5">
+													<div class="form-group">
+														<label class="form-label" >CardHolder Name</label>
+														<input type="text" class="form-control" id="name1" placeholder="First Name">
+													</div>
+													<div class="form-group">
+														<label class="form-label">Card number</label>
+														<div class="input-group">
+															<input type="text" class="form-control" placeholder="Search for...">
+															<span class="input-group-append">
+																<button class="btn btn-primary" type="button"><i class="fa fa-cc-visa"></i> &nbsp; <i class="fa fa-cc-amex"></i> &nbsp;
+																<i class="fa fa-cc-mastercard"></i></button>
+															</span>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-sm-8">
+															<div class="form-group mb-sm-0">
+																<label class="form-label">Expiration</label>
+																<div class="d-flex">
+																	<div class="input-group mr-4">
+																		<select class="form-control select2" data-placeholder="Choose Month">
+																			<option>Select Month</option>
+																			<option value="0">01</option>
+																			<option value="1">02</option>
+																			<option value="2">03</option>
+																			<option value="3">04</option>
+																			<option value="4">05</option>
+																			<option value="5">06</option>
+																			<option value="6">07</option>
+																			<option value="7">08</option>
+																			<option value="8">09</option>
+																			<option value="9">10</option>
+																			<option value="10">11</option>
+																			<option value="11">12</option>
+																		</select>
+																	</div>
+																	<div class="input-group">
+																		<select class="form-control select2" data-placeholder="Choose Year">
+																			<option>Select Year</option>
+																			<option value="2021">2021</option>
+																			<option value="2022">2022</option>
+																			<option value="2023">2023</option>
+																			<option value="2024">2024</option>
+																			<option value="2025">2025</option>
+																			<option value="2026">2026</option>
+																			<option value="2027">2027</option>
+																			<option value="2028">2028</option>
+																			<option value="2029">2029</option>
+																			<option value="2030">2030</option>
+																			<option value="2031">2031</option>
+																			<option value="2032">2032</option>
+																			<option value="2033">20331</option>
+																			<option value="2034">2034</option>
+																			<option value="2035">2035</option>
+																			<option value="2036">2036</option>
+																			<option value="2037">2037</option>
+																			<option value="2038">2038</option>
+																			<option value="2039">2039</option>
+																			<option value="2040">2040</option>
+																		</select>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-sm-4 ">
+															<div class="form-group mb-0">
+																<label class="form-label">CVV <i class="fa fa-question-circle"></i></label>
+																<input type="password" class="form-control" required="" value="524">
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="tab-pane " id="tab6">
+													<h6 class="font-weight-semibold">Paypal is easiest way to pay online</h6>
+													<p><a href="#" class="btn btn-secondary"><i class="fa fa-paypal"></i> Log in my Paypal</a></p>
+													<p class="mb-0"><strong>Note:</strong> Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+												</div>
+												<div class="tab-pane " id="tab7">
+													<div class="control-group form-group">
+														<div class="form-group">
+															<label class="form-label text-dark">All Banks</label>
+															<select class="form-control custom-select required category select2-no-search">
+																<option value="0">Select Bank</option>
+																<option value="1">Credit Agricole Group</option>
+																<option value="2">Bank of America</option>
+																<option value="3">Mitsubishi UFJ Financial Group</option>
+																<option value="4">BNP Paribas</option>
+																<option value="5">JPMorgan Chase & Co.</option>
+																<option value="6">HSBC Holdings</option>
+																<option value="7">Bank of China</option>
+																<option value="8">Agricultural Bank of China</option>
+																<option value="9">China Construction Bank Corp.</option>
+																<option value="10">Industrial & Commercial Bank of China, or ICBC</option>
+															</select>
+														</div>
+													</div>
+													<p><a href="#" class="btn btn-secondary">Log in Bank</a></p>
+												</div>
+												<div class="tab-pane " id="tab8">
+													<div class="form-group">
+														<label class="form-label">Gift Voucher</label>
+														<div class="input-group">
+															<input type="text" class="form-control" placeholder="Enter Your Gv Number">
+															<span class="input-group-append">
+																<button class="btn btn-primary px-6" type="button">
+																Apply</button>
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group row clearfix">
+										<div class="col-lg-12">
+											<div class="checkbox checkbox-info">
+												<label class="custom-control mt-4 custom-checkbox">
+													<input type="checkbox" class="custom-control-input" />
+													<span class="custom-control-label text-dark pl-2">I agree with the Terms and Conditions.</span>
+												</label>
+											</div>
+										</div>
+										<ul class=" mb-b-4 ">
+											<li class="float-right"><a href="#" class="btn btn-secondary  mb-0 mr-2">Continue</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="float-right mb-5 mb-lg-0">
+
+                         <input type="submit" value="Enregistrer" class="btn btn-success"  onClick="validateSubmit()"/>
+						</div>
+
+                        
+					</div>
+					
+                                                  
+
+				</div>
+			</div>
+		</section>
+        <script>
+                                function validateSubmit() {
+                         result = confirm("Are you sure you want to submit this form ?");
+                        if (result) {
+                           $('#form').submit();
+                          
+                           
+                        
+                                  }
+                        }
+                        </script>
+          {{ form_end(form) }}
 {% endblock %}
