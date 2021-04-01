@@ -1,0 +1,132 @@
+{% extends 'singleshow.html.twig' %}
+
+
+           {% block name %}
+{{repas.nom}}
+           {% endblock %}
+
+{% block container %}
+
+
+    <section class="sptb">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8 col-md-12">
+
+                    <!--repas Overview-->
+                    <div class="card overflow-hidden details-accordion">
+                        <div class="ribbon ribbon-top-right text-danger font-weight-bold"><span class="bg-danger fs-16 font-weight-bold">{{repas.price}}
+                            <small class="fs-12"> / Day</small></span></div>
+                        <div class="card-body">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <a href="#" class="fs-16 font-weight-semibold2 card-header bg-transparent" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Description
+                                    </a>
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <div class="card-body leading-normal-2">
+                                            <div class="mb-0">
+                                                <p class="leading-loose">{{repas.description}}.
+                                                                        </p>
+                                            </div>
+                                            <h4 class="card-title mt-6 mb-3 font-weight-semibold2">Contact Info</h4>
+                                            <div class="item-user mt-3">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <h6 class="font-weight-normal"><span><i class="fe fe-mail mr-3 mb-2 d-inline-block"></i></span><a href="contact.html" class="text-body"> contact us here</a></h6>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <h6 class="font-weight-normal"><span><i class="fe fe-phone mr-3 mb-2 d-inline-block"></i></span>0-235-657-24587</h6>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                        <div class="card">
+                                            <a href="#" class="fs-16 font-weight-semibold2 collapsed card-header bg-transparent" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                                Specifications
+                                            </a>
+                                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                                    <div class="card-body leading-normal-2">
+                                                        <div class="table-responsive">
+                                                            <table class="table row table-borderless w-100 m-0 text-nowrap">
+                                                                <tbody class="col-lg-12 col-xl-6 p-0">
+                                                                <tr>
+                                                                    <td class="px-0"><span class="font-weight-semibold">    Category :</span> {{repas.category}}
+                                                                    </td>
+                                                                </tr>
+                                                            
+                                                                </tbody>
+
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+
+
+
+                                    <div class="card">
+                                        <a href="#" class="fs-16 font-weight-semibold2 collapsed card-header bg-transparent" id="headingThree" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                            Gallery
+                                        </a>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                        <div class="card-body leading-normal-2">
+                                            <div class="table-responsive">
+                                                <table class="table row table-borderless w-100 m-0 text-nowrap">
+                                                    
+                                                      <img src="{{ asset('uploads/' ~ repas.img ) }}" alt="img" class="cover-image">
+ 
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+ 
+
+
+                            </div>
+                            <form  method="post" >
+               
+    
+                              <a type='submit' href="{{ path('reservationrepas_new',{ 'id': repas.id  }) }}" class="btn btn-success" style="float:right;">book</a>
+
+
+                            </form>
+                        </div>
+
+
+
+                           
+
+ 
+                       <div class="card-footer">
+
+                        </div>
+                         
+
+                    </div>
+
+
+
+                    <!--Related Posts-->
+
+                    <!--/Related Posts-->
+
+                    <!--Faqs-->
+
+
+                    <!--Side Content-->
+
+                    <!--/ Side Content-->
+                </div>
+            </div>
+
+    </section>
+  
+
+{%  endblock %}

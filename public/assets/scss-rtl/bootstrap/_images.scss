@@ -1,0 +1,25 @@
+/*-------- Images  -------*/
+.cover-image {
+	background-size: cover !important;
+	position: relative;
+	width:100%;
+}
+.img-thumbnail {
+	padding: .25rem;
+	background-color: $white;
+	border: 1px solid $border-color;
+	border-radius: 5px;
+	max-width: 100%;
+	height: auto;
+}
+.img-flag {
+	width: 25px;
+	height: 17px;
+	margin-top: -4px;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+    width: 100%;
+}
+/*-------- Images -------*/

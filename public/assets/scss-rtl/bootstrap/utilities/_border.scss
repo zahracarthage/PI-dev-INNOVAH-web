@@ -1,0 +1,62 @@
+/*-------- borders -------*/
+.border {
+	border: 1px solid $border-color !important;
+}
+.border-top {
+	border-top: 1px solid $border-color !important;
+}
+.border-right {
+	border-right: 1px solid $border-color !important;
+}
+.border-bottom {
+	border-bottom: 1px solid $border-color !important;
+}
+.border-left {
+	border-left: 1px solid $border-color !important;
+}
+.border-dark-transparent {
+	border-color: $border-color !important;
+}
+.border-white-transparent {
+	border-color: rgba($white, 0.15) !important;
+}
+.border-white-transparent-5 {
+	border-color: rgba($white, 0.5) !important;
+}
+.border-white {
+	border-color: $white !important;
+}
+.border-0 {
+	border: 0 !important;
+}
+.border-top-0 {
+	border-top: 0 !important;
+}
+.border-right-0 {
+	border-right: 0 !important;
+}
+.border-bottom-0 {
+	border-bottom: 0 !important;
+}
+.border-left-0 {
+	border-left: 0 !important;
+}
+.border-dotted {
+	border-style: dotted !important;
+}
+.border-dashed {
+	border-style: dashed !important;
+}
+
+/* Border-colors */
+@each $colors, $value in $colors {
+	@include border-variant(".border-#{$colors}", $value);
+}
+
+/* Border-widths */
+@each $prop, $abbrev in (border-width: border-width) {
+  @each $size, $length in $custom-width {
+    .#{$abbrev}-#{$size} { #{$prop}: $length !important; }
+  }
+}
+/*-------- borders -------*/

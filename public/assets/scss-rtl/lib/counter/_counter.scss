@@ -1,0 +1,105 @@
+/*-------- Counters -------*/
+#count-down1 .clock-presenter {
+	padding: 0;
+	text-align: center;
+	.digit {
+		font-size: $default-value-size * 20;
+		line-height: 40px;
+		height: 40px;
+		display: inline-block;
+		overflow: hidden;
+		text-align: center;
+		position: relative;
+		cursor: default;
+		background: $white;
+		color: $black;
+		border-radius: 5px;
+	}
+	.note {
+		position: relative;
+		margin-bottom: 0;
+		cursor: default;
+		font-size: $default-value-size * 14;
+		opacity: .7;
+	}
+}
+.counter {
+	font-size: $default-value-size * 35;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+.counter-1 {
+	font-size: $default-value-size * 40;
+	font-weight: $font-weight-semibold2;
+}
+.count {
+	font-size: 37px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.card-counter2 i {
+	font-size: 4.5em;
+}
+#count-down {
+	margin: 3rem;
+	.clock-presenter {
+		height: 80px;
+		padding: 0;
+		text-align: center;
+		.digit {
+			margin-top: 20px;
+			font-size: 3rem;
+			line-height: 46px;
+			height: 50px;
+			padding: 0 7px;
+			display: inline-block;
+			overflow: hidden;
+			text-align: center;
+			position: relative;
+			cursor: default;
+			color: $white;
+			background-size: cover;
+			border-radius: 5px;
+		}
+		.note {
+			position: relative;
+			margin-bottom: 0;
+			cursor: default;
+			font-size: $default-value-size * 16;
+			opacity: .7;
+		}
+	}
+}
+
+.info .counter-icon {
+	border: 0px solid rgba($white, 0.9) !important;
+}
+
+.counter-status.bg-white-transparent {
+	background-color: rgba($white, 0.1) !important;
+}
+
+.counter-circle {
+	width: 200px;
+	height: 200px;
+	padding-top: 60px;
+	border-radius: 50%;
+	margin: 0 auto;
+	border: 3px solid;
+}
+
+.counter-icon {
+	margin-bottom: 1.5rem;
+	display: inline-flex;
+	width: $space-xl * 2;
+	height: $space-xl * 2;
+	padding: 1.3rem 1.4rem;
+	border-radius: 50%;
+	text-align: center;
+	background: rgba($white, 0.15);
+	i {
+		font-size: 1.2rem;
+	}
+}
+/*-------- Counters -------*/

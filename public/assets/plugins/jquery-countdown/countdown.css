@@ -1,0 +1,81 @@
+/* jQuery Countdown styles 2.0.0. */
+#launch_date{
+	    margin: 50px auto 50px auto;
+}
+.countdown-rtl {
+	direction: rtl;
+}
+.countdown-holding span {
+	color: #fff;
+}
+.countdown-row {
+	clear: both;
+	width: 100%;
+	padding: 0px 2px;
+	text-align: center;
+}
+.countdown li{
+	display:inline-block;
+	
+}
+.countdown .time{
+	font-size: 16px;
+	color: rgba(255, 255, 255, 0.8);
+	padding-top:2px;
+	font-weight:500;
+}
+.countdown .number{
+	color: rgb(255, 255, 255);
+	font-size: 2.2rem;
+	font-weight: bold;
+	width:88px;
+	height:88px;
+	border-radius:8px;
+	line-height: 88px;
+	padding: 0px;
+	text-align:center;
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+	background: rgba(71, 62, 193,0.0);
+	z-index:1;
+	border:1px solid rgba(255, 255, 255, 0.0);
+	box-shadow:none;
+}
+.countdown .number:before{
+	content: '';
+    position: absolute;
+    width: 88px;
+    height: 88px;
+    background:  rgba(71, 62, 193,0.35);
+    top: 0;
+    left: 0;
+	border-radius:8px;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+.countdown span{
+	display:block;
+}
+@media (max-width:991px){
+	.countdown li{
+		margin:20px 10px 10px 10px;
+	}
+	.is-countdown{
+		margin-top:20px;
+	}
+}
+@media (min-width:992px){
+	.countdown li{
+		margin:0px 10px 5px 10px;
+	}
+}
+.construction h3 {
+    color: #fff;
+    font-size: 3.2rem;
+    font-weight: 800!important;
+    margin-bottom: .4em!important;
+    letter-spacing: 0;
+    padding-bottom: 0;
+    line-height: 1.2;
+}	

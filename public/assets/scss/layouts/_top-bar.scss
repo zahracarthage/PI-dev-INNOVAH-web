@@ -1,0 +1,115 @@
+/*------ Top Bar -------*/
+.top-bar {
+	border-bottom: 1px solid $border-color;
+	background: $white;
+	position: relative;
+    z-index: 19;
+}
+.top-bar-left ul {
+	margin-bottom: 0;
+}
+.top-bar {
+	.top-bar-left {
+		display: flex;
+		.socials li {
+			display: inline-block;
+			float: left;
+			font-size: $default-value-size * 15;
+			padding: 9px 15px;
+			margin: 0;
+			border-left: 1px solid $border-color;
+			cursor:pointer;
+		}
+		.contact li {
+			margin: 0px;
+			display: inline-block;
+			color: $text-color;
+			cursor:pointer;
+		}
+	}
+	.top-bar-right {
+		display: flex;
+		float: right;
+		li{
+			cursor:pointer;
+		}
+	}
+}
+.top-bar.top-bar-style2 {
+	.header-logo {
+		padding: 8px 0;
+		width: 85%;
+	}
+	.contact li {
+		height: 50px;
+		line-height: 50px;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.top-bar-right .custom li {
+		height: 50px;
+		line-height: 50px;
+		padding-top: 0;
+		padding-bottom: 0;
+		cursor:pointer;
+		&.dropdown a {
+			line-height: 1.2rem;
+		}
+	}
+}
+
+.header-absolute {
+	position: absolute;
+	width: 100%;
+	z-index: 99;
+	display: block;
+	.top-bar {
+		background: rgba($text-color, 0.3);
+		border-bottom: 1px solid rgba($white, 0.1);
+		&.header-transparent {
+			background: rgba(0, 0, 0, 0.05) !important;
+			border-bottom: 1px solid rgba($white, 0.1);
+		}
+	}
+}
+
+.header-main.header-absolute {
+	.top-bar .contact.border-left {
+		border-left: 1px solid rgba($white, 0.2) !important;
+	}
+}
+
+
+.header-absolute .top-bar.header-transparent {
+	.top-bar-left {
+		.socials li, .contact li {
+			border-color: rgba($white, 0.15);
+		}
+	}
+	.contact.border-right {
+		border-color: rgba($white, 0.15) !important;
+	}
+	.top-bar-right .custom {
+		border-color: rgba($white, 0.15) !important;
+		li {
+			border-color: rgba($white, 0.15) !important;
+		}
+	}
+}
+.top-bar.app-header-background {
+	.top-bar-left {
+		.socials li, .contact li {
+			border-color: rgba($white, 0.15);
+		}
+	}
+	.contact.border-right {
+		border-color: rgba($white, 0.15) !important;
+	}
+	.top-bar-right .custom {
+		border-color: rgba($white, 0.15) !important;
+		li {
+			border-color: rgba($white, 0.15) !important;
+		}
+	}
+}
+/*------ Top Bar -------*/

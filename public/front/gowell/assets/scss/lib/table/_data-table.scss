@@ -1,0 +1,13 @@
+/*-------- Data tables -------*/
+
+div.dataTables_wrapper div.dataTables_filter input {
+	margin-left: .5em;
+	display: inline-block;
+	width: auto;
+	height: calc(1.8125rem + 2px);
+	border-color: $border-color;
+}
+.dataTables_wrapper .dataTables_length select {
+	border-color: $border-color !important;
+	color: $text-color;
+}

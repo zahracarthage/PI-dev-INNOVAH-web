@@ -1,0 +1,143 @@
+/*---- custom form elements -----*/
+.error {
+	color: #ff0000;
+}
+input {
+	&.error {
+		border: 1px solid #ff0000 !important;
+	}
+	&.valid {
+		border: 1px solid #4ecc48 !important;
+	}
+}
+.form-group {
+	display: block;
+	margin-bottom: 1rem;
+}
+.form-label {
+	display: block;
+	margin-bottom: .375rem;
+	font-weight: $font-weight-semibold;
+	font-size: .875rem;
+}
+.form-label-small {
+	float: left;
+	font-weight: $font-weight-normal;
+	font-size: 87.5%;
+}
+.form-footer {
+	margin-top: 2rem;
+}
+
+.input-icon {
+	position: relative;
+	.form-control {
+		&:not(:last-child), &:not(:first-child) {
+			padding-left: 2.5rem;
+		}
+	}
+}
+.input-icon-addon {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	min-width: 2.5rem;
+	pointer-events: none;
+	&:last-child {
+		right: auto;
+		left: 0;
+	}
+}
+.form-fieldset {
+	background: #f8f9fa;
+	border: 1px solid $border-color;
+	padding: 1rem;
+	border-radius: 5px;
+	margin-bottom: 1rem;
+}
+.form-required {
+	color: #fe6567;
+	&:before {
+		content: ' ';
+	}
+}
+.state-valid {
+	padding-right: 2rem;
+	background: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%235eba00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'><polyline points='20 6 9 17 4 12'></polyline></svg>") no-repeat center right 0.5rem / 1rem;
+}
+.state-invalid {
+	padding-right: 2rem;
+	background: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23cd201f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-x'><line x1='18' y1='6' x2='6' y2='18'></line><line x1='6' y1='6' x2='18' y2='18'></line></svg>") no-repeat center right 0.5rem / 1rem;
+}
+.form-help {
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	text-align: center;
+	line-height: 1rem;
+	color: #cecde0;
+	background: #f8f9fa;
+	border-radius: 50%;
+	font-size: .75rem;
+	transition: .3s background-color, .3s color;
+	text-decoration: none;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	&:hover, &[aria-describedby] {
+		background: $color-blue;
+		color: $white;
+	}
+}
+
+.form-group.has-feedback span {
+	display: block !important;
+}
+
+.input-icon .form-group.is-empty {
+	.form-control {
+		margin-bottom: 0;
+	}
+	margin-bottom: 0;
+}
+.conv-form-wrapper div#messages div.message.to {
+	background: $body-color;
+}
+
+.sub-input .form-control {
+	box-shadow: 5px 4px 12px 4px rgba(79, 37, 225, 0.03);
+}
+
+.form .btn {
+	position: relative;
+	margin-right: -1px;
+	width: 101%;
+}
+.form-group .location-gps {
+	cursor: pointer;
+	height: 20px !important;
+	line-height: 33px;
+	position: absolute;
+	left: 22px;
+	right: auto;
+	text-align: right;
+	top: 28%;
+	background: $white;
+	width: 15px !important;
+	color: $text-color;
+	z-index: 9;
+	opacity: 0.5;
+}
+.nice-select.form-control{
+	border:1px solid rgba(255,255,255,0.15) !important;
+}
+/*---- custom form elements -----*/

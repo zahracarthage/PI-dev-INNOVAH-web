@@ -1,0 +1,238 @@
+/*-------- Header style -------*/
+%absolute-details{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	right: 0;
+	display: block;
+	top: 0;
+}
+.banner-1 {
+	.item-search-tabs .search-background .form-control {}
+	.search-background .form-control {
+		border: 1px solid $form-background;
+	}
+	.search-background {
+		.form1 {
+			border-left: 1px solid $white!important;
+		}
+		.btn-lg {
+			position: relative;
+		}
+	}
+	.header-text, .header-text1 {
+		left: 0;
+		right: 0;
+		color: $white;
+	}
+	.header-text {
+		h1 {
+			margin-bottom: .3rem;
+			font-weight: $font-weight-semibold2;
+			font-size: 3rem;
+		}
+		p {
+			margin-bottom: 1.5rem;
+			font-size: $default-value-size * 18;
+		}
+	}
+}
+.banner-2 {
+	.form-control {
+		border-top-left-radius: 2px;
+		border-top-right-radius: 2px;
+		border: 0 !important;
+	}
+	.header-text {
+		left: 0;
+		right: 0;
+		color: $white;
+		p {
+			margin-bottom: 0;
+			font-size: $default-value-size * 16;
+		}
+	}
+}
+.bannerimg .breadcrumb {
+	display: inline-flex;
+	font-size: $default-value-size * 18;
+	font-weight: $font-weight-semibold;
+}
+.banner1 .slide-header-text {
+	top: 6%;
+	z-index: 98 !important;
+}
+.slider-header:before {
+	@extend %absolute-details;
+	z-index: 1;
+}
+.bannerimg {
+	padding: 5rem 0 5rem 0;
+	background-size: cover;
+	.header-text h1 {
+		margin-bottom: 0;
+		font-size: $default-value-size * 24;
+		font-weight: $font-weight-semibold2;
+	}
+}
+.banner-ratings {
+	justify-content: center;
+}
+.about-1 {
+	position: relative;
+	.header-text {
+		left: 0;
+		right: 0;
+		color: $white;
+	}
+}
+.bannerimg .breadcrumb a:hover {
+	color: $white;
+}
+.banner-absolute-image img {
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+	opacity: 0.3;
+	&.location-gps {
+		opacity: 0.5;
+	}
+}
+.absolute-banner-section {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+}
+.absolute-banner-section2 {
+	position: absolute;
+	z-index: 1;
+	left: auto;
+	right: auto;
+	width: 100%;
+}
+.slide-header-text {
+	left: 0;
+	right: 0;
+	position: absolute !important;
+	margin: 0 auto;
+	text-align: center;
+	top: 34% !important;
+	.search-background {
+		text-align: left;
+	}
+}
+.banner-absolute-type2 {
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+.banner-icons i {
+	width: 2rem;
+	height: 2rem;
+	display: inline-block;
+	line-height: 2rem;
+	background: rgba($text-color, 0.4);
+	border-radius: 50%;
+	font-size: $default-value-size * 12;
+}
+.search-background {
+	.form-control {
+		border: 1px solid $form-background;
+	}
+	&.bg-transparent .form-control {
+		border: 1px solid $border-color;
+	}
+}
+.header-text1 {
+	.form-control {
+		border: 1px solid $form-background;
+	}
+}
+.background {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	z-index: 0;
+}
+.pattern {
+	background: url(../images/products/products/pattern3.png);
+	&:before {
+		@extend %absolute-details;
+		z-index: 0;
+	}
+}
+.pattern2 {
+	background: url(../images/products/products/prism.png);
+	&:before {
+		@extend %absolute-details;
+		z-index: 0;
+	}
+}
+.pattern-2 {
+	background: linear-gradient(-225deg, rgba(72, 1, 255, 0.7) 0, rgba(121, 24, 242, 0.7) 48%, rgba(172, 50, 228, 0.7) 100%), url(../images/products/products/subscribe.jpg);
+}
+.patter-image {
+	background-repeat: repeat !important;
+	background-size: auto !important;
+}
+.pattern-background.cover-image {
+	background-size: auto !important;
+}
+/*** Type write ***/
+
+.relative {
+	position: relative !important;
+}
+h1.animated-text {
+	font-family: monospace;
+	overflow: hidden;
+	border-right: .15em solid orange;
+	white-space: nowrap;
+	margin: 0 auto;
+	letter-spacing: .15em;
+	animation: typing 3.5s steps(30, end), blinking-cursor 0.5s step-end infinite;
+}
+a.typewrite {
+	color: $white!important;
+	font-size: 2.5rem;
+}
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+@keyframes blinking-cursor {
+	from, to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: orange;
+	}
+}
+
+/**** Particles ***/
+
+#particles-js {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	right: 0;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	z-index: 0;
+}
+/*-------- Header style -------*/

@@ -1,0 +1,441 @@
+//default
+$body-color         :  #f5f4fb;	
+$text-color         :  #312d65;
+$border-color       :  #e5e4f0;
+$border-dark-color  :  #efecfb;
+$form-background	:  #f8f7fc;
+$white				:  #fff;
+$black				:  #000;
+
+// colors
+$color-dark-purple	:  #282f3f;
+$color-success		:  #3eb750;
+$color-info			:  #23bcb9;
+$color-warning		:  #ffb609;
+$color-danger		:  #f96768;
+$color-blue			:  #4049ec;
+$color-azure		:  #00d6e6;
+$color-indigo		:  #6574cd;
+$color-purple		:  #6d33ff;
+$color-pink			:  #ec296b;
+$color-red			:  #fe6567;
+$color-orange		:  #e67605;
+$color-yellow		:  #ffb609;
+$color-lime			:  #63e600;
+$color-green		:  #3eb750;
+$color-teal			:  #05e6e6;
+$color-cyan			:  #17a2b8;
+$color-gray			:  #868e96;
+$color-gray-dark	:  #343a40;
+$color-dark			:  $text-color;
+$color-light		:  #e5e4f0;
+$color-muted		:  #797896;
+
+$colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+  (
+    "dark-purple"  	:  $color-dark-purple,
+    "success"  		:  $color-success,
+    "info"  		:  $color-info,
+    "warning" 		:  $color-warning,
+    "danger" 		:  $color-danger,
+    "blue" 			:  $color-blue,
+    "azure" 		:  $color-azure,
+    "indigo" 		:  $color-indigo,
+    "purple" 		:  $color-purple,
+    "pink" 			:  $color-pink,
+    "red" 			:  $color-red,
+    "orange" 		:  $color-orange,
+    "yellow" 		:  $color-yellow,
+    "lime" 			:  $color-lime,
+    "green" 		:  $color-green,
+    "teal" 			:  $color-teal,
+    "cyan" 			:  $color-cyan,
+    "gray" 			:  $color-gray,
+    "gray-dark" 	:  $color-gray-dark,
+    "dark" 			:  $color-dark,
+    "light" 		:  $color-light,
+    "muted"			:  $color-muted,
+  ),
+  $colors
+);
+
+// btn hover colors
+$btn-hover-dark-purple	:  #282f3f;
+$btn-hover-success		:  #349e44;
+$btn-hover-info			:  #23bcb9;
+$btn-hover-warning		:  #ffb609;
+$btn-hover-danger		:  #e44f50;
+$btn-hover-blue			:  #316cbe;
+$btn-hover-azure		:  #316cbe;
+$btn-hover-indigo		:  #0ea9b5;
+$btn-hover-purple		:  #923ce6;
+$btn-hover-pink			:  #e61470;
+$btn-hover-red			:  #b3160b;
+$btn-hover-orange		:  #fd811e;
+$btn-hover-yellow		:  #fa3;
+$btn-hover-lime			:  #69b829;
+$btn-hover-green		:  #3adfab;
+$btn-hover-teal			:  #05fafa;
+$btn-hover-cyan			:  #138496;
+$btn-hover-gray			:  #727b84;
+$btn-hover-gray-dark	:  #23272b;
+
+$hovercolors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$hovercolors: map-merge(
+  (
+    "dark-purple"  	:  $btn-hover-dark-purple,
+    "success"  		:  $btn-hover-success,
+    "info"  		:  $btn-hover-info,
+    "warning" 		:  $btn-hover-warning,
+    "danger" 		:  $btn-hover-danger,
+    "blue" 			:  $btn-hover-blue,
+    "azure" 		:  $btn-hover-azure,
+    "indigo" 		:  $btn-hover-indigo,
+    "purple" 		:  $btn-hover-purple,
+    "pink" 			:  $btn-hover-pink,
+    "red" 			:  $btn-hover-red,
+    "orange" 		:  $btn-hover-orange,
+    "yellow" 		:  $btn-hover-yellow,
+    "lime" 			:  $btn-hover-lime,
+    "green" 		:  $btn-hover-green,
+    "teal" 			:  $btn-hover-teal,
+    "cyan" 			:  $btn-hover-cyan,
+    "gray" 			:  $btn-hover-gray,
+    "gray-dark" 	:  $btn-hover-gray-dark,
+  ),
+  $hovercolors
+);
+
+	
+// white variables
+$white-05 : rgba($white, 0.05);
+$white-75 : rgba($white, 0.075);
+$white-08 : rgba($white, 0.08);
+$white-1  : rgba($white, 0.1);
+$white-2  : rgba($white, 0.2);
+$white-3  : rgba($white, 0.3);
+$white-4  : rgba($white, 0.4);
+$white-5  : rgba($white, 0.5);
+$white-6  : rgba($white, 0.6);
+$white-7  : rgba($white, 0.7);
+$white-8  : rgba($white, 0.8);
+$white-9  : rgba($white, 0.9);
+
+$whites: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$whites: map-merge(
+  (
+    "50"  : $white-05,
+    "75"  : $white-75,
+    "80"  : $white-08,
+    "100" : $white-1,
+    "200" : $white-2,
+    "300" : $white-3,
+    "400" : $white-4,
+    "500" : $white-5,
+    "600" : $white-6,
+    "700" : $white-7,
+    "800" : $white-8,
+    "900" : $white-9
+  ),
+  $whites
+);
+
+
+// black variables
+$black-05 : rgba(0, 0, 0, 0.05);
+$black-1  : rgba(0, 0, 0, 0.1);
+$black-2  : rgba(0, 0, 0, 0.2);
+$black-3  : rgba(0, 0, 0, 0.3);
+$black-4  : rgba(0, 0, 0, 0.4);
+$black-5  : rgba(0, 0, 0, 0.5);
+$black-6  : rgba(0, 0, 0, 0.6);
+$black-7  : rgba(0, 0, 0, 0.7);
+$black-8  : rgba(0, 0, 0, 0.8);
+$black-9  : rgba(0, 0, 0, 0.9);
+
+$blacks: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$blacks: map-merge(
+  (
+    "50"  : $black-05,
+    "100" : $black-1,
+    "200" : $black-2,
+    "300" : $black-3,
+    "400" : $black-4,
+    "500" : $black-5,
+    "600" : $black-6,
+    "700" : $black-7,
+    "800" : $black-8,
+    "900" : $black-9
+  ),
+  $blacks
+);
+
+
+// Theme 01
+$color-primary: #7167ff;
+$color-secondary: #f96768;
+
+// Theme 02
+$color-primary-02:#0b75b3;
+$btn-hover-primary-02:#1571a7;
+$color-secondary-02: #ec296b;
+$btn-hover-secondary-02:#c7275d;
+
+// Theme 03
+$color-primary-03:#3f469a;
+$btn-hover-primary-03:#123884;
+$color-secondary-03: #f0162f;
+$btn-hover-secondary-03:#d3142a;
+
+// Theme 04
+$color-primary-04:#5719ec;
+$btn-hover-primary-04:#341384;
+$color-secondary-04: #ea167c;
+$btn-hover-secondary-04:#960f50;
+
+// Theme 05
+$color-primary-05:#158878;
+$btn-hover-primary-05:#237936;
+$color-secondary-05: #e91e63;
+$btn-hover-secondary-05:#cc2f64;
+
+// Theme 06
+$color-primary-06:#711b8a;
+$btn-hover-primary-06:#72128e;
+$color-secondary-06: #e67c18;
+$btn-hover-secondary-06:#d07219;
+
+// Theme 07
+$color-primary-07:#8c37ff;
+$btn-hover-primary-07:#8337ea;
+$color-secondary-07: #f94a36;
+$btn-hover-secondary-07:#e03b28;
+
+// Theme 08
+$color-primary-08:#007bff;
+$btn-hover-primary-08:#0c6fda;
+$color-secondary-08: #ea167c;
+$btn-hover-secondary-08:#960f50;
+
+// Theme 09
+$color-primary-09:#5e4796;
+$btn-hover-primary-09:#4f3294;
+$color-secondary-09: #e67605;
+$btn-hover-secondary-09:#ca6908;
+
+// Theme 10
+$color-primary-10:#004063;
+$btn-hover-primary-10:#004063;
+$color-secondary-10: #ff8e01;
+$btn-hover-secondary-10:#de8617;
+
+// Images Path
+$browser-path: "../images/browsers";
+$flags-path: "../images/flags";
+$payment-path: "../images/payments";
+
+// Grid breakpoints
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$width-xs:0;
+$width-sm:576px;
+$width-md:768px;
+$width-lg:992px;
+$width-xl:1200px;
+
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$sizes: map-merge(
+  (
+    0: 0,
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 0.75rem,
+    4: 1rem,
+    5: 1.5rem,
+    6: 2rem,
+    7: 3rem,
+    8: 4rem,
+    9: 6rem,
+    10: 10%,
+    15: 15%,
+    20: 20%,
+    25: 25%,
+    30: 30%,
+    35: 35%,
+    40: 40%,
+    45: 45%,
+    50: 50%,
+    55: 55%,
+    60: 60%,
+    65: 65%,
+    70: 70%,
+    75: 75%,
+    80: 80%,
+    85: 85%,
+    90: 90%,
+    95: 95%,
+    100: 100%,
+    auto: auto
+  ),
+  $sizes
+);
+
+// This variable affects the `.zindex-*` classes.
+$zindex: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$zindex: map-merge(
+  (
+    0: 0,
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4,
+    5: 5,
+    6: 6,
+    7: 7,
+    8: 8,
+    9: 9,
+    10: 10,
+    14: 14,
+    15: 15,
+    16: 16,
+    19: 19,
+  ),
+  $zindex
+);
+
+// This variable affects the `.op-*` classes.
+$opacity: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$opacity: map-merge(
+  (
+    0: 0.0,
+    1: 0.1,
+    2: 0.2,
+    3: 0.3,
+    4: 0.4,
+    5: 0.5,
+    6: 0.6,
+    7: 0.7,
+    8: 0.8,
+    9: 0.9,
+    10: 1,
+  ),
+  $opacity
+);
+
+// This variable affects the `.op-*` classes.
+$custom-width: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$custom-width: map-merge(
+  (
+    0: 0,
+    1: 1px,
+    2: 2px,
+    3: 3px,
+    4: 4px,
+    5: 5px,
+    6: 6px,
+    7: 7px,
+    8: 8px,
+    9: 9px,
+    10: 10px,
+  ),
+  $custom-width
+);
+
+// Spacing
+
+$spacer: 1.5rem !default;
+$spacers: () !default;
+$spacers: map-merge((
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 0.75rem,
+  4: 1rem,
+  5: 1.5rem,
+  6: 2rem,
+  7: 3rem,
+  8: 4rem,
+  9: 6rem,
+  10: 9.3rem
+), $spacers);
+
+
+//font-weights
+$font-weight-light    		: 300 !important;
+$font-weight-normal  		: 400 !important;
+$font-weight-semibold  		: 500 !important;
+$font-weight-semibold2 		: 600 !important;
+$font-weight-bold 			: 700 !important;
+
+//Padding-spacer
+$space-xs: 0.25rem;
+$space-sm: 0.5rem;
+$space-md: 1rem;
+$space-lg: 1.5rem;
+$space-xl: 2rem;
+
+//shadows
+$box-shadow : 0 8px 10px 0 rgba($color-dark, 0.15);
+$shadow-sm  : 0 0.125rem 0.25rem rgba($color-dark, 0.075);
+$shadow     : 0 0.5rem 1rem rgba($color-dark, 0.15);
+$shadow-lg  : 0 1rem 3rem rgba($color-dark, 0.175);
+
+//font-sizes
+$default-value-size		:		0.0625rem;
+
+//button social Colors
+$facebook 	: #3b5998;
+$twitter  	: #1da1f2;
+$google		: #dd4b39;
+$youtube	: red;
+$vimeo		: #1ab7ea;
+$dribble	: #ea4c89;
+$github		: #181717;
+$instagram	: #e4405f;
+$pinterest	: #bd081c;
+$vk			: #6383a8;
+$rss		: #cc8400;
+$flickr		: #0063dc;
+$bitbucket	: #0052cc;
+
+$socail-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$socail-colors: map-merge(
+  (
+    "facebook"  	:  $facebook,
+    "twitter"  		:  $twitter,
+    "google"  		:  $google,
+    "youtube" 		:  $youtube,
+    "vimeo" 		:  $vimeo,
+    "dribble" 		:  $dribble,
+    "github" 		:  $github,
+    "instagram" 	:  $instagram,
+    "pinterest"		:  $pinterest,
+    "vk" 			:  $vk,
+    "rss" 			:  $rss,
+    "flickr" 		:  $flickr,
+    "bitbucket" 	:  $bitbucket,
+  ),
+  $socail-colors
+);
+
+//overflows
+$overflows: auto, hidden !default;

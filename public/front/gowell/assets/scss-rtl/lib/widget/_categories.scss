@@ -1,0 +1,57 @@
+/*-------- Categories -------*/
+.category-svg {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	margin: 0 auto;
+	line-height: 80px;
+	position: relative;
+	svg {
+		width: 45px;
+		height: 45px;
+		margin: 0 auto;
+	}
+}
+.category-svg-secondary svg {
+	fill: $white!important;
+	g {
+		fill: $white!important;
+	}
+}
+.category-svg.category-svg-secondary svg {
+	width: 35px;
+	height: 35px;
+}
+.all-categories .row {
+	.card-body {
+		border-bottom: 1px solid $border-color;
+	}
+	&:last-child .card-body {
+		border-bottom: 0 !important;
+	}
+}
+.cat-item {
+	position: relative;
+	a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+	.cat-img img {
+		width: 60px;
+		height: 60px;
+		margin: 0 auto;
+	}
+	.cat-desc {
+		margin-top: 20px;
+		color: $text-color;
+	}
+}
+.fea-ad .card, .cat-slide .card {
+	margin-bottom: 0;
+}
+/*-------- Categories -------*/

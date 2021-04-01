@@ -1,0 +1,18 @@
+// badges mixins
+
+//badge variant mixin
+@mixin badge-variant($parent, $color, $ignore-warning: true) {
+    #{$parent} {
+		color:$white;
+        background-color: $color !important;
+    }
+	#{$parent} {
+		&[href]{
+			&:focus, &:hover {
+				color:$white;
+				text-decoration: none;
+				background-color: darken($color, 10%) !important;
+			}
+		}
+	}
+}

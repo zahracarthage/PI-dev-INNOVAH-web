@@ -1,0 +1,7 @@
+/*-------- Z index -------*/
+@each $prop, $abbrev in (z-index: zindex) {
+  @each $size, $length in $zindex {
+    .#{$abbrev}-#{$size} { #{$prop}: $length !important; }
+  }
+}
+/*-------- Z index -------*/

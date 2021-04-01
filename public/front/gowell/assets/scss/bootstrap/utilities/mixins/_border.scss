@@ -1,0 +1,6 @@
+// border variamt mixin
+@mixin border-variant($parent, $color, $ignore-warning: true) {
+    #{$parent} {
+        border-color: $color !important;
+    }
+}

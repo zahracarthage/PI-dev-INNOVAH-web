@@ -1,0 +1,195 @@
+/*-------- Timeline -------*/
+.timeline {
+	position: relative;
+	margin: 0 0 2rem;
+	padding: 0;
+	list-style: none;
+	&:before {
+		background-color: $border-color;
+		position: absolute;
+		display: block;
+		content: '';
+		height: 100%;
+		top: 0;
+		bottom: 0;
+		left: 4px;
+	}
+}
+.timeline-item {
+	position: relative;
+	display: -ms-flexbox;
+	display: flex;
+	padding-left: 2rem;
+	margin: .5rem 0;
+	&:first-child:before, &:last-child:before {
+		content: '';
+		position: absolute;
+		background: $white;
+		width: 1px;
+		left: .25rem;
+	}
+	&:first-child {
+		margin-top: 0;
+		&:before {
+			top: 0;
+			height: .5rem;
+		}
+	}
+	&:last-child {
+		margin-bottom: 0;
+		&:before {
+			top: .5rem;
+			bottom: 0;
+		}
+	}
+}
+.timeline-badge {
+	position: absolute;
+	display: block;
+	width: .4375rem;
+	height: .4375rem;
+	left: 1px;
+	top: .5rem;
+	border-radius: 100%;
+	border: 1px solid $white;
+	background: #adb5bd;
+}
+.timeline-time {
+	white-space: nowrap;
+	margin-left: auto;
+	color: #cecde0;
+	font-size: 87.5%;
+}
+
+.timeline__item:after {
+	background: $white!important;
+}
+.timeline--horizontal .timeline-divider {
+	background: #dffbff !important;
+}
+.timeline__content {
+	background-color: $white;
+	border-radius: 10px;
+	display: block;
+	padding: 1.25rem;
+	position: relative;
+}
+
+.timeline-tour {
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		width: 12px;
+		height: 100%;
+		border: 1px dashed #efefef;
+		right: 2rem;
+		top: 1rem;
+		z-index: 0;
+		border: dotted;
+		border-color: #e7e7f5;
+		border-width: 2px 2px;
+		border-radius: 40px 0 0 0px;
+		border-left: 0;
+		border-top: 0;
+		border-bottom: 0;
+	}
+}
+.absolute-tour-timeline-icon {
+	width: 35px;
+	height: 35px;
+	background: $border-color;
+	position: absolute;
+	line-height: 35px;
+	top: 75%;
+	border-radius: 50%;
+	right: 15px;
+	text-align: center;
+	img {
+		width: 50%;
+		opacity: .5;
+	}
+}
+.timeline-data .timeline-reply-data {
+	position: relative;
+	&:before {
+		position: absolute;
+		top: -6px;
+		left: 12px;
+		display: inline-block;
+		border-right: 5px solid transparent;
+		border-bottom: 5px solid $border-color;
+		border-left: 5px solid transparent;
+		border-bottom-color: $border-color;
+		content: '';
+	}
+	&:after {
+		position: absolute;
+		top: -5px;
+		left: 12px;
+		display: inline-block;
+		border-right: 5px solid transparent;
+		border-bottom: 5px solid $white;
+		border-left: 5px solid transparent;
+		content: '';
+	}
+	&:before, &:after {
+		right: 12px;
+		left: auto;
+	}
+}
+.timeline-tour {
+	li {
+		padding-top: 50px;
+		&:first-child {
+			padding-top: 0;
+		}
+	}
+	.tour-before {
+		z-index: 1;
+		padding: 0px;
+	}
+}
+.hotel-absolute {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	cursor: pointer;
+	z-index: 1;
+	.btn {
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		text-align: center;
+		top: 45%;
+		position: absolute;
+		width: fit-content;
+		opacity: 0;
+	}
+}
+.hotel-card:hover .hotel-absolute .btn {
+	opacity: 1;
+}
+.service-time-line-main {
+	position: relative;
+	z-index: 1;
+}
+.service-timeline {
+	.service-card {
+		z-index: 1;
+	}
+	.service-card-svg svg {
+		fill: $white;
+	}
+}
+.service-timeline2 .service-card-svg svg {
+	fill: $white;
+}
+.time-title {
+	font-size: $default-value-size * 14;
+}
+/*-------- Timeline -------*/

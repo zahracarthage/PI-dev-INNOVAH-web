@@ -1,0 +1,146 @@
+/*------ List -------*/
+.list-style2 {
+	list-style: decimal;
+	padding-right: inherit;
+	ul {
+		list-style: decimal;
+		padding-right: 30px;
+	}
+	li {
+		line-height: 30px;
+	}
+}
+.list-style3 {
+	list-style: circle !important;
+	padding-right: inherit;
+	ul {
+		list-style: decimal;
+		padding-right: 30px;
+	}
+	li {
+		line-height: 30px;
+	}
+}
+.list-style4 {
+	list-style: lower-alpha;
+	padding-left: inherit;
+	ul {
+		list-style: decimal;
+		padding-left: 30px;
+	}
+	li {
+		line-height: 30px;
+	}
+}
+.list-style5 {
+	list-style: square;
+	padding-right: inherit;
+	ul {
+		list-style: decimal;
+		padding-right: 30px;
+	}
+	li {
+		line-height: 30px;
+	}
+}
+.list-style6 {
+	list-style: lower-roman;
+	padding-right: inherit;
+	ul {
+		list-style: decimal;
+		padding-right: 30px;
+	}
+	li {
+		line-height: 30px;
+	}
+}
+
+.list-style {
+    list-style: inherit;
+    padding-right: inherit;
+}
+.list-style ul {
+    list-style: inherit;
+    padding-right: 30px;
+}
+
+.listorder {
+	position: relative;
+	padding: .75rem 1.25rem;
+	margin-bottom: -1px;
+	background-color: $white;
+	border: 1px solid $border-color;
+	list-style-type: decimal;
+	list-style-position: inside;
+}
+.listorder1 {
+	position: relative;
+	padding: .75rem 1.25rem;
+	margin-bottom: -1px;
+	background-color: $white;
+	border: 1px solid $border-color;
+	list-style-type: upper-alpha;
+	list-style-position: inside;
+}
+.listunorder {
+	position: relative;
+	padding: .75rem 1.25rem;
+	margin-bottom: -1px;
+	background-color: $white;
+	border: 1px solid $border-color;
+	list-style-type: circle;
+	list-style-position: inside;
+}
+.listunorder1 {
+	position: relative;
+	padding: .75rem 1.25rem;
+	margin-bottom: -1px;
+	background-color: $white;
+	border: 1px solid $border-color;
+	list-style-type: square;
+	list-style-position: inside;
+}
+// order list-style
+
+.order-list li {
+	line-height: 30px;
+}
+
+.list-catergory ul li {
+	line-height: 2;
+}
+
+.list-media {
+	.media-img {
+		position: relative;
+		float: left;
+		width: 48px;
+		margin-right: 20px;
+	}
+	.info {
+		padding-left: 55px;
+		min-height: 40px;
+		height: auto;
+		position: relative;
+		h4 a {
+			font-size: $default-value-size * 16;
+			margin-top: 10px;
+		}
+		p {
+			font-size: $default-value-size * 13;
+		}
+		.text-right {
+			right: 0;
+			color: #8a8a8a;
+			top: 50%;
+			font-size: $default-value-size * 12;
+			transform: translateY(-50%);
+			-webkit-transform: translateY(-50%);
+			-moz-transform: translateY(-50%);
+			-o-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			margin-top: -28px;
+		}
+	}
+}
+/*------ List -------*/

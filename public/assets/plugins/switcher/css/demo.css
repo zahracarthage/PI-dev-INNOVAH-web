@@ -1,0 +1,303 @@
+/* Color Swicher CSS */
+
+.switcher {
+    width: 30px !important;
+    height: 40px !important;
+    display: inline-block;
+    margin: 4px 8px;
+    border-radius: 5px;
+    border: 0px solid #000;
+}
+.swichermainleft {
+  width: 100%;
+  float: left;
+}
+.wscolorcode {
+    display: inline-block;
+    margin: 4px 4px;
+    width: 45px;
+    height: 60px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/*-- color-1 --*/
+.color1{
+	background: #7167ff !important
+}
+
+/*-- color-2 --*/
+.color2{
+	background: #0b75b3 !important;
+}
+
+/*-- color-3 --*/
+.color3{
+	background: #3f469a !important;
+}
+
+/*-- color-4 --*/
+.color4{
+	background: #5719ec !important;
+}
+
+/*-- color-5 --*/
+.color5{
+	background: #158878 !important;
+}
+
+/*-- color-6 --*/
+.color6{
+	background: #711b8a !important;
+}
+
+/*-- color-7 --*/
+.color7{
+	background: #8c37ff !important;
+}
+
+/*-- color-8 --*/
+.color8{
+	background: #007bff !important;
+}
+
+/*-- color-9 --*/
+.color9{
+	background: #5e4796 !important;
+}
+
+/*-- color-10 --*/
+.color10{
+	background: #004063 !important;
+}
+/*-- color-11 --*/
+.color11{
+	background: linear-gradient(-225deg, rgba(69, 68, 221, 0.8) 48%, rgba(238, 124, 62, 0.8) 100%) ;
+}
+
+/*-- color-12 --*/
+.color12{
+	background: linear-gradient(-225deg, rgba(150, 52, 78, 0.8) 48%, rgba(181, 136, 53, 0.8) 100%);
+}
+
+/*-- color-13 --*/
+.color13{
+	background: linear-gradient(-225deg, rgba(107, 42, 255, 0.8) 48%, rgba(46, 185, 255, 0.8) 100%);
+}
+
+/*-- color-14 --*/
+.color14{
+	background: linear-gradient(-225deg, rgba(39, 49, 125, 0.8) 48%, rgba(144, 89, 48, 0.8) 100%);
+}
+
+/*-- color-15 --*/
+.color15{
+	background: linear-gradient(-225deg, rgba(74, 61, 184, 0.8) 48%, rgba(50, 228, 179, 0.8) 100%);
+}
+
+/*-- color-16 --*/
+.color16{
+	background: linear-gradient(-225deg, rgba(70, 26, 144, 0.8) 48%, rgba(194, 93, 149, 0.8) 100%);
+}
+
+/*-- color-17 --*/
+.color17{
+	background: linear-gradient(-225deg, rgba(24, 120, 138, 0.8) 48%, rgba(34, 78, 130, 0.8) 100%);
+}
+/*-- color-18 --*/
+.color18{
+	background: linear-gradient(-225deg, rgba(51, 71, 72, 0.8) 48%, rgba(95, 99, 74, 0.8) 100%);
+}
+/*-- color-19 --*/
+.color19{
+	background:linear-gradient(-225deg, rgba(48, 19, 21, 0.8) 48%, rgba(135, 20, 37, 0.8) 100%);
+}
+
+/*-- color-20 --*/
+.color20{
+	background: linear-gradient(-225deg, rgba(22, 66, 113, 0.8) 48%, rgba(52, 111, 84, 0.8) 100%);
+}
+
+
+.full-width .container{  
+    max-width:inherit !important;
+	width:95% !important;	
+	transition:all 0.5s ease;
+}
+.switch_section span {
+    font-size: 15px;
+    font-weight: 800;
+}
+.unbox {  
+   margin:0; 
+}
+
+.switch_section li{
+    width:100%;
+    height:30px;
+}
+.switch_section {
+    width: 100%;
+    height: auto;
+    list-style: none;
+    font-size: 1.1em;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* //////////////////  switch-1  //////////////// */
+.onoffswitch {
+    position: relative;
+    width: 30px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select: none;
+    
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    height: 15px;
+    padding: 0;
+    line-height: 16px;
+    border: 1px solid #CCCCCC;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    transition: background-color 0.3s ease-in;
+}
+.onoffswitch-label:before {
+    content: "";
+	height: 16px;
+    display: block;
+	width: 17px; 
+	margin: 0px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 13px;
+    border: 1px solid #CCCCCC; border-radius: 15px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label {
+    background-color: #49E845;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
+   border-color: #49E845;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+    right: 0px; 
+}
+
+/* //////////////////  switch-2  //////////////// */
+.onoffswitch2 {
+    position: relative;
+    width: 30px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select: none;
+    
+}
+.onoffswitch2-checkbox {
+    display: none;
+}
+.onoffswitch2-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    height: 15px;
+    padding: 0;
+    line-height: 16px;
+    border: 1px solid #CCCCCC;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    transition: background-color 0.3s ease-in;
+}
+.onoffswitch2-label:before {
+    content: "";
+	height: 16px;
+    display: block;
+	width: 17px; 
+	margin: 0px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 13px;
+    border: 1px solid #CCCCCC; border-radius: 15px;
+    transition: all 0.3s ease-in 0s; 
+}
+
+.onoffswitch2-checkbox:checked + .onoffswitch2-label:before {
+    right: 0px; 
+}
+
+/* //////////////////  switch-3  //////////////// */
+.onoffswitch3 {
+    position: relative;
+    width: 30px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select: none;
+    
+}
+.onoffswitch3-checkbox {
+    display: none;
+}
+.onoffswitch3-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    height: 15px;
+    padding: 0;
+    line-height: 16px;
+    border: 1px solid #CCCCCC;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    transition: background-color 0.3s ease-in;
+}
+.onoffswitch3-label:before {
+    content: "";
+	height: 16px;
+    display: block;
+	width: 17px; 
+	margin: 0px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 13px;
+    border: 1px solid #CCCCCC; border-radius: 15px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch3-checkbox:checked + .onoffswitch3-label {
+    background-color: #49E845;
+}
+.onoffswitch3-checkbox:checked + .onoffswitch-label3, .onoffswitch3-checkbox:checked + .onoffswitch3-label:before {
+   border-color: #49E845;
+}
+.onoffswitch3-checkbox:checked + .onoffswitch3-label:before {
+    right: 0px; 
+}
+
+/*light-header*/
+.light-header .top-bar{
+	border-bottom: 1px solid #e8ebf3;
+    background: #fff;
+}
+.light-header .top-bar .text-dark {
+    color: #070510!important;
+}
+.light-header .select-country .select2-container--default .select2-selection--single .select2-selection__rendered{
+	color: #504e70 !important;
+}
+
+/*Dark-header*/
+.dark-header .top-bar{
+	border-bottom: 1px solid transparent;
+    background: #0b0c19;
+}
+.dark-header .top-bar .text-dark {
+    color: #fff!important;
+}
+.dark-header .select-country .select2-container--default .select2-selection--single .select2-selection__rendered{
+	color: #fff !important;
+}

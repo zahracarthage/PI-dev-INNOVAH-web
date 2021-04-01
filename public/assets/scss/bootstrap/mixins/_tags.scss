@@ -1,0 +1,7 @@
+// tags variant mixin
+@mixin tag-variant($parent, $color, $ignore-warning: true) {
+    #{$parent} {
+        background-color: $color !important;
+        color: $white !important;
+    }
+}

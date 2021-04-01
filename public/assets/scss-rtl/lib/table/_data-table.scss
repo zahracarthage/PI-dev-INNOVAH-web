@@ -1,0 +1,26 @@
+/*-------- Data tables -------*/
+
+div.dataTables_wrapper div.dataTables_filter input {
+	margin-left: .5em;
+	display: inline-block;
+	width: auto;
+	height: calc(1.8125rem + 2px);
+	border-color: $border-color;
+}
+.dataTables_wrapper .dataTables_length select {
+	border-color: $border-color !important;
+	color: $text-color;
+}
+
+.dataTables_wrapper .dataTables_info {
+    float: right !important;
+}
+.dataTables_wrapper .dataTables_paginate {
+    float: left !important;
+}
+.dataTables_wrapper .dataTables_length {
+    float: right !important;;
+}
+.dataTables_wrapper .dataTables_filter {
+    float: left  !important;;
+}

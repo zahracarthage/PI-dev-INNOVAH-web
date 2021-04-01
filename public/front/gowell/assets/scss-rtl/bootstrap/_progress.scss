@@ -1,0 +1,50 @@
+/*-------- Progress Bar -------*/
+.progress {
+	display: -ms-flexbox;
+	display: flex;
+	height: 1rem;
+	overflow: hidden;
+	font-size: .703125rem;
+	background-color: $border-color;
+	border-radius: $default-value-size * 2;
+	position: relative;
+}
+.progress-bar {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-ms-flex-pack: center;
+	justify-content: center;
+	color: $white;
+	text-align: center;
+	white-space: nowrap;
+	transition: width .6s ease;
+	font-weight: $font-weight-bold;
+}
+.progress-content {
+	margin-bottom: 16.5px;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+.progress-xs {
+	height: $default-value-size * 4;
+	.progress-bar {
+		height: $default-value-size * 4;
+	}
+}
+.progress-sm {
+	height: $default-value-size * 8;
+	.progress-bar {
+		height: $default-value-size * 8;
+	}
+}
+.progress-lg {
+	height: $default-value-size * 20;
+	.progress-bar {
+		height: $default-value-size * 20;
+	}
+}
+
+/*-------- Progress Bar -------*/

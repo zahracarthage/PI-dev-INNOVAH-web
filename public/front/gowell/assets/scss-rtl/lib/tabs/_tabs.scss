@@ -1,0 +1,149 @@
+/*-------- Tabs -------*/
+.tab-content> {
+	.tab-pane {
+		display: none;
+	}
+	.active {
+		display: block;
+	}
+}
+.settings-tab .tabs-menu {
+	margin-bottom: 25px;
+	border: 1px solid $border-color;
+	border-radius: 4px;
+	li {
+		width: 33.3%;
+		display: block;
+		a {
+			padding: .8rem 1rem;
+			background: $white;
+			display: block;
+			text-align: center;
+			border-right: 1px solid $border-color;
+		}
+		&:last-child a {
+			border-right: 0;
+		}
+		a.active {
+			border-radius: 0px;
+			text-align: center;
+		}
+	}
+}
+.ads-tabs .tabs-menus {
+	margin-bottom: 2rem;
+	ul li {
+		a {
+			border: 1px solid $border-color;
+			color: $text-color;
+			padding: 10px 20px 11px 20px;
+			border-radius: 4px;
+			background: $border-color;
+			margin-left:1rem;
+		}
+		margin-right: 1rem;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+.tab-style-width .tabs-menu1 ul li {
+	width: 48%;
+	margin: 0 3px 10px 3px;
+}
+.listing-tabs-price {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+}
+.tab_wrapper {
+	>ul {
+		li {
+			border: 1px solid $border-color;
+			border-top: 3px solid $border-color;
+		}
+		border-bottom: 1px solid $border-color;
+	}
+	&.right_side {
+		.content_wrapper {
+			border: 1px solid $border-color;
+		}
+		>ul {
+			li {
+				&.active {
+					border-color: $border-color;
+				}
+				&:after {
+					background: $border-color;
+				}
+			}
+			border-bottom: 1px solid $border-color;
+		}
+	}
+}
+.usertab-list {
+	display: inline-block;
+	li {
+		width: 50%;
+		margin-bottom: .85rem;
+		float: left;
+		border-bottom: 1px dashed $border-color;
+		padding-bottom: .85rem;
+	}
+}
+.tabs-menu ul li {
+	a {
+		padding: 8px 20px 8px 20px;
+		display: block;
+		background: $white;
+		margin-right: 5px;
+		border-radius: 5px;
+		border: 1px solid $border-color;
+		font-weight: $font-weight-semibold;
+	}
+	.active {
+		color: $white;
+		border-radius: 5px;
+		display: block;
+	}
+}
+.tabs-menu1 ul li {
+	a {
+		padding: 10px 20px 11px 20px;
+		display: block;
+		background: $white;
+		border: 1px solid $border-color;
+		border-radius: 5px;
+		margin-right: 2px;
+	}
+	.active {
+		border-radius: 5px;
+		background: $white;
+	}
+}
+.tabs-menu-body {
+	padding: 15px;
+	border: 1px solid $border-color;
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+.tab-menu-heading {
+	padding: 20px;
+	border: 1px solid $border-color;
+	border-bottom: 0;
+}
+.tab_wrapper .content_wrapper .tab_content.active p:last-child {
+	margin-bottom: 0;
+}
+.tab-price-value {
+	position: absolute;
+	padding: 6px 10px;
+	border-radius: 3px;
+	bottom: 15px;
+	left: 15px;
+	color: $white;
+	text-align: center;
+	background: linear-gradient(rgba($text-color, 0.75) 10%, rgba($text-color, 0.75));
+}
+/*-------- Tabs -------*/

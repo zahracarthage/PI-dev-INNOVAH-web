@@ -1,0 +1,65 @@
+/*-------- Panel -------*/
+.expanel {
+	margin-bottom: 20px !important;
+	background-color: $white!important;
+	border: 1px solid $border-color !important;
+	border-radius: 4px !important;
+	-webkit-box-shadow: 0 1px 1px rgba($text-color, 0.05) !important;
+	box-shadow: 0 1px 1px rgba($text-color, 0.05) !important;
+}
+.expanel-default>.expanel-heading {
+	background-color: $border-color !important;
+	border: 1px solid $border-color !important;
+}
+.expanel-heading {
+	padding: 10px 15px !important;
+	border-bottom: 1px solid $border-color;
+	border-top-left-radius: 3px !important;
+	border-top-right-radius: 3px !important;
+}
+.expanel-footer {
+	padding: 10px 15px !important;
+	background-color: $border-color !important;
+	border-top: 1px solid $border-color !important;
+	border-bottom-right-radius: 3px !important;
+	border-bottom-left-radius: 3px !important;
+}
+.expanel-body {
+	padding: 15px !important;
+}
+.expanel-primary {
+	border-color: $border-color !important;
+}
+.expanel-success {
+	border-color: $color-success !important;
+}
+.expanel-danger {
+	border-color: $color-danger !important;
+}
+.expanel-primary>.expanel-heading {
+	color: #7b838f !important;
+	background-color: $border-color !important;
+	border-color: #eef2f9 !important;
+}
+.expanel-success>.expanel-heading {
+	color: $white!important;
+	background-color: $color-success !important;
+	border-color: $color-success !important;
+}
+.expanel-danger>.expanel-heading {
+	color: $white!important;
+	background-color: $color-danger !important;
+	border-color: $color-danger !important;
+}
+.expanel-warning>.expanel-heading {
+	color: $white!important;
+	background-color: $color-warning !important;
+	border-color: $color-warning !important;
+}
+.expanel-title {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	font-size: $default-value-size * 16 !important;
+	color: inherit !important;
+}
+/*-------- Panel -------*/

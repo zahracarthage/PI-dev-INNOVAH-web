@@ -1,0 +1,225 @@
+/*-------- Input Styles -------*/
+
+.input-lg {
+	height: 46px !important;
+	padding: 10px 16px;
+	font-size: $default-value-size * 14;
+	line-height: 1.3333333;
+	border-radius: $default-value-size * 5;
+}
+.input-sm {
+	height: 30px !important;
+	padding: 5px 10px;
+	font-size: $default-value-size * 12;
+	line-height: 1.5;
+	border-radius: $default-value-size * 5;
+}
+.col-form-label {
+	padding-top: calc(.375rem + 1px);
+	padding-bottom: calc(.375rem + 1px);
+	margin-bottom: 0;
+	font-size: inherit;
+	line-height: 1.6;
+}
+.col-form-label-lg {
+	padding-top: calc(.5rem + 1px);
+	padding-bottom: calc(.5rem + 1px);
+	font-size: 1.125rem;
+	line-height: 1.44444444;
+}
+.col-form-label-sm {
+	padding-top: calc(.25rem + 1px);
+	padding-bottom: calc(.25rem + 1px);
+	font-size: .875rem;
+	line-height: 1.14285714;
+}
+.form-control-plaintext {
+	display: block;
+	width: 100%;
+	padding-top: .375rem;
+	padding-bottom: .375rem;
+	margin-bottom: 0;
+	line-height: 1.6;
+	color: #3d4e67;
+	background-color: transparent;
+	border: solid transparent;
+	border-width: 1px 0;
+	&.form-control-lg, &.form-control-sm {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+%validfeedback{
+	.valid-feedback, .valid-tooltip {
+		display: block;
+	}
+}
+%feedback-content{
+	display: none;
+	width: 100%;
+	margin-top: .25rem;
+	font-size: 87.5%;
+}
+%tooltip-content{
+	position: absolute;
+	top: 100%;
+	z-index: 5;
+	display: none;
+	max-width: 100%;
+	padding: .5rem;
+	margin-top: .1rem;
+	font-size: .875rem;
+	line-height: 1;
+	color: $white;
+	border-radius: .2rem;
+}
+%invalid-feedback{
+	.invalid-feedback, .invalid-tooltip {
+		display: block;
+	}
+}
+.valid-feedback {
+	@extend %feedback-content;
+	color: #3eb750;
+}
+.valid-tooltip {
+	@extend %tooltip-content;
+	background-color: rgba(94, 186, 0, 0.8);	
+}
+.custom-select.is-valid, .form-control.is-valid {
+	border-color: #3eb750;
+}
+.was-validated {
+	.custom-select:valid, .form-control:valid {
+		border-color: #3eb750;
+	}
+}
+.custom-select.is-valid:focus, .form-control.is-valid:focus {
+	border-color: #3eb750;
+	box-shadow: 0 0 0 2px rgba(94, 186, 0, 0.25);
+}
+.was-validated {
+	.custom-select:valid:focus, .form-control:valid:focus {
+		border-color: #3eb750;
+		box-shadow: 0 0 0 2px rgba(94, 186, 0, 0.25);
+	}
+}
+.custom-select.is-valid~ {
+	@extend %validfeedback;
+}
+.form-control.is-valid~ {
+	@extend %validfeedback;
+}
+.was-validated {
+	.custom-select:valid~ {
+		@extend %validfeedback;
+	}
+	.form-control:valid~ {
+		@extend %validfeedback;
+	}
+}
+.form-check-input.is-valid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label {
+	color: #3eb750;
+}
+.form-check-input.is-valid~ {
+	@extend %validfeedback;
+}
+.was-validated .form-check-input:valid~ {
+	@extend %validfeedback;
+}
+.custom-control-input.is-valid~.custom-control-label, .was-validated .custom-control-input:valid~.custom-control-label {
+	color: #3eb750;
+}
+.custom-control-input.is-valid~.custom-control-label::before, .was-validated .custom-control-input:valid~.custom-control-label::before {
+	background-color: #9eff3b;
+}
+.custom-control-input.is-valid~ {
+	@extend %validfeedback;
+}
+.was-validated .custom-control-input:valid~ {
+	@extend %validfeedback;
+}
+.custom-control-input.is-valid:checked~.custom-control-label::before, .was-validated .custom-control-input:valid:checked~.custom-control-label::before {
+	background-color: #78ed00;
+}
+.custom-control-input.is-valid:focus~.custom-control-label::before, .was-validated .custom-control-input:valid:focus~.custom-control-label::before {
+	box-shadow: 0 0 0 1px $border-color, 0 0 0 2px rgba(94, 186, 0, 0.25);
+}
+.custom-file-input.is-valid~.custom-file-label, .was-validated .custom-file-input:valid~.custom-file-label {
+	border-color: #3eb750;
+}
+.custom-file-input.is-valid~.custom-file-label::before, .was-validated .custom-file-input:valid~.custom-file-label::before {
+	border-color: inherit;
+}
+.custom-file-input.is-valid~ {
+	@extend %validfeedback;
+}
+.was-validated .custom-file-input:valid~ {
+	@extend %validfeedback;
+}
+.custom-file-input.is-valid:focus~.custom-file-label, .was-validated .custom-file-input:valid:focus~.custom-file-label {
+	box-shadow: 0 0 0 2px rgba(94, 186, 0, 0.25);
+}
+.invalid-feedback {
+	@extend %feedback-content;
+}
+.invalid-tooltip {
+	@extend %tooltip-content;
+	background-color: rgba(205, 32, 31, 0.8);
+}
+.custom-select.is-invalid~ {
+	@extend %invalid-feedback;
+}
+.form-control.is-invalid~ {
+	@extend %invalid-feedback;
+}
+.was-validated {
+	.custom-select:invalid~ {
+		@extend %invalid-feedback;
+	}
+	.form-control:invalid~ {
+		@extend %invalid-feedback;
+	}
+}
+.form-check-input.is-invalid~ {
+	@extend %invalid-feedback;
+}
+.was-validated .form-check-input:invalid~ {
+	@extend %invalid-feedback;
+}
+.custom-control-input.is-invalid~.custom-control-label::before, .was-validated .custom-control-input:invalid~.custom-control-label::before {
+	background-color: #ec8080;
+}
+.custom-control-input.is-invalid~ {
+	@extend %invalid-feedback;
+}
+.was-validated .custom-control-input:invalid~ {
+	@extend %invalid-feedback;
+}
+.custom-control-input.is-invalid:checked~.custom-control-label::before, .was-validated .custom-control-input:invalid:checked~.custom-control-label::before {
+	background-color: #e23e3d;
+}
+.custom-control-input.is-invalid:focus~.custom-control-label::before, .was-validated .custom-control-input:invalid:focus~.custom-control-label::before {
+	box-shadow: 0 0 0 1px $border-color, 0 0 0 2px rgba(205, 32, 31, 0.25);
+}
+.custom-file-input.is-invalid~.custom-file-label::before, .was-validated .custom-file-input:invalid~.custom-file-label::before {
+	border-color: inherit;
+}
+.custom-file-input.is-invalid~ {
+	@extend %invalid-feedback;
+}
+.was-validated .custom-file-input:invalid~ {
+	@extend %invalid-feedback;
+}
+.custom-file-input.is-invalid:focus~.custom-file-label, .was-validated .custom-file-input:invalid:focus~.custom-file-label {
+	box-shadow: 0 0 0 2px rgba(205, 32, 31, 0.25);
+}
+
+.form-control.is-valid, .was-validated .form-control:valid{
+    background-position: left calc(.375em + .1875rem) center !important;
+}
+.form-control.is-invalid, .was-validated .form-control:invalid{
+   background-position: left calc(.375em + .1875rem) center;
+}
+/*-------- Input Styles -------*/

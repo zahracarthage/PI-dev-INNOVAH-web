@@ -1,0 +1,203 @@
+/*------ Special badges -------*/
+%badge-offer-style{
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	content: "";
+	height: 0;
+	left: 0;
+	position: absolute;
+	top: 33px;
+	width: 0;
+}
+.badge-offer {
+	position: absolute;
+	top: 0;
+	left: 15px;
+	z-index: 2;
+	padding: 5px;
+	font-weight: $font-weight-normal;
+	text-align: center;
+	color: $white;
+	font-size: $default-value-size * 16;
+	height: 33px;
+	width: 50px;
+	margin-bottom: 0;
+	&.bg-danger:after {
+		border-top: 12px solid $color-danger;
+		@extend %badge-offer-style;
+	}
+	&.bg-secondary:after {
+		@extend %badge-offer-style;
+	}
+	&.bg-primary:after {
+		border-top: 12px solid $color-primary;
+		@extend %badge-offer-style;
+	}
+	&.bg-success:after {
+		border-top: 12px solid $color-success;
+		@extend %badge-offer-style;
+	}
+	&.bg-info:after {
+		border-top: 12px solid $color-info;
+		@extend %badge-offer-style;
+	}
+	&.bg-warning:after {
+		border-top: 12px solid $color-warning;
+		@extend %badge-offer-style;
+	}
+	&.bg-purple:after {
+		border-top: 12px solid $color-purple;
+		@extend %badge-offer-style;
+	}
+	&.bg-pink:after {
+		border-top: 12px solid $color-pink;
+		@extend %badge-offer-style;
+	}
+}
+
+.badge-offer1 {
+	position: absolute;
+	top: 0;
+	right: 15px;
+	z-index: 2;
+	padding: 5px;
+	font-weight: $font-weight-normal;
+	text-align: center;
+	color: $white;
+	font-size: $default-value-size * 16;
+	height: 33px;
+	width: 50px;
+	margin-bottom: 0;
+	&.bg-danger:after {
+		border-top: 12px solid $color-danger;
+		@extend %badge-offer-style;
+	}
+	&.bg-secondary:after {
+		@extend %badge-offer-style;
+	}
+	&.bg-primary:after {
+		border-top: 12px solid $color-primary;
+		@extend %badge-offer-style;
+	}
+	&.bg-success:after {
+		border-top: 12px solid $color-success;
+		@extend %badge-offer-style;
+	}
+	&.bg-info:after {
+		border-top: 12px solid $color-info;
+		@extend %badge-offer-style;
+	}
+	&.bg-warning:after {
+		border-top: 12px solid $color-warning;
+		@extend %badge-offer-style;
+	}
+	&.bg-purple:after {
+		border-top: 12px solid $color-purple;
+		@extend %badge-offer-style;
+	}
+	&.bg-pink:after {
+		border-top: 12px solid $color-pink;
+		@extend %badge-offer-style;
+	}
+}
+
+
+.special-offer {
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	top: -20px;
+	text-align: center;
+	padding-top: 20px;
+	border-radius: 50% 30% 0% 30%;
+	right: -20px;
+	transition: all 0.4s;
+	opacity: 1;
+	.percentage {
+		font-size: $default-value-size * 16;
+		font-weight: $font-weight-semibold2;
+		padding-top: 9px;
+		padding-right: 20px;
+	}
+	.percentage-off {
+		font-size: $default-value-size * 12;
+		padding-left: 12px;
+	}
+}
+.special-offer2 {
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	top: 0px;
+	text-align: center;
+	padding-top: 13px;
+	border-radius: 50% 5px 50% 40%;
+	right: 0px;
+	transition: all 0.4s;
+	opacity: 1;
+	z-index: 9;
+	.percentage {
+		font-size: $default-value-size * 16;
+		font-weight: $font-weight-semibold2;
+		padding-top: 0px;
+		padding-left: 0px;
+		color: $white;
+	}
+	.percentage-off {
+		font-size: $default-value-size * 12;
+		padding-left: 0px;
+		color: $white;
+	}
+}
+.special-offer .percentage-off span, .special-offer2 .percentage-off span {
+	display: none;
+}
+.special-badge-offer {
+	position: absolute;
+	z-index: 2;
+	color: $white;
+	margin: 0 auto;
+	text-align: center;
+	width: 220px;
+	height: 220px;
+	background: #ffa531;
+	padding-top: 40px;
+	border-radius: 50%;
+	border: 5px solid #f7d075;
+	top: -50px;
+	left: 50px;
+	span {
+		padding: 6px 20px;
+		border: 1px solid rgba($white, 0.3);
+		border-radius: 20px;
+	}
+	h3 {}
+	h2 {
+		margin-bottom: 20px;
+	}
+}
+.badge-absolute.badge-circle {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	display: inline-block;
+	top: -10px;
+	right: -10px;
+	z-index: 2;
+	color: $white;
+	font-size: $default-value-size * 14;
+	font-weight: $font-weight-semibold;
+	line-height: 1.2;
+	padding-top: 11px;
+	span {
+		display: block;
+		font-size: $default-value-size * 10;
+		font-weight: $font-weight-normal;
+		text-transform: uppercase;
+	}
+}
+.review_score.badge {
+	line-height: 1.2;
+}
+/*------ Special badges -------*/

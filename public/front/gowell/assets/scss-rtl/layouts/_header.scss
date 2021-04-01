@@ -1,0 +1,353 @@
+/*-------- Header -------*/
+.header {
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	width: 100%;
+	z-index: 100;
+}
+body.fixed-header .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1030;
+}
+@media print {
+	.header {
+		display: none;
+	}
+}
+.header {
+	.dropdown-menu {
+		margin-top: 0;
+	}
+	.mega-menu {
+		width: 350px;
+	}
+}
+.header-brand {
+	color: inherit;
+	margin-left: 1rem;
+	font-size: 1.25rem;
+	white-space: nowrap;
+	font-weight: $font-weight-semibold2;
+	padding: 0;
+	transition: .3s opacity;
+	line-height: 2.9rem;
+}
+%header-style{
+	color: inherit;
+	margin-right: 0;
+	font-size: 1.25rem;
+	white-space: nowrap;
+	font-weight: $font-weight-semibold2;
+	padding: 0;
+	transition: .3s opacity;
+	.header-brand-img {
+		margin-left: 0;
+	}
+}
+%width-style{
+	width: 2rem;
+	height: 2rem;
+}
+.app-header .header-brand {
+	@extend %header-style;
+	line-height: 2.9rem;
+	min-width: 200px;
+	text-align: center;	
+}
+.app-header1 .header-brand {
+	@extend %header-style;
+	line-height: 0;
+	min-width: 190px;
+	margin-top: -1.5px;
+	margin-right: 17px;
+}
+.header-brand:hover {
+	color: inherit;
+	text-decoration: none;
+}
+.header-brand-img {
+	height: 2.5rem;
+	line-height: 2rem;
+	vertical-align: bottom;
+	margin-right: .5rem;
+	width: auto;
+}
+.header-avatar {
+	@extend %width-style;
+	display: inline-block;
+	vertical-align: bottom;
+	border-radius: 50%;
+}
+.header-btn {
+	display: inline-block;
+	@extend %width-style;
+	line-height: 2rem;
+	text-align: center;
+	font-size: 1rem;
+	&.has-new {
+		position: relative;
+		&:before {
+			content: '';
+			width: 6px;
+			height: 6px;
+			position: absolute;
+			top: 4px;
+			right: 4px;
+			border-radius: 50%;
+		}
+	}
+}
+.header-toggler {
+	@extend %width-style;
+	position: relative;
+	color: $white;
+	&:hover {
+		color: $white;
+	}
+}
+.header-toggler-icon {
+	position: absolute;
+	width: 1rem;
+	height: 2px;
+	color: inherit;
+	background: currentColor;
+	border-radius: $default-value-size * 5;
+	top: 50%;
+	left: 50%;
+	margin: -2px 0 0 -.5rem;
+	box-shadow: 0 5px currentColor, 0 -5px currentColor;
+}
+
+.form-control.header-search {
+	background: rgba($white, 0.1);
+	border: 1px solid rgba($white, 0.2) !important;
+	color: $white;
+	width: 100%;
+	border-radius: 12em;
+	&::placeholder {
+		color: $white;
+	}
+	&:focus, &:hover {
+		border-bottom: 1px solid rgba($white, 0.2) !important;
+		border: 0;
+		box-shadow: none;
+	}
+}
+.header-main .social-icons {
+	float: right;
+	li {
+		color: $text-color;
+		margin-right: 35px;
+		display: inline-block;
+		list-style: none;
+		font-size: $default-value-size * 20;
+		a {
+			color: $text-color;
+		}
+	}
+}
+.header-search {
+	padding: 1.5rem 1.5rem;
+	background: $white;
+	.header-icons {
+		.header-icons-link {
+			display: flex;
+			margin-bottom: 0;
+			li a {
+				background: transparent;
+				width: 40px;
+				height: 40px;
+				border-radius: 50px;
+				text-align: center;
+				line-height: 2;
+				margin-right: 5px;
+				display: block;
+				border: 1px solid $border-color;
+				color: $text-color;
+				font-size: $default-value-size * 20 !important;
+			}
+			.header-icons-link1, .header-icons-link2 {
+				width: 2.5rem;
+				text-align: center;
+				height: 2.5rem;
+				font-size: $default-value-size * 16;
+				position: relative;
+				line-height: 2.7rem;
+			}
+		}
+		.header-icons-link1 .main-badge1 {
+			position: absolute;
+			top: -3px;
+			left: -8px;
+			text-align: center;
+			font-size: $default-value-size * 10;
+			padding: 0.2rem 0.32rem !important;
+		}
+		.header-icons-link.icons li {
+			background: $white;
+		}
+	}
+}
+
+.header-search {
+	.header-inputs .input-group-append.searchicon {
+		top: 10px;
+		right: 25px;
+		position: relative;
+	}
+	.header-search-logo {
+		margin-right: 1rem;
+	}
+	.header-nav .nav-cart .icon-cart {
+		i {
+			font-size: $default-value-size * 18;
+			color: #cecde0;
+		}
+		a {
+			color: #cecde0;
+		}
+	}
+}
+.header-nav {
+	display: flex;
+}
+.header-links {
+	padding: 3px;
+	li {
+		margin: 5px;
+		a {
+			padding: 9px 18px;
+			border-radius: $default-value-size * 5;
+		}
+	}
+}
+.header-main {
+	.top-bar .contact {
+		padding-right: 15px;
+		li {
+			margin: 0;
+			padding: 8px 0;
+			padding-left: 15px;
+			border-left: 1px solid $border-color;
+			height: 40px;
+			line-height: 26px;
+		}
+	}
+	.top-bar-right .custom {
+		display: flex;
+		border-right: 1px solid $border-color;
+		li {
+			padding: 0px 12px;
+			font-size: $default-value-size * 13;
+			border-left: 1px solid $border-color;
+			line-height:40px;
+			&:last-child {
+				margin-right: 0;
+			}
+			a{
+				line-height:40px;
+			}
+			.dropdown-menu .dropdown-item{
+				line-height:22px;
+			}
+		}
+	}
+}
+
+.header-main {
+	.ace-responsive-menu li a {
+		color: $text-color;
+		&:hover {
+			color: $white;
+		}
+		&:focus {
+			color: $black;
+		}
+	}
+	.post-btn {
+		float: right;
+		margin-left: auto;
+	}
+}
+
+.header {
+	.nav-item .badge, .nav-link .badge {
+		position: absolute;
+		top: 0;
+		right: -1px;
+		min-width: 1rem;
+		font-size: $default-value-size * 13;
+	}
+}
+#headerMenuCollapse {
+	.nav-item .badge, .nav-link .badge {
+		position: relative;
+		min-width: 1rem;
+		font-size: $default-value-size * 10;
+		font-weight: $font-weight-semibold;
+	}
+}
+
+.header-right-icons{
+	.dropdown-menu.show {
+		margin-top:15px;
+	}
+}
+
+.header-style03 {
+	.sticky-wrapper {
+		position: relative;
+	}
+	.horizontal-main {
+		background: $white!important;
+		box-shadow: 2px 3px 4.7px 0.3px rgba($text-color, 0.24);
+	}
+	.horizontalMenu>.horizontalMenu-list>li>a {
+		color: $text-color;
+		>.fa {
+			color: #797896;
+		}
+		&.active .fa {
+			color:$white;
+		}
+	}
+}
+.header-menu1 {
+	float: none !important;
+}
+.header-transparent {
+	background: rgba(0, 0, 0, 0.05);
+}
+.app-selector {
+	box-shadow: 0 1px 2px 0 rgba($text-color, 0.05);
+	min-width: 16rem;
+}
+.country-selector .avatar {
+	width: 1.4rem;
+	height: 1.4rem;
+	line-height: 1rem;
+	border-radius: 50%;
+	border: 1px solid $border-color;
+}
+.user p {
+	&.u-name {
+		margin: 0;
+		font-size: $default-value-size * 14;
+		font-weight: $font-weight-semibold2;
+		line-height: 18px;
+		color: #cecde0;
+	}
+	&.u-designation {
+		margin: 0;
+		font-size: $default-value-size * 11;
+		color: #cecde0;
+	}
+}
+.online {
+	margin-left: 20px;
+	margin-top: -3px;
+}
+/*-------- Header -------*/

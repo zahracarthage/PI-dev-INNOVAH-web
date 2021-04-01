@@ -1,0 +1,99 @@
+// buttons mixins
+
+// btn variant mixins
+@mixin btn-variant($parent, $color, $ignore-warning: true) {
+    #{$parent} {
+		color:$white;
+        background-color: $color !important;
+        border-color: $color !important;
+		box-shadow: 0px 0px 12px 0px rgba($color, 0.35);
+    }
+	#{$parent}{
+		@include btn-hover-focus-active {
+			color:$white;
+			background-color: darken($color, 10%) !important;
+			border-color: darken($color, 10%) !important;
+			box-shadow: 0px 0px 12px 0px rgba($color, 0.35);
+		}
+	}
+	#{$parent}{
+		@include btn-disabled-active{
+			color:$white;
+			background-color: darken($color, 10%) !important;
+			border-color: darken($color, 10%) !important;
+			box-shadow: 0px 0px 12px 0px rgba($color, 0.35);
+			&:focus{
+				color:$white;
+				background-color: darken($color, 10%) !important;
+				border-color: darken($color, 10%) !important;
+				box-shadow: 0px 0px 12px 0px rgba($color, 0.35);
+			}
+		}
+	}
+	.show>#{$parent}.dropdown-toggle{
+		color:$white;
+		background-color: darken($color, 10%) !important;
+		border-color: darken($color, 10%) !important;
+		&:focus{
+			box-shadow: 0px 0px 12px 0px rgba($color, 0.35);
+		}
+	}
+}
+
+// btn disabled mixin
+@mixin btn-disabled-active() {
+	&:not(:disabled):not(.disabled){
+		&.active, &:active {
+			@content;
+		}
+	}
+}
+
+// btn hover focus mixin
+@mixin btn-hover-focus-active() {
+	&:hover,
+	&:focus, &.focus, &:disabled, &.disabled,
+	&:active {
+		@content;
+	}
+}
+
+//btn outline-variant mixin
+@mixin btn-outline-variant($parent, $color, $ignore-warning: true) {
+    #{$parent} {
+		color:$color !important;
+        background-color: transparent !important;
+        border-color: $color !important;
+		box-shadow: 0px 0px 12px 0px rgba($color, 0.35);
+    }
+	#{$parent}{
+		@include btn-hover-focus-active {
+			color:$white !important;
+			background-color: darken($color, 10%) !important;
+			border-color: darken($color, 10%) !important;
+			box-shadow: 0px 0px 12px 0px rgba($color, 0.35);
+		}
+	}
+	#{$parent}{
+		@include btn-disabled-active{
+			color:$color !important;
+			background-color: transparent !important;
+			border-color: darken($color, 10%) !important;
+			box-shadow: 0px 0px 12px 0px rgba($color, 0.35);
+			&:focus{
+				color:$white  !important;
+				background-color: darken($color, 10%) !important;
+				border-color: darken($color, 10%) !important;
+				box-shadow: 0px 0px 12px 0px rgba($color, 0.35);
+			}
+		}
+	}
+	.show>#{$parent}.dropdown-toggle{
+		color:$color !important;
+		background-color: transparent !important;
+		border-color: darken($color, 10%) !important;
+		&:focus{
+			box-shadow: 0px 0px 12px 0px rgba($color, 0.35);
+		}
+	}
+}

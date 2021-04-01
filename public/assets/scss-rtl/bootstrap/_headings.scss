@@ -1,0 +1,172 @@
+/*-------- Headings  -------*/
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+	margin-bottom:0.66em;
+	line-height:1.4;
+}
+.h1, h1 {
+	font-size: 2.5rem;
+	font-weight: $font-weight-normal;
+}
+.h2, h2 {
+	font-size: 1.75rem;
+}
+.h3, h3 {
+	font-size: 1.5rem;
+}
+.h4, h4 {
+	font-size: 1.125rem;
+}
+.h5, h5 {
+	font-size: 1rem;
+}
+.h6, h6 {
+	font-size: .875rem;
+}
+.lead {
+	font-size: 1.171875rem;
+	font-weight: $font-weight-light;
+	line-height: 1.4;
+}
+.display-1 {
+	font-size: 10.5rem;
+	font-weight: $font-weight-normal;
+	line-height: 1.1;
+}
+.display-2 {
+	font-size: 4rem;
+	font-weight: $font-weight-light;
+	line-height: 1.1;
+}
+.display-3 {
+	font-size: 3.5rem;
+	font-weight: $font-weight-light;
+	line-height: 1.1;
+}
+.display-4 {
+	font-size: 3rem;
+	font-weight: $font-weight-light;
+	line-height: 1.1;
+}
+.display-5 {
+	font-size: 2.4rem;
+	font-weight: $font-weight-light;
+	line-height: 1.1;
+}
+.display-6 {
+	font-size: 2.3rem;
+	font-weight: $font-weight-light;
+	line-height: 1.1;
+}
+.display-1 i, .display-2 i, .display-3 i, .display-4 i {
+	vertical-align: baseline;
+	font-size: .815em;
+}
+
+/*-------- Font Sizes -------*/
+.fs-10 {
+	font-size: $default-value-size * 10 !important;
+}
+.fs-12 {
+	font-size: $default-value-size * 12 !important;
+}
+.fs-13 {
+	font-size: $default-value-size * 13 !important;
+}
+.fs-14 {
+	font-size: $default-value-size * 14 !important;
+}
+.fs-15 {
+	font-size: $default-value-size * 15 !important;
+}
+.fs-16 {
+	font-size: $default-value-size * 16 !important;
+}
+.fs-18 {
+	font-size: $default-value-size * 18 !important;
+}
+.fs-20 {
+	font-size: $default-value-size * 20 !important;
+}
+.fs-22 {
+	font-size: $default-value-size * 22 !important;
+}
+.fs-24 {
+	font-size: $default-value-size * 24 !important;
+}
+.fs-26 {
+	font-size: $default-value-size * 26 !important;
+}
+.fs-28 {
+	font-size: $default-value-size *  28 !important;
+}
+.fs-30 {
+	font-size: $default-value-size * 30 !important;
+}
+.fs-32 {
+	font-size: $default-value-size * 32 !important;
+}
+.fs-35 {
+	font-size: $default-value-size * 35 !important;
+}
+.fs-38 {
+	font-size: $default-value-size * 38 !important;
+}
+.fs-40 {
+	font-size: $default-value-size * 40 !important;
+}
+.fs-50 {
+	font-size: $default-value-size * 50 !important;
+}
+.fs-60 {
+	font-size: 60px !important;
+}
+.fs-70 {
+	font-size: 70px !important;
+}
+.fs-80 {
+	font-size: 80px !important;
+}
+.fs-90 {
+	font-size: 90px !important;
+}
+.fs-100 {
+	font-size: 100px !important;
+}
+/*-------- Font Sizes -------*/
+
+/*-------- Heading styles -------*/
+.heading-inverse {
+	background-color: $text-color;
+	color: $white;
+	padding: 5px;
+}
+.heading-secondary {
+	color: $white;
+	padding: 5px;
+}
+.heading-success {
+	background-color: $color-success;
+	color: $white;
+	padding: 5px;
+}
+.heading-info {
+	background-color: $color-info;
+	color: $white;
+	padding: 5px;
+}
+.heading-warning {
+	background-color: $color-warning;
+	color: $white;
+	padding: 5px;
+}
+.heading-danger {
+	background-color: $color-danger;
+	color: $white;
+	padding: 5px;
+}
+.heading-style {
+	font-size: 32px;
+	font-family: 'Dancing Script', cursive;
+	font-weight: $font-weight-bold;
+}
+/*-------- Heading styles -------*/

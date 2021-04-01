@@ -1,0 +1,86 @@
+/*-------- Cookies -------*/
+button#ihavecookiesBtn {
+	margin-left: 0 !important;
+}
+#gdpr-cookie-message {
+	display: block !important;
+	position: fixed;
+	z-index: 999;
+	right: 0;
+	bottom: 30px;
+	max-width: 375px;
+	background-color: rgba($white, 0.95);
+	padding: 20px;
+	border-radius: 8px;
+	border: 1px solid $border-color;
+	box-shadow: 5px 4px 12px 4px rgba(79, 37, 225, 0.03);
+	margin-right: 30px;
+	h4 {
+		font-size: $default-value-size * 18;
+		font-weight: $font-weight-semibold;
+		margin-bottom: 10px;
+	}
+	h5 {
+		font-size: $default-value-size * 15;
+		font-weight: $font-weight-semibold;
+		margin-bottom: 10px;
+	}
+	p, ul {
+		color: $text-color;
+		font-size: $default-value-size * 15;
+		line-height: 1.5em;
+	}
+	p:last-child {
+		margin-bottom: 0;
+	}
+	li {
+		width: 49%;
+		display: -webkit-inline-box;
+	}
+	a {
+		text-decoration: none;
+		font-size: $default-value-size * 15;
+		padding-bottom: 2px;
+		transition: all .3s ease-in;
+	}
+	button {
+		border: none;
+		color: $white;
+		font-size: $default-value-size * 15;
+		padding: 7px 18px;
+		border-radius: 5px;
+		margin-top: 4px;
+		cursor: pointer;
+		transition: all .3s ease-in;
+	}
+}
+button {
+	&#ihavecookiesBtn {
+		border: none;
+		color: $white;
+		font-size: $default-value-size * 15;
+		padding: 7px 18px;
+		border-radius: 5px;
+		margin-top: 4px;
+		cursor: pointer;
+		transition: all .3s ease-in;
+	}
+	&#gdpr-cookie-advanced {
+		margin-left: 4px;
+	}
+}
+#gdpr-cookie-message {
+	button:disabled {
+		opacity: .3;
+	}
+	input[type=checkbox] {
+		float: none;
+		margin-top: 0;
+		margin-right: 5px;
+	}
+}
+
+button#gdpr-cookie-advanced {
+    margin-right: 4px;
+}
+/*-------- Cookies -------*/

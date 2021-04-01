@@ -1,0 +1,23 @@
+// bg variamt mixin
+@mixin bg-variant($parent, $color, $ignore-warning: true) {
+    #{$parent} {
+        background-color: $color !important;
+    }
+    a#{$parent}, button#{$parent} {
+        @include hover-focus {
+            background-color: darken($color, 10%) !important;
+        }
+    }
+}
+
+// text variamt mixin
+@mixin text-variant($parent, $color, $ignore-warning: true) {
+    #{$parent} {
+        color: $color !important;
+    }
+    a#{$parent}, #{$parent} {
+        @include hover-focus {
+            color: darken($color, 10%) !important;
+        }
+    }
+}

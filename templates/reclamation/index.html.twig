@@ -1,0 +1,149 @@
+{% extends 'baseback.html.twig' %}
+
+
+{% block title %} Reclamation index {% endblock %} 
+
+
+
+{% block body %}
+
+    <div class="app-content">
+        <div class="side-app">
+            <div class="page-header">
+                <h4 class="page-title">Data Tables</h4>
+                
+            </div>
+       
+
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Tables des reclamations</div>
+                        </div>
+
+
+                        <div class="card-body">
+
+
+
+                            <div class="table-responsive">
+                              <input class="form-control" id="myInput" type="text" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
+
+
+                                <table id="dataTable" class="table table-striped table-bordered" >
+
+
+
+                                    <thead>
+                                    <tr>
+                                        <th class="wd-15p">Id </th>
+                                        <th class="wd-15p">Nom</th>
+                                        <th class="wd-20p">prenom</th>
+                                        <th class="wd-15p">Email</th>
+                                        <th class="wd-10p">Sujet</th>
+                                        <th class="wd-25p">Message</th>
+                                        <th class="wd-25p">Etat</th>
+                                        <th class="wd-25p">Delete</th>
+                                        <th class="wd-25p">Update</th>
+
+
+                                    </tr>
+
+                                    </thead>
+                            <tbody id="hi">
+
+                                    {% for reclamation in reclamation %}
+                                        <tr>
+                                            <td>{{ reclamation.id }}</td>
+                                            <td>{{ reclamation.nom }}</td>
+                                            <td>{{ reclamation.prenom }}</td>
+                                            <td>{{ reclamation.email }}</td>
+                                            <td>{{ reclamation.subject }}</td>
+                                            <td>{{ reclamation.message }}</td>
+
+                                           <td>
+                                                   {% if reclamation.etat =="0" %}
+                                                       non regler
+
+                                                   {% endif %}
+
+
+
+                                            </td>
+
+
+                                            <td>
+                                                <a href="{{ path('reclamation_delete', {'id': reclamation.id}) }}" class="btn btn-success">Delete</a>
+
+                                            </td>
+    
+                                            <td>
+
+
+
+<input type="checkbox" class="toggle" checked>    
+</div>
+
+<style>
+  
+    
+</style>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    {% endfor %}
+                                       
+                                 
+
+                                </table>
+                                {# a changer m3a el base twig bsh yodhhrou mourab3at #}
+
+                                 
+                               
+<div style="float:right;">{{ knp_pagination_render(reclamation) }}
+</div>
+
+                            </div>
+
+                        </div>
+                       
+
+                        <!-- table-wrapper -->
+                    </div>
+                    <!-- section-wrapper -->
+                </div>
+                
+
+            </div>
+        </div>
+
+
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#hi tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+
+
+
+$(document).ready(function() {
+    $('#dataTable').DataTable( {      
+         "searching": false,
+         "paging": false
+    } );
+} );
+
+
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,16 @@
+// back to top
+
+//radius mixins
+@mixin brradius($property, $value, $prefixes) {
+	@each $brradius in $prefixes {
+		-#{$brradius}-#{$property}: $value;
+	}
+	#{$property}: $value;
+}
+//trasition-background mixins
+@mixin trasition-background($property, $prop, $value, $prop2, $prefixes) {
+	@each $trasition-background in $prefixes {
+		-#{$trasition-background}-#{$property}: $prop $value $prop2;
+	}
+	#{$property}: $prop $value $prop2;
+}

@@ -1,0 +1,32 @@
+/*-------- Show more -------*/
+.showmore-button {
+	text-align: center;
+}
+.showmore-button-inner {
+	display: inline-block;
+	padding: 10px 19px;
+	line-height: 14px;
+	font-size: $default-value-size * 14;
+	border-radius: 5px;
+	text-decoration: none;
+	cursor: pointer;
+	margin-top: 20px;
+}
+.showmore-button1 {
+	text-align: center;
+	.showmore-button1-inner {
+		display: inline-block;
+		line-height: 14px;
+		font-size: $default-value-size * 14;
+		color: #cecde0;
+		text-decoration: none;
+		cursor: pointer;
+		margin-top: 8px;
+		margin-bottom: 20px;
+	}
+}
+#container3 {
+	border-radius: 5px;
+	overflow: hidden;
+}
+/*-------- Show more -------*/

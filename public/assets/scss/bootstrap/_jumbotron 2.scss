@@ -1,0 +1,19 @@
+/*-------- Jumbotron -------*/
+
+.jumbotron {
+    padding: $space-xl $space-lg;
+    margin-bottom: $space-xl;
+    background-color: $color-light;
+    border-radius: .3rem;
+}
+@include media-breakpoint-up(sm) {	
+	.jumbotron .display-3 {
+		font-size: $space-sm * 5;
+	}
+}
+@include media-breakpoint-down(xs) {
+	.jumbotron {
+		padding: $space-xl;
+	}
+}
+/*-------- Jumbotron -------*/

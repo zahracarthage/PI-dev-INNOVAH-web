@@ -1,0 +1,44 @@
+/*-------- text-colors -------*/
+@each $colors, $value in $colors {
+	@include text-variant(".text-#{$colors}", $value);
+}
+
+.text-black-50 {
+	color: rgba($color-dark, 0.5) !important;
+}
+.text-white-50 {
+	color: rgba($white, 0.5) !important;
+}
+.text-white-80 {
+	color: rgba($white, 0.8) !important;
+}
+.text-white {
+	color:$white !important;
+}
+.text-inherit {
+	color: inherit !important;
+}
+.text-default {
+	color: $text-color !important;
+}
+.text-muted-dark {
+	color: #5f6877 !important;
+}
+.text-monospace {
+	font-family: Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+p.leading-tight {
+	display: block;
+	display: -webkit-box;
+	max-width: 100%;
+	margin: 0 auto;
+	font-size: $default-value-size * 14;
+	line-height: 1;
+	-webkit-line-clamp: 2;
+	-moz-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

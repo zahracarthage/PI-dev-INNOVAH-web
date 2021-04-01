@@ -1,0 +1,80 @@
+/*------ Widths & Heights -------*/
+@each $prop, $abbrev in (width: w, height: h) {
+  @each $size, $length in $sizes {
+    .#{$abbrev}-#{$size} { #{$prop}: $length !important; }
+  }
+}
+
+/*------ Custom Widths & Heights -------*/
+.w100 {
+	width: 100px !important;
+}
+.w73 {
+	width: 73px !important;
+}
+.w-125 {
+	width: 125px !important;
+}
+.w-180 {
+	width: 180px !important;
+}
+.w-150 {
+	width: 150px !important;
+}
+.w-200 {
+	width: 200px !important;
+}
+.mw-300 {
+	width: 300px !important;
+}
+.mw-100 {
+	max-width: 100% !important;
+}
+.h100 {
+	height: 100px !important;
+}
+.h73 {
+	height: 73px !important;
+}
+.h80 {
+	height: 80px !important;
+}
+.h-125 {
+	height: 125px !important;
+}
+.h-150 {
+	height: 150px !important;
+}
+.h-180 {
+	height: 180px !important;
+}
+.h-196 {
+	height: 196px !important;
+}
+.h-400 {
+	height: 400px !important;
+}
+.h-350 {
+	height: 350px !important;
+}
+.h-300 {
+	height: 300px !important;
+}
+.h-290 {
+	height: 290px !important;
+}
+.h-220 {
+	height: 220px !important;
+}
+.h-250 {
+	height: 250px !important;
+}
+.mh-100 {
+	max-height: 100% !important;
+}
+.minh-210 {
+	min-height: 210px !important;
+}
+.mh-500 {
+	max-height: 500px;
+}

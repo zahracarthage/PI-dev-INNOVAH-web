@@ -1,0 +1,12 @@
+// label variant mixin
+@mixin label-variant($parent, $color, $ignore-warning: true) {
+    #{$parent} {
+        background-color: $color !important;
+    }
+	#{$parent}.arrowed{
+		&:before{
+			border-right-color: $color;
+		}
+	}
+	
+}

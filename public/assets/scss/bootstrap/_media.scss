@@ -1,0 +1,52 @@
+/*-------- Media -------*/
+
+.media {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	margin-top: 15px;
+	img {
+		width: $default-value-size * 45;
+		height: $default-value-size * 45;
+	}
+	&.meida-md img {
+		width: $default-value-size * 65;
+		height: $default-value-size * 65;
+	}
+	&.meida-lg img {
+		width: $default-value-size * 80;
+		height: $default-value-size * 80;
+	}
+}
+.media-body {
+	-ms-flex: 1;
+	flex: 1;
+	zoom: 1;
+	overflow: hidden;
+}
+.media-object {
+	display: block;
+}
+.media-right, .media>.pull-right {
+	padding-left: 10px;
+}
+.media-body, .media-left, .media-right {
+	display: table-cell;
+	vertical-align: top;
+}
+.media-heading {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+.media-middle {
+	vertical-align: middle;
+}
+.media-bottom {
+	vertical-align: bottom;
+}
+.media-left, .media>.pull-left {
+	padding-right: 10px;
+}
+
+/*-------- Media -------*/

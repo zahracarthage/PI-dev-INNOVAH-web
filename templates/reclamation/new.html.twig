@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Reclamation{% endblock %}
+
+{% block body %}
+
+    <div class="sptb">
+        <div class="container">
+            <div class="">
+                <div class="row">
+                    <div class="col-lg-8 col-xl-8 col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Get In Touch With Me</div>
+                            </div>
+                                {{ form_start(form, {'attr': {'role': 'form', 'onsubmit':'return validate();'}}) }} 
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-group">
+                                        {{ form_widget(form.nom , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Nom'}} ) }}
+                                        {{ form_errors(form.nom) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_widget(form.prenom , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Prenom'}} ) }}
+                                        {{ form_errors(form.prenom) }}                                    </div>
+                                    <div class="form-group">
+                                        {{ form_widget(form.email , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Email'}} ) }}
+                                        {{ form_errors(form.email) }}                                    </div>
+                                    <div class="form-group">
+                                        {{ form_widget(form.subject , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Sujet'}} ) }}
+                                        {{ form_errors(form.subject) }}                                    </div>
+                                    <div class="form-group">
+                                        {{ form_widget(form.message , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Ecrivez votre message'}} ) }}
+                                        {{ form_errors(form.message) }}
+                                    </div>
+
+                                    {{ form_widget(form) }}
+
+                                    <button type="submit" class="btn btn-primary btn-block" onClick="validateSubmit();">Send Message</button>
+                                    {{ form_end(form) }}
+
+                         
+                         
+                        
+                        <script>
+
+
+                        function validateSubmit() {
+                         result = confirm("Are you sure you want to submit this form ?");
+                        if (result) {
+                           $('#form').submit();
+                           
+                        
+                                  }
+                        }
+                        </script>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

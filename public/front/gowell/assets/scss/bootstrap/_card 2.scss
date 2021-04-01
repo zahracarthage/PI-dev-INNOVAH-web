@@ -1,0 +1,223 @@
+/*-------- Card -------*/
+
+.card {
+	position: relative;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-width: 0;
+	border-radius: 8px;
+	word-wrap: break-word;
+	background-color: $white;
+	background-clip: border-box;
+	border: 1px solid $border-color;
+	box-shadow: 5px 4px 12px 4px rgba(79, 37, 225, 0.03);
+	margin-bottom: 1.5rem;
+	width: 100%;
+	> {
+		hr {
+			margin-right: 0;
+			margin-left: 0;
+		}
+		.list-group {
+			&:first-child .list-group-item:first-child {
+				border-top-left-radius: $default-value-size * 7;
+				border-top-right-radius: $default-value-size * 7;
+			}
+			&:last-child .list-group-item:last-child {
+				border-bottom-right-radius: $default-value-size * 7;
+				border-bottom-left-radius: $default-value-size * 7;
+			}
+		}
+	}
+}
+.card-body {
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	margin: 0;
+	padding: $space-lg $space-lg;
+	position: relative;
+}
+.card-subtitle {
+	margin-top: -.75rem;
+	margin-bottom: 0;
+}
+.card-text:last-child {
+	margin-bottom: 0;
+}
+.card-link {
+	&:hover {
+		text-decoration: none;
+	}
+	+.card-link {
+		margin-left: $space-lg;
+	}
+}
+.card-header+.list-group .list-group-item:first-child {
+	border-top: 0;
+}
+.card-footer {
+	padding: $space-lg $space-lg;
+	background-color: rgba($text-color, 0.03);
+	border-top: 1px solid $border-color;
+	&:last-child {
+		border-radius: 0 0 calc(8px - 1px) calc(8px - 1px);
+	}
+}
+.card-header-tabs {
+	margin-right: -.75rem;
+	margin-bottom: -1.5rem;
+	margin-left: -.75rem;
+	border-bottom: 0;
+	margin: -1.25rem 0;
+	line-height: 2rem;
+}
+.card-header-pills {
+	margin-right: -.75rem;
+	margin-left: -.75rem;
+	margin: -.75rem 0;
+}
+.card-img {
+	width: 100%;
+	border-radius: calc(3px - 1px);
+	height: 100%;
+}
+.card-img-top {
+	width: 100%;
+	border-top-left-radius: calc(3px - 1px);
+	border-top-right-radius: calc(3px - 1px);
+}
+.card-img-bottom {
+	width: 100%;
+	border-bottom-right-radius: calc(3px - 1px);
+	border-bottom-left-radius: calc(3px - 1px);
+}
+.card-deck {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	.card {
+		margin-bottom: .75rem;
+	}
+}
+.card-group {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	>.card {
+		margin-bottom: .75rem;
+	}
+}
+.card-columns .card {
+	margin-bottom: $space-lg;
+}
+.card .card {
+	box-shadow: 0 0 40px 0 rgba(234, 238, 249, 0.5);
+}
+@media print {
+	.card {
+		box-shadow: none;
+		border: none;
+	}
+}
+.card-body+.card-body {
+	border-top: 1px solid $border-color;
+}
+.card-body> :last-child {
+	margin-bottom: 0;
+}
+@media print {
+	.card-body {
+		padding: 0;
+	}
+}
+.card-body-scrollable {
+	overflow: auto;
+}
+.card-bottom, .card-footer {
+	padding:$space-md $space-lg;
+	background: 0 0;
+}
+.card-header {
+	background: 0 0;
+	display: -ms-flexbox;
+	display: flex;
+	min-height: 3.5rem;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: $space-lg $space-lg;
+	margin-bottom: 0;
+	background-color: transparent;
+	border-bottom: 1px solid $border-color;
+	.card-title {
+		margin-bottom: 0;
+	}
+	&.border-0+.card-body {
+		padding-top: 0;
+	}
+}
+@media print {
+	.card-header {
+		display: none;
+	}
+}
+.card-title {
+	font-size: 1.125rem;
+	line-height: 1.2;
+	font-weight: $font-weight-semibold2;
+}
+.card-title {
+	a {
+		color: inherit;
+	}
+	&:only-child {
+		margin-bottom: 0;
+	}
+}
+.card-subtitle, .card-title small {
+	color: #cecde0;
+	font-size: .875rem;
+	display: block;
+	margin: -.75rem 0 1rem;
+	line-height: 1.1;
+	font-weight: $font-weight-normal;
+}
+.card-table {
+	margin-bottom: 0;
+	tr {
+		&:first-child {
+			td, th {
+				border-top: 0;
+			}
+		}
+		td:first-child, th:first-child {
+			padding-left: 1.5rem;
+		}
+		td:last-child, th:last-child {
+			padding-right: 1.5rem;
+		}
+	}
+}
+.card-body+.card-table {
+	border-top: 1px solid $border-color;
+}
+.card-body+.card-list-group {
+	border-top: 1px solid $border-color;
+}
+.card-list-group .list-group-item {
+	border-right: 0;
+	border-left: 0;
+	border-radius: 0;
+	padding-left: $space-lg;
+	padding-right: $space-lg;
+	&:last-child {
+		border-bottom: 0;
+	}
+	&:first-child {
+		border-top: 0;
+	}
+}
+/*-------- Card -------*/

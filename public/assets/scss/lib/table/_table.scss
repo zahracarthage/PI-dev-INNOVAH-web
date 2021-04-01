@@ -1,0 +1,101 @@
+/*-------- Tables -------*/
+.ico-listing.table {
+	td, th {
+		padding: .75rem;
+		vertical-align: middle;
+	}
+}
+.table-calendar-link {
+	line-height: 2rem;
+	min-width: calc(2rem + 2px);
+	display: inline-block;
+	border-radius: 5px;
+	background: #f8f9fa;
+	color: #3d4e67;
+	font-weight: $font-weight-semibold2;
+	transition: .3s background, .3s color;
+	position: relative;
+	&:before {
+		content: '';
+		width: 4px;
+		height: 4px;
+		position: absolute;
+		left: .25rem;
+		top: .25rem;
+		border-radius: 50px;
+		background: $color-blue;
+	}
+	&:hover {
+		color: $white;
+		text-decoration: none;
+		background: $color-blue;
+		transition: .3s background;
+		&:before {
+			background: $white;
+		}
+	}
+}
+
+.table-calendar {
+	margin: 0 0 .75rem;
+	td, th {
+		border: 0;
+		text-align: center;
+		padding: 0 !important;
+		width: 14.28571429%;
+		line-height: 2.5rem;
+	}
+	td {
+		border-top: 0;
+	}
+}
+.table-header-asc {
+	color: #3d4e67 !important;
+	&:after {
+		content: '\f0de';
+	}
+}
+.table-header-desc {
+	color: #3d4e67 !important;
+	&:after {
+		content: '\f0dd';
+	}
+}
+.table-inbox {
+	border: 1px solid $border-color;
+	margin-bottom: 0;
+	tr {
+		border-bottom: 1px solid $border-color;
+		&:last-child {
+			border-bottom: 0;
+		}
+		td {
+			padding: 12px !important;
+			&:hover {
+				cursor: pointer;
+			}
+			.fa-star {
+				&.inbox-started, &:hover {
+					color: #f78a09;
+				}
+				color: $border-color;
+			}
+		}
+		&.unread td {
+			background: $body-color;
+			font-weight: $font-weight-semibold2;
+			border-bottom: $border-color 1px solid;
+		}
+	}
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+	padding: 0 !important;
+	margin: 0 !important;
+	border: 0 !important;
+}
+table.dataTable {
+	&.display tbody tr:hover, &.hover tbody tr:hover {
+		background-color: #eeeef9 !important;
+	}
+}
+/*-------- Tables -------*/

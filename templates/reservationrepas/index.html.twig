@@ -1,0 +1,136 @@
+{% extends 'baseback.html.twig' %}
+
+{% block title %}Reservationrepas index{% endblock %}
+
+{% block body %}
+
+<div class="app-content">
+        <div class="side-app">
+            <div class="page-header">
+                <h4 class="page-title">Data Tables</h4>
+                
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title" "bPaginate": false>Tables des reservations</div>
+                        </div>
+                        <div class="card-body">
+
+    <form role="search" id="nav-search-form" method="post" action="{{ path('trireservationparnom') }}">
+
+
+        <div class="btn-toolbar" role="toolbar" aria-label="Programmatic control">
+            <div class="btn-group btn-group-sm" aria-label="Set Select2 option">
+                <button class="js-programmatic-set-val btn btn-outline-primary mr-1 mb-1">
+                    Sort by Name
+                </button>
+            </div>
+
+    </form>
+
+    <form role="search" id="nav-search-form" method="post" action="{{ path('trireservationparid') }}">
+
+
+        <div class="btn-toolbar" role="toolbar" aria-label="Programmatic control">
+            <div class="btn-group btn-group-sm" aria-label="Set Select2 option">
+                <button class="js-programmatic-set-val btn btn-outline-primary mr-1 mb-1">
+                    Sort by Id
+                </button>
+            </div>
+
+    </form>
+
+                                <div class="table-responsive">
+
+                                <table id="dataTable" class="table table-striped table-bordered" >
+
+                                    <thead>
+                                    <tr>
+                                        <th class="wd-15p">Id </th>
+                                        <th class="wd-15p">Nom</th>
+                                        <th class="wd-20p">nombre de personnes</th>
+                                        <th class="wd-15p">Message</th>
+                                        <th class="wd-10p">Date</th>
+                                        <th class="wd-25p">Heure</th>
+                                        <th class="wd-10p">Email</th>
+                                        <th class="wd-10p">Numero de telephone</th>
+                                        <th class="wd-25p">Delete</th>
+
+
+                                    </tr>
+
+                                    </thead>
+                                    {% for r in reservationrepas %}
+
+                                        <tbody>
+
+
+                                    <tr>
+                                                        <td>{{ r.id }}</td>
+
+                                         <td>{{ r.nom }}</td>
+                                         <td>{{ r.nbrpersonnes }}</td>
+                                        <td>{{ r.message }}</td>
+                                        <td>{{ r.date ? r.date|date('Y-m-d') : '' }}</td>
+                                        <td>{{ r.heure ? r.heure|date('H:i') }}</td>
+                                        <td>{{r.email}}</td>
+                                        <td>{{r.phone}}</td>
+
+
+
+                                        <td><a href="{{ path('reservationrepas_delete', {'id': r.id}) }}" class="btn btn-danger">Delete</td>
+
+                                    </tr>
+                                    </tbody>
+                                      <div> 
+</div>
+
+                                    
+                                    {% endfor %}
+
+                                </table>
+
+                            </div>
+                    <div class="card-body">
+
+                        <!-- table-wrapper -->
+                         
+
+
+                    </div>
+
+                   
+                    <!-- section-wrapper -->
+                     <div style="float:right;">
+                         {{ knp_pagination_render(reservationrepas) }}
+                           </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+
+   
+
+
+<script>
+$(document).ready(function() {
+    $('#dataTable').DataTable( {      
+         "searching": false,
+         "paging": false
+    } );
+} );
+</script>
+
+
+    
+{% endblock %}
+
+
+
