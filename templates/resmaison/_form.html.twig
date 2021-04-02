@@ -1,0 +1,48 @@
+
+
+{% block body %}
+
+
+<div class="app-content">
+
+          <div class="side-app">
+            
+             <div class="row">
+              <div class="col-md-12">
+                <div class="card m-b-20">
+                  <div class="card-header">
+                    <h3 class="card-title">Réserver une maison d'hote</h3>
+
+                  </div>
+                   {{ form_start(form)}}
+                    
+
+                         <div class="card-body">
+
+                    <form>
+                      <div class="form-group">
+                        <label class="form-label" for="exampleInputname">Date d'entrée</label>
+                        {{ form_widget(form.dateentre ) }}
+                                        {{ form_errors(form.dateentre) }}
+                      </div>
+
+
+                      <div class="form-group">
+                        <label class="form-label" for="exampleInputname">Date de sortie</label>
+                        {{ form_widget(form.datesortie ) }}
+                                        {{ form_errors(form.datesortie) }}
+                      </div>
+
+                                        <div class="form-group mb-0">
+												<div class="checkbox checkbox-secondary">
+													<button type="submit" class="btn btn-success">{{ button_label|default('Save') }}</button>
+													<a type="submit" class="btn btn-success" href="{{ path('resmaison_index') }}">Retour liste</a>
+												</div>
+										</div>
+
+
+</div>
+                                     {{ form_end(form) }}
+								</div>
+							</div>
+{% endblock %}

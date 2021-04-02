@@ -1,0 +1,49 @@
+{% extends 'baseback.html.twig' %}
+
+{#<h1>Ajout Article</h1>
+{{ form(form)}}#}
+{% block body %}
+<div class="app-content">
+
+							<div class="side-app">
+						
+						 <div class="row">
+							<div class="col-md-12">
+								<div class="card m-b-20">
+									<div class="card-header">
+										<h3 class="card-title">Ajouter Commande</h3>
+
+									</div>
+									 {{ form_start(form)}}
+                                    <div class="card-body">
+
+										<form>
+											<div class="form-group">
+												<label class="form-label" for="exampleInputname">Date de la commande</label>
+												{{ form_widget(form.date , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Date'}} ) }}
+                                        {{ form_errors(form.date) }}
+											</div>
+											<div class="form-group">
+												<label class="form-label" for="exampleInputEmail2">Quantité</label>
+												{{ form_widget(form.quantite , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Quantite'}} ) }}
+                                        {{ form_errors(form.quantite) }}
+											</div>
+											<div class="form-group">
+												<label class="form-label" for="exampleInputPassword2">Prix Total</label>
+												{{ form_widget(form.prix_total , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Prix Total'}} ) }}
+                                        {{ form_errors(form.prix_total) }}
+											</div>
+										
+											<div class="form-group mb-0">
+												<div class="checkbox checkbox-secondary">
+                                                {{ form_widget(form) }}
+													<button type="SubmitType" class="btn btn-primary ">Modifier commande</button>
+												</div>
+											</div>
+										</form>
+									</div>
+                                     {{ form_end(form) }}
+								</div>
+                                
+							</div>
+                            {% endblock %}

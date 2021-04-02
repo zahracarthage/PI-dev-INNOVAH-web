@@ -1,0 +1,80 @@
+{% extends 'base2.html.twig' %}
+{% block button %}
+
+                          {% if is_granted('ROLE_EDITOR') %}
+                             <a class="btn btn-secondary" href="{{path('repas_new')}}"><i class="fe fe-plus"></i> Add Post</a>
+                        {% endif %}
+
+
+{% endblock %}
+
+{% block body %}
+    <section class="sptb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card overflow-hidden">
+                        <div class="card-status bg-primary"></div>
+                        <div class="card-body p-5">
+                            <div class="wideget-user">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="wideget-user-desc d-sm-flex p-4 bg-light-50 br-5">
+                                            <div class="wideget-user-img mr-4 relative mb-3 mb-sm-0">
+
+                                                <img src="{{ asset('uploads/' ~ app.user.image ) }}" style="height: 120px; width: 120px;" alt="img">
+                                                <a class="edit-profile-icon" href="#"><i class="fe fe-camera"></i></a>
+                                            </div>
+                                            <div class="user-wrap wideget-user-info mt-4">
+                                                <a href="#" class=""><h4 class="font-weight-semibold2 mb-2">{{ app.user.username }}</h4></a>
+                                                <div class="wideget-user-info ">
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wideget-user-tab wideget-user-tab3 mt-5">
+                                <div class="tab-menu-heading">
+                                    <div class="tabs-menu1">
+                                        <ul class="nav">
+                                            <li class=""><a href="#tab-5" class="active" data-toggle="tab">Profile</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="br-4 mb-0 overflow-hidden border br-tl-0 bg-white">
+                                <div class="card-body">
+                                    <div class="border-0">
+                                        <div class="tab-content">
+                                            <div class="tab-pane active p-3" id="tab-5">
+                                                <div class="profile-log-switch">
+                                                    <div class="media-heading">
+                                                        <h3 class="card-title mb-3 font-weight-semibold2">Personal Details</h3>
+                                                    </div>
+                                                    <ul class="usertab-list mb-0 mt-3">
+                                                        <li><a href="#" class="text-dark"><span class="font-weight-semibold">Username :</span>{{ app.user.username }} </a></li>
+                                                        <li><a href="#" class="text-dark"><span class="font-weight-semibold">Email :</span> {{ app.user.email }}</a></li>
+                                                        <li><a href="#" class="text-dark"><span class="font-weight-semibold">Compte :</span> {% if app.user.activation_token==NULL %}Activee{% else %} N est pas activee{% endif %}</a></li>
+                                                    </ul>
+                                                    {% if is_granted('ROLE_ADMIN') %}
+                                                    <a href="{{ path('admin_utilisateurs') }}" class="text-dark"><button type="button" class="btn btn-primary btn-block">Gerer les utilisateurs</button></a>
+                                                    {% endif %}
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,61 @@
+
+
+{% block body %}
+<div class="app-content">
+
+							<div class="side-app">
+						
+						 <div class="row">
+							<div class="col-md-12">
+								<div class="card m-b-20">
+									<div class="card-header">
+										<h3 class="card-title">Formulaire d'ajout d'une maison d'hote </h3>
+
+									</div>
+									 {{ form_start(form)}}
+                                    <div class="card-body">
+
+											<div class="form-group">
+												<label class="form-label" for="exampleInputname">Nom </label>
+												{{ form_widget(form.nom , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'nom'}} ) }}
+                                        {{ form_errors(form.nom) }}
+											</div>
+											<div class="form-group">
+												<label class="form-label" for="exampleInputEmail2">Adresse</label>
+												{{ form_widget(form.adresse, {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'adresse'}} ) }}
+                                        {{ form_errors(form.adresse) }}
+											</div>
+											<div class="form-group">
+												<label class="form-label" for="exampleInputPassword2">Numéro</label>
+												{{ form_widget(form.num , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'numéro'}} ) }}
+                                        {{ form_errors(form.num) }}
+											</div>
+											<div class="form-group">
+												<label class="form-label">Prix</label>
+												{{ form_widget(form.prix , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Prix en dinars'}} ) }}
+                                        {{ form_errors(form.prix) }}
+											</div>
+											<div class="form-group">
+												<label class="form-label">Note</label>
+												{{ form_widget(form.note , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'note'}} ) }}
+                                        {{ form_errors(form.note) }}
+											</div>
+											<div class="form-group">
+												<label class="form-label" for="exampleInputnumber">Image</label>
+                                                {{ form_widget(form.image , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Nom du fichier'}} ) }}
+                                        {{ form_errors(form.image) }}
+											</div>
+											
+											<div class="form-group mb-0">
+												<div class="checkbox checkbox-secondary">
+													<button type="submit" class="btn btn-success">{{ button_label|default('Save') }}</button>
+													<button type="submit" class="btn btn-success" href="{{ path('maisonhote_index') }}">Retour liste</button>
+													
+												</div>
+											</div>
+										
+									</div>
+                                     {{ form_end(form) }}
+								</div>
+							</div>
+                            {% endblock %}

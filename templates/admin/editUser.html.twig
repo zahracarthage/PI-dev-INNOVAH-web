@@ -1,0 +1,49 @@
+{% extends 'baseback.html.twig' %}
+
+{% block loader %}
+{% endblock %}
+
+{% block body %}
+
+
+<div class="app-content">
+<div class="side-app">
+    <div class="page-header">
+        <h4 class="page-title">Modifier utilisateur</h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#"><i class="fe   fe-settings mr-1"></i> Settings</a></li>
+            <li class="breadcrumb-item active" aria-current="page"></li>
+        </ol>
+    </div>
+    <div class="row row-cards">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                   
+                {{ form_start(formUser) }}
+                <div class="card-body">
+
+                    <form>
+                        <div class="form-group">
+
+                            {{ form_widget(formUser) }}
+                        </div>
+                        <div class="form-group mb-0">
+                            <div class="checkbox checkbox-secondary">
+                                                        
+
+
+                                <button type="submit" class="btn btn-success">Modifier</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{{form_end(formUser)}}
+
+{% endblock %}
+

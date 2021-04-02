@@ -1,0 +1,43 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block body %}
+<div class="app-content">
+
+							<div class="side-app">
+						
+						 <div class="row">
+							<div class="col-md-12">
+								<div class="card m-b-20">
+									<div class="card-header">
+										<h3 class="card-title">Ajouter une réservation</h3>
+
+									</div>
+									 {{ form_start(form)}}
+                                    <div class="card-body">
+
+										<form>
+											<div class="form-group">
+												<label class="form-label" for="exampleInputname">date de la réservation</label>
+												{{ form_widget(form.date , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'date réservation'}} ) }}
+                                        {{ form_errors(form.date) }}
+											</div>
+											<div class="form-group">
+												<label class="form-label" for="exampleInputEmail2">nombres de personnes</label>
+												{{ form_widget(form.nbpersonnes , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'nombres de personnes'}} ) }}
+                                        {{ form_errors(form.nbpersonnes) }}
+											</div>
+											
+										
+											
+											<div class="form-group mb-0">
+												<div class="checkbox checkbox-secondary">
+                                                    {{ form_widget(form) }}
+													<button type="submit" class="btn btn-primary ">Ajouter</button>
+												</div>
+											</div>
+										</form>
+									</div>
+                                     {{ form_end(form) }}
+								</div>
+							</div>
+                            {% endblock %}

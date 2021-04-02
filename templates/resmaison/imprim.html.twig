@@ -1,0 +1,28 @@
+{% block body %}
+<h1 align ="center">Liste des réservation</h1><hr>
+
+
+                      <table class="table table-striped table-bordered" >
+                         <thead>
+                             <tr>
+                                <th>ID</th>
+                                <th>Date d'entre</th>
+                                <th>Date de sortie</th>
+              
+                             </tr>
+                        </thead>
+                        <tbody>
+        {% for resmaison in resmaisons %}
+            <tr>
+                <td>{{ resmaison.id }}</td>
+                <td>{{ resmaison.dateentre ? resmaison.dateentre|date('Y-m-d') : '' }}</td>
+                <td>{{ resmaison.datesortie ? resmaison.datesortie|date('Y-m-d') : '' }}</td>
+                
+            </tr>
+       
+        {% endfor %}
+    </tbody>
+   </table>
+                       
+
+{% endblock %}

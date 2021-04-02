@@ -1,0 +1,87 @@
+
+{% extends 'listefront.html.twig' %}
+
+{% block body %}
+<section>
+                    <li ><a href="{{path('cart_index')}}" class="btn btn-success btn-sm mt-4 mb-4"><i class="fa fa-shopping-cart"></i> Panier</a> </li>
+
+
+								<div class="row">
+								{% for a in article %}
+									<div class="col-lg-6 col-xl-4">
+										<div class="card item-card">
+											<div class="ribbone">
+												<span class="ribbon1">
+													<span>20%</span>
+												</span>
+											</div>
+											<div class="card-body p-0">
+												<div class="text-center">
+													<img src="{{ asset('uploads/' ~ a.image ) }}" alt="img" class="image" style="max-height: 200px; max-width: 280px;">
+												</div>
+												<div class="card-body cardbody">
+													<div class="cardtitle">
+													<a class="shop-title">{{a.nom}}</a>
+													
+														<div>
+															<a href="#"><i class="fa fa-star-o text-yellow fs-16" data-value="1"></i></a>
+															<a href="#"><i class="fa fa-star-o text-yellow fs-16" data-value="2"></i></a>
+															<a href="#"><i class="fa fa-star-o text-yellow fs-16" data-value="3"></i></a>
+															<a href="#"><i class="fa fa-star-o text-yellow fs-16" data-value="4"></i></a>
+															<a href="#"><i class="fa fa-star-o text-yellow fs-16" data-value="5"></i></a>
+															<a href="#"> (48)</a>
+															
+														</div>
+													
+													</div>
+													<div class="cardprice">
+														<span class="type--strikethrough">{{a.prix}}</span>
+														<span>{{a.prix}}</span>
+													</div>
+												</div>
+											</div>
+											<div class="text-center border-top">
+												<a href="shop-description.html" class="btn btn-primary btn-sm mt-4 mb-4"> View More</a>
+												<a href="{{ path('cart_add', {'id': a.id})}}" class="btn btn-success btn-sm mt-4 mb-4"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+											</div>
+										</div>
+									</div>
+									{% endfor %}
+                                </div>
+                            </div>
+							
+						</div>
+						
+                    </div>
+</div>
+
+<div >
+{{ knp_pagination_render(article)}}
+</div>  
+</section>
+                              
+
+			
+{% endblock %}
+{#}<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Catégorie</th>
+        <th>Prix</th>
+        <th>Image</th>
+        <th>Modifier</th>
+        <th>Supprimer</th>
+    </tr>
+    <tr {% for a in article %}>
+        <td>{{a.idarticle}}</td>
+        <td>{{a.nom}}</td>
+        <td>{{a.description}}</td>
+        <td>{{a.categorie}}</td>
+        <td>{{a.prix}}</td>
+        <td>{{a.image}}</td>
+        <td><a href="{{ path('ModifierArticle', {'idarticle':a.idarticle}) }}">Modifier</a></td>
+        <td><a href="{{ path('SupprimerArticle', {'idarticle':a.idarticle}) }}">Supprimer</a></td>
+    </tr {% endfor %}>
+</table>#}

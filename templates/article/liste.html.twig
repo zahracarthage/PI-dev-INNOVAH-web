@@ -1,0 +1,31 @@
+
+{% block body %}
+<h1 align="center">Liste des articles</h1><hr>
+
+<table>
+<thead>
+													<tr>
+														<th class="wd-15p">ID</th>
+														<th class="wd-15p">Nom</th>
+														<th class="wd-20p">Description</th>
+														<th class="wd-15p">Catégorie</th>
+                                                        <th class="wd-15p">Prix</th>
+                                                        
+													</tr>
+												</thead>
+												<tbody>
+                                                {% for a in article %}
+													<tr >
+                                                        <td>{{a.id}}</td>
+                                                        <td>{{a.nom}}</td>
+                                                        <td>{{a.description}}</td>
+                                                        <td>{{a.categorie}}</td>
+                                                        <td>{{a.prix}}</td>
+                                                        
+                                                    </tr >
+                                                    {% endfor %}
+                                                    </tbody>
+											</table>
+										</div>
+
+{% endblock %}

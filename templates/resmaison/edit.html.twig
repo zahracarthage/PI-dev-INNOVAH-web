@@ -1,0 +1,13 @@
+{% extends 'baseback.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <h1>Modifier réservation</h1>
+
+    {{ include('resmaison/_form.html.twig', {'button_label': 'Update'}) }}
+
+   
+
+    {{ include('resmaison/_delete_form.html.twig') }}
+{% endblock %}

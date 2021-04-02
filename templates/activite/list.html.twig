@@ -1,0 +1,186 @@
+
+{% extends 'standardlist.html.twig' %}
+
+
+
+{% block namelist %} Activités list {% endblock %}
+{#<div class="card">
+                   <div class="card-body">
+                       <div class="input-group">
+                           <input type="text" class="form-control br-tl-5 br-bl-5" placeholder="chercher une activité">
+                           <div class="input-group-append ">
+                               <button type="submit" class="btn btn-secondary br-tr-5 br-br-5">
+                                   rechercher
+                               </button>
+                           </div>
+                       </div>
+                   </div>
+               </div>#}
+
+   {# {% block recherche %}
+     
+     <div class="card">
+        <div class="card-body">
+          <div class="input-group">
+            <form>
+            <div class="form-group">
+		        <label class="form-label" for="exampleInputnumber">recherche</label>
+                {#{% if form is defined %}
+                {{form_start(form)}}
+                
+			    {{ form_widget(form.nom , {'attr': {'class': 'form-control br-tl-5 br-bl-5 ' , 'placeholder' : 'rechercher une activité'}} ) }}
+                {{ form_errors(form.nom) }}
+                
+                <div class="input-group-append ">
+                <button type="submit" class="btn btn-secondary br-tr-5 br-br-5">
+                                   rechercher
+                </button>
+                {{form_end(form)}}
+                {#{% endif %} 
+                 </div>
+	        </div>
+            </form>
+            
+        </div>
+       </div>
+     </div> 
+    
+        
+   {% endblock %} #}
+
+
+   {% block body %}
+
+   <style>
+    #map {
+        height: 500px;
+        width : 100%;
+    }
+</style>
+<div class=" map-view" id="map"></div>
+<script>
+    function initMap(){
+        var location = { lat:33.8439408 , lng:9.400138 };
+        var map = new google.maps.Map(document.getElementById("map"), {
+            zoom:4,
+            center:location
+        });
+        var marker = new google.maps.Marker ({
+            position: location,
+            map: map,
+        });
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB991J3VKEDyuDIofrKMVSSRAqXZKO0kfU&callback=initMap"></script>
+   
+
+                   <div class="tab-pane active" id="tab-12">
+                       <div class="row">
+                       {% for activites in activites %}
+                               <div class="col-lg-6 col-md-6 col-xl-6">
+                               <div class="card overflow-hidden">
+                                   <div class="h-100">
+
+                                       <div class="item-card9-img h-250">
+                                           <div class="item-card9-imgs">
+                                               <a href="tours.html" class="absolute-link2"></a>
+                                               <img src="{{asset('uploads/'~ activites.image)}}" alt="image" class="image">
+                                           </div>
+
+                                           <div class="item-card9-icons">
+                                               <a href="#" class="item-card9-icons1 wishlist"> <i class="fa fa fa-heart-o"></i></a>
+                                           </div>
+                                                <div class="font-weight-semibold2 text-muted mb-0 price-badge item-cardreview-absolute-price bg-info"><span class="text-white">{{ activites.prix }}</span><small class="text-white-80">/person</small></div>
+
+
+                                       </div>
+
+                                  <div class="card border-0 mb-0 br-0">
+                                   <div class="card-body h-100">
+                                        <div class="item-card9">
+
+
+
+
+                                            <a href="tours.html" class="text-dark"><h4 class="font-weight-semibold2 mt-1 mb-1">{{ activites.Nom }}</h4></a>
+
+                                                   <div class="mt-0 mb-0 d-sm-flex d-md-block d-xl-flex">
+                                                       <a href="#" class="mt-1 mb-0 mr-3 text-dark"><i class="fe fe-map-pin mr-1"></i> {{ activites.getDate()|date('d-m-Y H:i:s') }}</a>
+                                                       <div class="star-ratings start-ratings-main clearfix d-flex mt-1">
+                                                           <div class="stars stars-example-fontawesome stars-example-fontawesome-sm mr-2">
+                                                               <select class="example-fontawesome" name="rating" autocomplete="off">
+                                                                   <option value="1">1</option>
+                                                                   <option value="2">2</option>
+                                                                   <option value="3">3</option>
+                                                                   <option value="4" selected>4</option>
+                                                                   <option value="5">5</option>
+                                                               </select>
+                                                           </div> <a class="fs-13 leading-tight mt-1" href="#">56 Reviews</a>
+                                                       </div>
+                                                   </div>
+
+                                                   <div class="">
+                                                       <p class="mt-2 mb-0 leading-loose"> {{ activites.description }}  </p>
+                                                   </div>
+                                                       <div class="card-footer">
+                                                           <div class="item-card9-footer d-flex">
+                                                               <div class="item-card9-cost d-flex">
+                                                                   <div class="ml-3">
+                                                                       <h6 class="mb-0 mt-2 font-weight-semibold2">{{ activites.categorie }}</h6>
+                                                                   </div>
+                                                               </div>
+                                                           </div>
+                                                        <a class="btn btn-light btn-pill btn-sm mt-2" href="{{path('reservation', {'id': activites.idact }) }}">Réserver cette activité</a>
+                                                       </div>
+
+
+
+
+                                               </div>
+                                        
+ 
+
+                                       
+
+
+
+                                       </div>
+                                   </div>
+                               </div>
+                       </div>
+                   </div>
+
+
+                   
+          
+
+        {%  endfor %}
+        </div>
+    </div>
+           
+            <div>
+                {{ knp_pagination_render (activites) }}
+            </div>    
+        
+        
+        
+        {# <div class="d-sm-flex">
+                       <h6 class="mb-4 mb-sm-0 mt-3">Showing <b>1 to 10</b> of 30 entries</h6>
+                       
+                       <ul class="pagination mb-5 ml-auto">
+                           <li class="page-item page-prev disabled">
+                               <a class="page-link" href="{{ knp_pagination_render (activites) }}" tabindex="-1">Prev</a>
+                           </li>
+                           <li class="page-item active"><a class="page-link" href="{{ knp_pagination_render (activites) }}">1</a></li>
+                           <li class="page-item"><a class="page-link" href="{{ knp_pagination_render (activites) }}">2</a></li>
+                           <li class="page-item"><a class="page-link" href="{{ knp_pagination_render (activites) }}">3</a></li>
+                           <li class="page-item page-next">
+                               <a class="page-link" href="{{ knp_pagination_render (activites) }}">Next</a>
+                           </li>
+                       </ul>
+                      
+        </div>#}
+
+   {% endblock %}          
+
+

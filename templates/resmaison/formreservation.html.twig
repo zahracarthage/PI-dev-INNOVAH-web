@@ -1,0 +1,97 @@
+{% extends 'standardlist.html.twig' %}
+
+
+
+{% block body %}
+
+
+
+<div class="app-content">
+
+              <div class="side-app">
+            
+             <div class="row">
+              <div class="col-md-12">
+                <div class="card m-b-20">
+                  <div class="card-header">
+                    <h3 class="card-title">Réserver une maison d'hote</h3>
+
+                  </div>
+                   {{ form_start(form)}}
+                                    <div class="card-body">
+
+                    <form>
+                      <div class="form-group">
+                        <label class="form-label" for="exampleInputname">Date d'entrée</label>
+                        {{ form_widget(form.dateentre ) }}
+                                        {{ form_errors(form.dateentre) }}
+                      </div>
+
+
+                      <div class="form-group">
+                        <label class="form-label" for="exampleInputname">Date de sortie</label>
+                        {{ form_widget(form.datesortie ) }}
+                                        {{ form_errors(form.datesortie) }}
+                      </div>
+
+
+                      
+                        <div class="form-group mb-0">
+
+                        <div class="checkbox checkbox-secondary">
+                                                    {{ form_widget(form) }}
+                                                    <script src="https://js.stripe.com/v3/"></script> 
+                          <button id="checkout-button" type="submit" class="btn btn-success "  ><i class="fe fe-check mr-2"></i>Réserver</button>
+                          <button id="checkout-button" type="submit" class="btn btn-success" href="{{ path('listmaisonhote') }}"><i class="fe fe-check mr-2"></i>Retour liste</button>
+
+
+
+                        </div>
+                      </div>
+                                            {% for message in app.flashes('success') %}
+                                                <div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                                                 <i class="fa fa-check-circle-o mr-2" aria-hidden="true"></i>{{ message }}
+                                                </div>
+                                            {% endfor %}
+                    </form>
+                  </div>
+                                     {{ form_end(form) }}
+                </div>
+              </div>
+
+<script src="https://js.stripe.com/v3/"></script>
+ <script type="text/javascript">
+      // Create an instance of the Stripe object with your publishable API key
+      var stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+      var checkoutButton = document.getElementById('checkout-button');
+
+      checkoutButton.addEventListener('click', function() {
+        // Create a new Checkout Session using the server-side endpoint you
+        // created in step 3.
+        fetch('/create-checkout-session', {
+          method: 'POST',
+        })
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(session) {
+          return stripe.redirectToCheckout({ sessionId: session.id });
+        })
+        .then(function(result) {
+          // If `redirectToCheckout` fails due to a browser or network
+          // error, you should display the localized error message to your
+          // customer using `error.message`.
+          if (result.error) {
+            alert(result.error.message);
+          }
+        })
+        .catch(function(error) {
+          console.error('Error:', error);
+        });
+      });
+    </script>
+
+    
+
+
+ {%  endblock %}

@@ -1,0 +1,35 @@
+
+{% block body %}
+<h1 align ="center">Liste des maisons d'hotes</h1><hr>
+
+
+                      <table class="table table-striped table-bordered" >
+                        <thead>
+                          <tr>
+                           <th class="wd-15p">ID</th>
+                            <th class="wd-15p">Nom</th>
+                            <th class="wd-20p">Adresse</th>
+                            <th class="wd-15p">Num</th>
+                            <th class="wd-15p">Prix</th>
+                            <th class="wd-15p">Note</th>
+                          
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr  {% for maisonhote in maisonhotes %}>
+                                                        <td>{{maisonhote.id}}</td>
+                                                        <td>{{maisonhote.nom}}</td>
+                                                        <td>{{maisonhote.adresse}}</td>
+                                                        <td>{{maisonhote.num}}</td>
+                                                        <td>{{maisonhote.prix}}</td>
+                                                        <td>{{maisonhote.note}}</td>
+                                                       
+
+                                                        
+                                                    </tr >
+                                                    {% endfor %}
+                                                    </tbody>
+                      </table>
+                       
+
+{% endblock %}

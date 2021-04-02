@@ -1,0 +1,131 @@
+
+
+
+
+
+{% extends 'listefront.html.twig'%}
+
+
+{% block namelist %}liste des maisons d'hotes {% endblock %}
+
+
+    {% block body %}
+    
+
+</div>
+
+        <div class="tab-pane active" id="tab-12">
+        <div class="row">
+       
+
+                {% for maisonhote in maisonhotes %}
+
+                           <div class="col-lg-6 col-md-6 col-xl-6">
+                                <div class="card overflow-hidden">
+                                    <div class="h-100">
+
+                                        <div class="item-card9-img h-250">
+                                            <div class="item-card9-imgs">
+
+                                          
+
+                                                <img src="{{asset('uploads/' ~ maisonhote.image )}}" alt="image" class="image">
+                                            </div>
+
+                                            <div class="item-card9-icons">
+                                                <a href="#" class="item-card9-icons1 wishlist"> <i class="fa fa fa-heart-o"></i></a>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card border-0 mb-0 br-0">
+                                    <div class="card-body h-100">
+                                         <div class="item-card9">
+
+
+
+
+                                           <a href="tours.html" class="text-dark"><h4 class="font-weight-semibold2 mt-1 mb-1">{{ maisonhote.nom }}</h4></a>
+                                                    <div class="mt-0 mb-0 d-sm-flex d-md-block d-xl-flex">
+                                                        <a href="#" class="mt-1 mb-0 mr-3 text-dark"><i class="fe fe-map-pin mr-1"></i> {{ maisonhote.adresse }}</a>
+                                                        <div class="star-ratings start-ratings-main clearfix d-flex mt-1">
+                                                            <div class="stars stars-example-fontawesome stars-example-fontawesome-sm mr-2">
+                                                                <select class="example-fontawesome" name="rating" autocomplete="off">
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="4" selected>4</option>
+                                                                    <option value="5">5</option>
+                                                                </select>
+                                                            </div> <a class="fs-13 leading-tight mt-1" href="#"></a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="">
+                                                        <p class="mt-2 mb-0 leading-loose"> {{ maisonhote.num }}  </p>
+                                                    </div>
+                                                        <div class="card-footer">
+                                                            <div class="item-card9-footer d-flex">
+                                                                <div class="item-card9-cost d-flex">
+                                                                    
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                   </div>
+
+                                                    <a class="btn btn-light btn-pill btn-sm mt-2" href="{{path('formreservation', {'id': maisonhote.id }) }}">Réserver cette maison</a>
+                                             </div>
+                                           </div>
+                                            </tbody>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+            {%  endfor %}
+
+        </div>
+        </div>
+        
+                    <div style="float:right;">{{ knp_pagination_render(maisonhotes) }}
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

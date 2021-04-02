@@ -1,0 +1,61 @@
+/*-------- Label  -------*/
+.label {
+	display: inline;
+	padding: .3em .6em .3em;
+	font-size: 75%;
+	color: $white;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: .25em;
+	margin-bottom: .5rem;
+}
+.label-pill {
+	padding-right: .6em;
+	padding-left: .6em;
+	border-radius: 10rem;
+}
+.label {
+	&.arrowed {
+		position: relative;
+		margin-left: 9px;
+	}
+	&.arrowed-in {
+		position: relative;
+		margin-left: 9px;
+		&:before {
+			display: inline-block;
+			content: "";
+			position: absolute;
+			left: -14px;
+			top: 0;
+			border: 9px solid transparent;
+			border-width: 9px 7px;
+		}
+	}
+	&.arrowed:before {
+		display: inline-block;
+		content: "";
+		position: absolute;
+		left: -14px;
+		top: 0;
+		border: 9px solid transparent;
+		border-width: 9px 7px;
+	}
+	&.arrowed-in-right, &.arrowed-right {
+		position: relative;
+		margin-right: 9px;
+		border-radius: 0 2px 2px 0;
+	}
+}
+.label-light {
+	background-color: $border-color;
+	color: $text-color;
+}
+
+/*-------- Label Colors  -------*/
+@each $colors, $value in $colors {
+	@include label-variant(".label-#{$colors}", $value);}
+/*--------Label Colors -------*/
+
+/*-------- Label  -------*/

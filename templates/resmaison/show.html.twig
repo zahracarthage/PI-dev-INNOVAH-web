@@ -1,0 +1,53 @@
+{% extends 'baseback.html.twig' %}
+
+{% block title %}Resmaison{% endblock %}
+
+{% block body %}
+    <h1>Modifier réservation</h1>
+
+
+ <div class="app-content">
+                    <div class="side-app">
+                        <div class="page-header">
+                            <h4 class="page-title"></h4>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#"><i class="fe   fe-box mr-1"></i> Tables</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Data Tables</li>
+                            </ol>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="card-title">Information de la résevation :</div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table id="example" class="table table-striped table-bordered" >
+
+
+
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ resmaison.id }}</td>
+            </tr>
+            <tr>
+                <th>Date d'entre</th>
+                <td>{{ resmaison.dateentre ? resmaison.dateentre|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Date de sortie</th>
+                <td>{{ resmaison.datesortie ? resmaison.datesortie|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('resmaison_index') }}">Retour liste</a>
+
+    <a class="btn btn-primary" href="{{ path('resmaison_edit', {'id': resmaison.id}) }}">Modifier</a>
+
+    {{ include('resmaison/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,182 @@
+/*------ My Dashboard -------*/
+@import "mixins/horizontal";
+.my-dash {
+	.side-menu .slide li a {
+		position: relative;
+	}
+	.slide, li {
+		list-style-type: none;
+	}
+	.side-menu li ul li a.active:before {
+		display: none;
+	}
+	.side-menu__item {
+		position: relative;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		@include transorm-origin(transform-origin, center, center, moz webkit o ms);
+		padding: 0.75rem 1.25rem;
+		font-size: $default-value-size * 14;
+		@include trasition-out(transition, background-color, 0.3s, ease, moz webkit o ms);
+		border-top: 1px solid $border-color;
+	}
+	&.app-sidebar .mCSB_draggerContainer {
+		right: -11px;
+	}
+	.side-menu__icon {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 auto;
+		flex: 0 0 auto;
+		width: 25px;
+	}
+	.side-menu__label {
+		white-space: nowrap;
+		-webkit-box-flex: 1;
+		-ms-flex: 1 1 auto;
+		flex: 1 1 auto;
+	}
+	.slide.is-expanded [data-toggle='slide'] {
+		border-bottom: 0px solid $border-color;
+	}
+	.side-menu li {
+		a {
+			border-top: 1px solid $border-color;
+		}
+		ul li a {
+			border-top: 0;
+			border-bottom: 0;
+		}
+	}
+	&.app-sidebar {
+		.side-menu li a.active {
+			background: none;
+		}
+		.slide-menu li.active>a {
+			font-weight: $font-weight-semibold;
+		}
+	}
+	.slide-menu li ul {
+		li {
+			font-size: $default-value-size * 12 !important;
+			font-weight:$font-weight-light;
+			border-bottom: 0px solid $border-color;
+		}
+		a {
+			padding: 10px 10px 10px 65px;
+		}
+	}
+	.side-menu .slide-menu li a {
+		font-size: $default-value-size * 13;
+	}
+	&.slide ul li a {
+		color: #605e7e;
+		font-weight:$font-weight-normal;
+	}
+	&.app-sidebar-footer {
+		clear: both;
+		display: block;
+		color: $white;
+		position: fixed;
+		bottom: 0px;
+		background: $white;
+		width: 228px;
+		z-index: 999;
+		border-top: 1px solid $border-color;
+	}
+	.app-sidebar-footer a {
+		padding: 10px 0;
+		text-align: center;
+		width: 20%;
+		color: $white;
+		font-size: $default-value-size * 15;
+		display: block;
+		float: left;
+		cursor: pointer;
+		border-right: 1px solid $border-color;
+		border-bottom: 1px solid $border-color;
+		&:hover {
+			background: rgba($white, 0.02);
+		}
+	}
+	.slide ul ul a {
+		font-size: $default-value-size * 13 !important;
+		padding: 0px 64px 0px 0px  !important;
+	}
+	&.app-sidebar ul li a {
+		color: #605e7e;
+		font-weight:$font-weight-normal;
+	}
+	.slide.is-expanded {
+		.slide-menu {
+			display:block;
+			background: $white;
+		}
+		.angle {
+			@include transform(transform, rotate(90deg), moz webkit o ms);
+		}
+	}
+	.slide-menu, .child-sub-menu {
+		display:none;
+	}
+	.sub-slide {
+		&.is-expanded {
+			.child-sub-menu {
+				display:block;
+				background: $white;
+			}
+			.sub-angle {
+				@include transform(transform, rotate(90deg), moz webkit o ms);
+			}
+		}
+		.sub-angle {
+			@include transorm-origin(transform-origin, center, center, moz webkit o ms);
+			@include trasition-out(transition, transform, 0.3s, ease, moz webkit o ms);
+			margin-left: 10px;
+		}
+	}
+	.slide-item {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		@include transorm-origin(transform-origin, center, center, moz webkit o ms);
+		padding: 0px  45px 0px 0px;
+		font-size: $default-value-size * 13;
+		color: #3e4b5b;
+		height: 40px;
+		line-height: 40px;
+		i{
+			line-height: 40px;
+		}
+	}
+	&.app-sidebar .side-menu .slide-menu li:last-child {
+		padding-bottom: 10px;
+		border-bottom: 0;
+	}
+	.slide-item .icon {
+		margin-right: 5px;
+	}
+	.angle {
+		@include transorm-origin(transform-origin, center, center, moz webkit o ms);
+		@include trasition-out(transition, transform, 0.3s, ease, moz webkit o ms);
+	}
+	.app-sidebar ul li a {
+		color: #605e7e;
+		font-weight:$font-weight-normal;
+	}
+	.slide.is-expanded {
+		.slide-menu {
+			display:block;
+		}
+		.angle {
+			@include transform(transform, rotate(90deg), moz webkit o ms);
+		}
+	}
+	.slide-menu {
+		display:none;
+	}
+	.child-sub-menu li a {
+		border-top: 0px solid rgba($black, 0.06) !important;
+	}
+}
+/*------ My Dashboard -------*/

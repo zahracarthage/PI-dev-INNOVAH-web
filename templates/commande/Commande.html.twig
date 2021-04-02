@@ -1,0 +1,21 @@
+
+{% block body %}
+<h1 align="center">Détails de la commande</h1><hr>
+
+<body>
+<h3>Numéro de la commande</h3>
+{% for c in commande %}
+<p>{{ c.id }}</p>
+<br>
+<h3>Date</h3>
+<p>{{ c.getDate()|date('d-m-Y H:i:s') }}</p>
+<br>
+<h3>Quantité des produits</h3>
+<p>{{ c.quantite }}</p>
+<br>
+<h3>Prix total</h3>
+<p>{{ c.getPrixTotal()}}</p>
+<br>
+{% endfor %}
+</body>													
+{% endblock %}

@@ -1,0 +1,153 @@
+/*-------- Form Control -------*/
+.form-control {
+	display: block;
+	width: 100%;
+	padding: .375rem .75rem;
+	font-size: $default-value-size * 14;
+	line-height: 1.6;
+	color: $text-color;
+	height: 40px;
+	background-color: $form-background;
+	background-clip: padding-box;
+	border: 1px solid $border-color;
+	border-radius: 5px;
+	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+	opacity: 1;
+	&.border-white {
+		border: 1px solid $white !important;
+	}
+}
+@media screen and (prefers-reduced-motion: reduce) {
+	.form-control {
+		transition: none;
+	}
+}
+.form-control {
+	&::-ms-expand {
+		background-color: transparent;
+		border: 0;
+	}
+	&:focus {
+		color: #6f6e6e;
+		background-color: #f8f7fc;
+		border-color:$border-color;
+		outline: 0;
+		box-shadow: none;
+	}
+	&::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &::-ms-input-placeholder {
+		color: #cecde0;
+		opacity: 1;
+	}
+	&:disabled, &[readonly] {
+		background-color: $border-color;
+		opacity: 1;
+	}
+}
+.form-control-file, .form-control-range {
+	display: block;
+	width: 100%;
+}
+
+.form-control-sm {
+	padding: $space-xs $space-sm;
+	font-size: .875rem;
+	line-height: 1.14285714;
+	border-radius: 5px;
+}
+
+.form-control-lg {
+	padding: $space-sm $space-md;
+	font-size: 1.125rem;
+	line-height: 1.44444444;
+	border-radius: 5px;
+}
+
+select.form-control {
+	&.select-lg {
+		height: 46px !important;
+		padding: 10px 16px !important;
+		font-size: $default-value-size * 17 !important;
+		line-height: 1.3333333 !important;
+		border-radius: 3px !important;
+	}
+	&.select-sm {
+		height: 30px !important;
+		padding: 0px 10px 1px 10px !important;
+		line-height: 1 !important;
+		border-radius: 3px !important;
+	}
+}
+select.form-control:not([size]):not([multiple]) {
+	height: 2.425rem;
+}
+select.form-control-sm:not([size]):not([multiple]) {
+	height: calc(1.8125rem + 2px);
+}
+select.form-control-lg:not([size]):not([multiple]) {
+	height: calc(2.6875rem + 2px);
+}
+select.form-control:focus::-ms-value {
+	color: #3d4e67;
+	background-color: $white;
+}
+.form-text {
+	display: block;
+	margin-top: .25rem;
+}
+.form-row {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-right: -5px;
+	margin-left: -5px;
+	> {
+		.col, [class*=col-] {
+			padding-right: 5px;
+			padding-left: 5px;
+		}
+	}
+}
+.form-check {
+	position: relative;
+	display: block;
+	padding-left: 1.25rem;
+}
+.form-check-input {
+	position: absolute;
+	margin-top: .3rem;
+	margin-left: -1.25rem;
+	&:disabled~.form-check-label {
+		color: #505662;
+	}
+}
+.form-check-label {
+	margin-bottom: 0;
+}
+.form-check-inline {
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-ms-flex-align: center;
+	align-items: center;
+	padding-left: 0;
+	margin-right: .75rem;
+	.form-check-input {
+		position: static;
+		margin-top: 0;
+		margin-right: .3125rem;
+		margin-left: 0;
+	}
+}
+
+.form-inline {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-ms-flex-align: center;
+	align-items: center;
+	.form-check {
+		width: 100%;
+	}
+}
+/*-------- Form Control -------*/

@@ -1,0 +1,13 @@
+{% extends 'baseback.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <h1>Modifier Maison d'hote</h1>
+
+    {{ include('maisonhote/_form.html.twig', {'button_label': 'Update'}) }}
+
+   
+
+    {{ include('maisonhote/_delete_form.html.twig', {'button_label': 'Delete'}) }}
+{% endblock %}

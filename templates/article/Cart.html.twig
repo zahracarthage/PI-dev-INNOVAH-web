@@ -1,0 +1,87 @@
+{% extends 'basefront.html.twig' %}
+{% block body %}
+  <div class="bg-light p-3">
+        <h1>Votre panier</h1>
+    </div>
+{% if items | length >0 %}
+<table class='table'>
+<thead>
+        <tr>
+            <th>Article</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+</thead>
+<tbody>
+{% for item in items %}
+    
+
+
+        <tr>
+            <td>{{item.product.nom}}</td>
+            <td>{{item.product.prix}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.product.prix * item.quantity}}</td>
+            <td><a href="{{ path('cart_remove', {'id': item.product.id})}}" class="btn btn-danger btn-sm">
+                <i class="fas fa-trash"></i></a>
+            </td>
+        </tr>
+
+    {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Total : </td>
+            <td>{{ total }}</td>
+            <td></td>
+            
+        </tr>
+        
+									
+		
+    </tfoot>
+    </table>
+    <script src="https://js.stripe.com/v3/"></script>
+    <button id="checkout-button" class="btn btn-primary">Procéder au paiement</button>
+  
+    
+    {% else %}
+    <p>Le panier est vide</p>
+    {% endif %}
+
+
+<script type="text/javascript">
+      // Create an instance of the Stripe object with your publishable API key
+      var stripe = Stripe('sk_test_BBap2t1CCsKoDKXnDyTlRIkI');
+      var checkoutButton = document.getElementById('checkout-button');
+
+      checkoutButton.addEventListener('click', function() {
+        // Create a new Checkout Session using the server-side endpoint you
+        // created in step 3.
+        fetch('/create-checkout-session', {
+          method: 'POST',
+        })
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(session) {
+          return stripe.redirectToCheckout({ sessionId: session.id });
+        })
+        .then(function(result) {
+          // If `redirectToCheckout` fails due to a browser or network
+          // error, you should display the localized error message to your
+          // customer using `error.message`.
+          if (result.error) {
+            alert(result.error.message);
+          }
+        })
+        .catch(function(error) {
+          console.error('Error:', error);
+        });
+      });
+    </script>
+{% endblock %}
+
+

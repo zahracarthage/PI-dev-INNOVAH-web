@@ -1,0 +1,44 @@
+ <div class="bg-light p-3">
+        <h1>Votre panier</h1>
+    </div>
+{% if items | length >0 %}
+<table class='table'>
+<thead>
+        <tr>
+            <th>Article</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+</thead>
+<tbody>
+{% for item in items %}
+    
+
+
+        <tr>
+            <td>{{item.product.nom}}</td>
+            <td>{{item.product.prix}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.product.prix * item.quantity}}</td>
+            
+              
+           
+        </tr>
+
+    {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Total : </td>
+            <td> {{total}} </td>
+            <td></td>
+            
+        </tr>
+        
+									
+		
+    </tfoot>
+    </table>
+    {% endif %}

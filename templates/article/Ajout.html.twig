@@ -1,0 +1,69 @@
+{% extends 'baseback.html.twig' %}
+
+{#<h1>Ajout Article</h1>
+{{ form(form)}}#}
+{% block body %}
+<div class="app-content">
+
+							<div class="side-app">
+						
+						 <div class="row">
+							<div class="col-md-12">
+								<div class="card m-b-20">
+									<div class="card-header">
+										<h3 class="card-title">Ajouter Article</h3>
+
+									</div>
+									 {{ form_start(form)}}
+                                    <div class="card-body">
+
+										<form>
+											<div class="form-group">
+												<label class="form-label" for="exampleInputname">Nom de l'article</label>
+												{{ form_widget(form.nom , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Nom article'}} ) }}
+                                        {{ form_errors(form.nom) }}
+											</div>
+											<div class="form-group">
+												<label class="form-label" for="exampleInputEmail2">Description</label>
+												{{ form_widget(form.description , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Description'}} ) }}
+                                        {{ form_errors(form.description) }}
+											</div>
+											<div class="form-group">
+												<label class="form-label" for="exampleInputPassword2">Catégorie</label>
+												{{ form_widget(form.categorie , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Catégorie'}} ) }}
+                                        {{ form_errors(form.categorie) }}
+											</div>
+											<div class="form-group">
+												<label class="form-label">Prix</label>
+												{{ form_widget(form.prix , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Prix en dinars'}} ) }}
+                                        {{ form_errors(form.prix) }}
+											</div>
+											<div class="form-group">
+												<label class="form-label" for="exampleInputnumber">Image</label>
+												{{ form_widget(form.image , {'attr': {'class': 'form-control form-control-user' , 'placeholder' : 'Nom du fichier'}} ) }}
+                                        {{ form_errors(form.image) }}
+											</div>
+											<div class="form-group mb-0">
+												<div class="checkbox checkbox-secondary">
+                                                {{ form_widget(form) }}
+													<button type="SubmitType" class="btn btn-primary " onClick="validateSubmit()">Ajouter article</button>
+												</div>
+											</div>
+										</form>
+									</div>
+                                     {{ form_end(form) }}
+								</div>
+                                
+							</div>
+							<script>									
+
+function validateSubmit() {
+                         result = confirm("Êtes-vous sur de vouloir ajouter l'article ?");
+                        if (result) {
+                           $('#form').submit();
+                           
+                        
+                                  }
+                        }
+                        </script>	
+                            {% endblock %}

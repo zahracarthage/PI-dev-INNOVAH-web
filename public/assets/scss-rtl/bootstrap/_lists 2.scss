@@ -1,0 +1,198 @@
+/*-------- Lists -------*/
+
+.list-style {
+	list-style: inherit;
+	padding-left: inherit;
+	ul {
+		list-style: inherit;
+		padding-left: 30px;
+	}
+	li {
+		line-height: 30px;
+	}
+}
+.list-group {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	padding-left: 0;
+	margin-bottom: 0;
+}
+.list-group-item-action {
+	width: 100%;
+	color: $text-color;
+	text-align: inherit;
+	&:focus, &:hover {
+		color: $text-color;
+		text-decoration: none;
+		background-color: $border-color;
+	}
+	&:active {
+		color: #cecde0;
+		background-color: $border-color;
+	}
+}
+.list-group-item {
+	position: relative;
+	display: block;
+	padding: .75rem 1.25rem;
+	margin-bottom: -1px;
+	background-color: $white;
+	border: 1px solid $border-color;
+	&:first-child {
+		border-top-left-radius: $default-value-size * 3;
+		border-top-right-radius:  $default-value-size * 3;
+	}
+	&:last-child {
+		margin-bottom: 0;
+		border-bottom-right-radius: $default-value-size * 3;
+		border-bottom-left-radius: $default-value-size * 3;
+	}
+	&:focus, &:hover {
+		z-index: 1;
+		text-decoration: none;
+	}
+	&.disabled, &:disabled {
+		color: #7c90b1;
+		background-color: $white;
+	}
+	&.active {
+		z-index: 2;
+		background-color: #eef0f9;
+		border: 1px solid $border-color;
+		color: $text-color;
+	}
+}
+.list-group-flush {
+	.list-group-item {
+		border-right: 0;
+		border-left: 0;
+		border-radius: 0;
+	}
+	&:first-child .list-group-item:first-child {
+		border-top: 0;
+	}
+	&:last-child .list-group-item:last-child {
+		border-bottom: 0;
+	}
+}
+.list-group-item-success {
+	color: $color-success;
+	background-color: rgba($color-success, 0.1);
+	&.list-group-item-action {
+		&:focus, &:hover {
+			color: $color-success;
+			background-color: rgba($color-success, 0.15);
+		}
+		&.active {
+			color: $white;
+			background-color: $color-success;
+			border-color: $color-success;
+		}
+	}
+}
+.list-group-item-info {
+	color: $color-info;
+	background-color: rgba($color-info, 0.1);
+	&.list-group-item-action {
+		&:focus, &:hover {
+			color: $color-info;
+			background-color: rgba($color-info, 0.15);
+		}
+		&.active {
+			color: $white;
+			background-color: $color-info;
+			border-color: $color-info;
+		}
+	}
+}
+.list-group-item-warning {
+	color: $color-danger;
+	background-color: rgba($color-danger, 0.1);
+	&.list-group-item-action {
+		&:focus, &:hover {
+			color: $color-danger;
+			background-color: rgba($color-danger, 0.15);
+		}
+		&.active {
+			color: $white;
+			background-color: $color-warning;
+			border-color: $color-warning;
+		}
+	}
+}
+.list-group-item-danger {
+	color: $color-danger;
+	background-color: rgba($color-danger, 0.1);
+	&.list-group-item-action {
+		&:focus, &:hover {
+			color: $color-danger;
+			background-color: rgba($color-danger, 0.15);
+		}
+		&.active {
+			color: $white;
+			background-color:$color-danger;
+			border-color: $color-danger;
+		}
+	}
+}
+.list-group-item-light {
+	color: #818182;
+	background-color: $color-light;
+	&.list-group-item-action {
+		&:focus, &:hover {
+			color: #818182;
+			background-color: $color-light;
+		}
+		&.active {
+			color: #818182;
+			background-color: $color-light;
+			border-color: $color-light;
+		}
+	}
+}
+.list-group-item-dark {
+	color: $text-color;
+	background-color: rgba($text-color, 0.1);
+	&.list-group-item-action {
+		&:focus, &:hover {
+			color: #1b1e21;
+			background-color: rgba($text-color, 0.15);
+		}
+		&.active {
+			color: $white;
+			background-color:$text-color;
+			border-color: $text-color;
+		}
+	}
+}
+.list-inline-dots .list-inline-item+.list-inline-item:before {
+	content: '· ';
+	margin-left: -2px;
+	margin-right: 3px;
+}
+.list-separated-item {
+	padding: 1rem 0;
+	&:first-child {
+		padding-top: 0;
+	}
+}
+.list-group-item {
+	&.active .icon {
+		color: inherit !important;
+	}
+	.icon {
+		color: #cecde0 !important;
+	}
+}
+.list-group-transparent .list-group-item {
+	background: 0 0;
+	border: 0;
+	padding: .5rem 1rem;
+	&.active {
+		background: $body-color;
+		font-weight: $font-weight-semibold2;
+	}
+}
+/*-------- Lists -------*/

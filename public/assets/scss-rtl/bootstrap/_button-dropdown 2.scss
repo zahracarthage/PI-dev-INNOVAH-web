@@ -1,0 +1,28 @@
+/*-------- Button Dropdown -------*/
+btn.dropdown-toggle~.dropdown-menu {
+	background-color: #f4f4f4 !important;
+	background-color: $white!important;
+	border: 0 solid #4285f4 !important;
+	box-shadow: 0 0 3px rgba(25, 25, 25, 0.3) !important;
+	top: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.btn.dropdown-toggle {
+	&.btn-secondary~.dropdown-menu .dropdown-plus-title {
+		border-color: $color-secondary !important;
+	}
+	&.btn-success~.dropdown-menu .dropdown-plus-title {
+		border-color: $color-success !important;
+	}
+	&.btn-info~.dropdown-menu .dropdown-plus-title {
+		border-color: $color-info !important;
+	}
+	&.btn-warning~.dropdown-menu .dropdown-plus-title {
+		border-color: $color-warning !important;
+	}
+	&.btn-danger~.dropdown-menu .dropdown-plus-title {
+		border-color: $color-danger !important;
+	}
+}
+/*-------- Button Dropdown -------*/
