@@ -1,7 +1,11 @@
 # PI-dev symfony
 The vendor folder is in the .gitignore therefore, you won't find it. 
 
-Run the command : composer instlal within your project to install all bundles that came in and make sure to change the email and password in the config/packages/dev/swiftmailer.yaml to yours. 
+Run the command : composer instlal within your project to install all bundles that came in.
+
+
+Mailer : 
+sure to change the email and password in the config/packages/dev/swiftmailer.yaml to yours. 
 
 
 
