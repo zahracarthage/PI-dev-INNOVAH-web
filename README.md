@@ -1,7 +1,7 @@
 # PI-dev symfony
 The vendor folder is in the .gitignore therefore, you won't find it. 
 
-Run the command : composer instlal within your project to install all bundles that came in.
+Run the command : composer install within your project to install all bundles that came in.
 
 
 Mailer : 
