@@ -15,6 +15,10 @@ if you want to test this project, create a database kiftrip and  run the command
 php bin/console doctrine:schema:update --force    
 
 To upload the entities to your database.  
+---------------------------
+The main route in the project is pointing on profile, however since this is not a deployed project, the database is empty and you'll have to sign up in order to be let in. 
+
+Make sure to sign up through this route http://127.0.0.1:PORT_NUMBER/inscription
 
 
 
