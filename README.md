@@ -13,13 +13,22 @@ Make sure to change the port number in the .env file to the port your server is 
 if you want to test this project, create a database kiftrip and  run the command : 
 
 php bin/console doctrine:schema:update --force    
-
 To upload the entities to your database.  
+
+
 ---------------------------
+ERROR PAGE WHEN STARTING UP THE PROJECT : 
+
 The main route in the project is pointing on profile, however since this is not a deployed project, the database is empty and you'll have to sign up in order to be let in. 
 
-Make sure to sign up through this route http://127.0.0.1:PORT_NUMBER/inscription
+Make sure to sign up through this route http://127.0.0.1:8080/inscription
 
+make sure to change the Port number (in my case it's 8080) to yours. 
+
+
+---------------------------
+Visualize and debug routes: 
+php bin/console debug:router to visualize all available routes and how to navigate to each one. 
 
 
 ----------------------------
