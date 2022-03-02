@@ -55,7 +55,7 @@ class CartController extends AbstractController
      */
     public function checkout(CartService $cartService)
     {
-        \Stripe\Stripe::setApiKey('pk_test_ljnAOl54FFPm8G9H0X7dQGfD');
+        \Stripe\Stripe::setApiKey('your stripe key');
         
         $session = \Stripe\Checkout\Session::create([
             'payment_method_types' => ['card'],
