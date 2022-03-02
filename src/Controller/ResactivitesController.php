@@ -171,7 +171,7 @@ class ResactivitesController extends AbstractController
     $em= $this->getDoctrine()->getManager();
     $Activites=$em->getRepository(Activites::class);
     
-        \Stripe\Stripe::setApiKey('pk_test_ljnAOl54FFPm8G9H0X7dQGfD');
+        \Stripe\Stripe::setApiKey('your stripe key');
        
 
         $session = \Stripe\Checkout\Session::create([
