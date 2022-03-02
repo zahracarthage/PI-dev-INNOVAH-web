@@ -67,7 +67,7 @@ class ResmaisonController extends AbstractController
      */
     public function checkout()
     {
-       \Stripe\Stripe::setApiKey('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+       \Stripe\Stripe::setApiKey('your stripe api key');
 
        $session = \Stripe\Checkout\Session::create([
           'payment_method_types' => ['card'],
